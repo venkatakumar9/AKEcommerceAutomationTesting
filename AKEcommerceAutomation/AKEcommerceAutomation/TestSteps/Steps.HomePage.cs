@@ -18,7 +18,6 @@ namespace AKEcommerceAutomation.TestSteps
         {
             homePage = new HomePage(driver);
             ScenarioContext.Current.Set(homePage); 
-            
         }
 
         [Then(@"SubMenu Appears:")]
@@ -29,7 +28,6 @@ namespace AKEcommerceAutomation.TestSteps
             {
                 Assert.AreEqual(table.Rows[i]["Value"], headerValues[i]);
             }
-            
         }
 
         //Verifying the SideBar on the Page
@@ -69,7 +67,6 @@ namespace AKEcommerceAutomation.TestSteps
             {
                 Assert.AreEqual(table.Rows[i]["Value"], headerlinksValues[i]);
             }
-
         }
 
         //Navigating to Destinations Homepage
@@ -83,7 +80,6 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"I navigate to Destinations homepage")]
         public void ThenINavigateToDestinationsPage()
         {
-         
            driver.PageSource.Contains("Destinations");
         }
 
@@ -98,7 +94,5 @@ namespace AKEcommerceAutomation.TestSteps
         {
             Current().Navigate().GoToUrl(Url);
         }
-
-     
     }
 }

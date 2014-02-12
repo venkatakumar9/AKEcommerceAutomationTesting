@@ -10,17 +10,12 @@ using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
 {
-    
-
     public class BasePage : SeleniumTestBase
     {
-        
-
         protected IWebDriver _driver;
         //private IBasePageStrategy _skin;
 
         protected BasePage(IWebDriver driver)
-
         {
             _driver = driver;
         }
@@ -136,7 +131,6 @@ namespace AKEcommerceAutomation.PageObjects
             return footerLinkValues;
 
         }
-        
 
         public string GetCopyRightText()
         {
@@ -216,9 +210,5 @@ namespace AKEcommerceAutomation.PageObjects
                     return true;
             }
         }
-
-        
-
-       
     }
 }
