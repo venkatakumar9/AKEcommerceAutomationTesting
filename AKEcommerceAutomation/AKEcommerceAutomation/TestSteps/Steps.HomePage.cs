@@ -1,8 +1,13 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//     Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
+using AKEcommerceAutomation.PageObjects.Object_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace AKEcommerceAutomation.TestSteps
@@ -12,18 +17,18 @@ namespace AKEcommerceAutomation.TestSteps
     {
         public HomePage homePage;
 
-      //Verify Sub-Navigation-Menu 
+        //Verify Sub-Navigation-Menu 
         [When(@"I am in the AK Homepage")]
         public void WhenIAmInTheAkHomepage()
         {
             homePage = new HomePage(driver);
-            ScenarioContext.Current.Set(homePage); 
+            ScenarioContext.Current.Set(homePage);
         }
 
         [Then(@"SubMenu Appears:")]
         public void ThenTheSubMenuAppears(Table table)
         {
-            var headerValues = homePage.GetHeaderValues();
+            string[] headerValues = homePage.GetHeaderValues();
             for (int i = 0; i < homePage.GetHeaderNavigationCount(); i++)
             {
                 Assert.AreEqual(table.Rows[i]["Value"], headerValues[i]);
@@ -35,7 +40,6 @@ namespace AKEcommerceAutomation.TestSteps
         [Given(@"I am on the homepage")]
         public void GivenINavigateToHomepage()
         {
-           
             WhenIAmInTheAkHomepage();
         }
 
@@ -48,7 +52,7 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"Carousel Main image displays")]
         public void ThenCarouselMainImageDisplayed()
         {
-            Assert.IsTrue(homePage.HasElement(By.XPath(HomePage.HomepageCarouselMainImage)));
+            Assert.IsTrue(homePage.HasElement(HomePageElements.HomepageCarouselMainImage));
         }
 
 
@@ -62,7 +66,7 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"Top Headerlinks displays")]
         public void ThenTopHeaderLinksDisplays(Table table)
         {
-            var headerlinksValues = homePage.GetHeaderLinksValues();
+            string[] headerlinksValues = homePage.GetHeaderLinksValues();
             for (int i = 0; i < homePage.GetHeaderLinks(); i++)
             {
                 Assert.AreEqual(table.Rows[i]["Value"], headerlinksValues[i]);
@@ -80,7 +84,7 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"I navigate to Destinations homepage")]
         public void ThenINavigateToDestinationsPage()
         {
-           driver.PageSource.Contains("Destinations");
+            driver.PageSource.Contains("Destinations");
         }
 
         //[AfterScenario]
@@ -94,5 +98,21 @@ namespace AKEcommerceAutomation.TestSteps
         {
             Current().Navigate().GoToUrl(Url);
         }
+
+        #region BeInspired Link Navigation
+
+        [When(@"I click on BeInspired link")]
+        public void WhenIClickOnBeInspiredLink()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"I Navigate to BeInspired Page")]
+        public void ThenINavigateToBeInspiredPage()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        #endregion
     }
 }

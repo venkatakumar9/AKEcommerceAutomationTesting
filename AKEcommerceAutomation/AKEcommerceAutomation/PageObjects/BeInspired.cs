@@ -2,9 +2,9 @@
 
 namespace AKEcommerceAutomation.PageObjects
 {
-    public class JourneysPage : BasePage
+    public class BeInspired : BasePage
     {
-        public JourneysPage(IWebDriver driver) : base(driver)
+        public BeInspired(IWebDriver driver) : base(driver)
         {
         }
     }

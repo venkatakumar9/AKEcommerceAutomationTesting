@@ -44,6 +44,10 @@
  When I Click on Destinations Link
  Then I navigate to Destinations homepage
 
+ Scenario: Navigate to BeInspired Page
+ When I click on BeInspired link
+ Then I Navigate to BeInspired Page
+
     
 
     

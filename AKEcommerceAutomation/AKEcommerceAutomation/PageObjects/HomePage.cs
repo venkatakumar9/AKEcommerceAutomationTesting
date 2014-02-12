@@ -1,32 +1,57 @@
-﻿using AKEcommerceAutomation.Framework;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//     Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using AKEcommerceAutomation.PageObjects.Object_Repository;
 using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
 {
+    /// <summary>
+    ///     Cliking on all the Links of the HomePage and Verifies the Elements of the HomePage.
+    /// </summary>
     public class HomePage : BasePage
     {
-        public const string HomepageCarouselMainImage = "//div[@id = 'Content_C002_Col00']/section";
         //Actions builder = new Actions(driver);
         public HomePage(IWebDriver driver) : base(driver)
         {
         }
 
+        /// <summary>
+        ///     Clicking on Destination Link
+        /// </summary>
         public DestinationsPage GetDestinationsPage()
         {
-            _driver.FindElement(By.XPath("//*[@id='destinations-hub']")).Click();
-            //_driver.WaitForPageToLoad();
+            _driver.FindElement(HomePageElements.Destinationlink).Click();
             return new DestinationsPage(_driver);
         }
 
+        /// <summary>
+        ///     Clicking on Journey Link
+        /// </summary>
         public JourneysPage GetJourneysPage()
         {
-            _driver.FindElement(By.XPath("//*[@id='journeys']")).Click();
+            _driver.FindElement(HomePageElements.JourneysLink).Click();
             return new JourneysPage(_driver);
         }
 
+        /// <summary>
+        ///     verifying the HomePage Image carousel.
+        /// </summary>
         public bool VerifyHomepageCarouselMainImage()
         {
-            return _driver.FindElement(By.XPath("//div[@id = 'Content_C002_Col00']/section")).Displayed;
+            return _driver.FindElement(HomePageElements.HomepageCarouselMainImage).Displayed;
+        }
+
+        /// <summary>
+        ///     Clicking on BeInspired Link
+        /// </summary>
+        public BeInspired GetBeInspiredPage()
+        {
+            _driver.FindElement(HomePageElements.BeInspiredLink).Click();
+            return new BeInspired(_driver);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
@@ -114,8 +113,7 @@ namespace AKEcommerceAutomation.PageObjects
                 footerValues[i] = _driver.FindElement(By.XPath("//*[@id='footer']/div[2]/div[" + (i + 1) + "]/a")).Text;
             }
             return footerValues;
-
-         }
+        }
 
         public string[] GetFooterLinkValues()
         {
@@ -129,7 +127,6 @@ namespace AKEcommerceAutomation.PageObjects
             }
 
             return footerLinkValues;
-
         }
 
         public string GetCopyRightText()
@@ -166,7 +163,7 @@ namespace AKEcommerceAutomation.PageObjects
             return _driver.FindElement(By.XPath(".//*[@id='page-wrapper']/div[1]/ul")).Displayed;
         }
 
-        
+
         //Broken Images
         public void BrokenImages(IWebElement ele)
         {
@@ -197,7 +194,6 @@ namespace AKEcommerceAutomation.PageObjects
         public string GetElementText(By by)
         {
             return _driver.FindElement(by).Text;
-
         }
 
         public bool HasElement(By by)
