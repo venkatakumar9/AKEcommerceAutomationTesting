@@ -98,21 +98,5 @@ namespace AKEcommerceAutomation.TestSteps
         {
             Current().Navigate().GoToUrl(Url);
         }
-
-        #region BeInspired Link Navigation
-
-        [When(@"I click on BeInspired link")]
-        public void WhenIClickOnBeInspiredLink()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"I Navigate to BeInspired Page")]
-        public void ThenINavigateToBeInspiredPage()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        #endregion
     }
 }

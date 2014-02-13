@@ -4,11 +4,12 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using AKEcommerceAutomation.PageObjects.Object_Repository;
-using OpenQA.Selenium;
-
 namespace AKEcommerceAutomation.PageObjects
 {
+    using System;
+    using Object_Repository;
+    using OpenQA.Selenium;
+
     /// <summary>
     ///     Cliking on all the Links of the HomePage and Verifies the Elements of the HomePage.
     /// </summary>
@@ -51,6 +52,7 @@ namespace AKEcommerceAutomation.PageObjects
         public BeInspired GetBeInspiredPage()
         {
             _driver.FindElement(HomePageElements.BeInspiredLink).Click();
+            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
             return new BeInspired(_driver);
         }
     }
