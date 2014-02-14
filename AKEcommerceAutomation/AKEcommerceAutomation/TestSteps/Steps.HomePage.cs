@@ -35,8 +35,8 @@ namespace AKEcommerceAutomation.TestSteps
             }
         }
 
-        //Verifying the SideBar on the Page
 
+        //Verifying the SideBar on the Page
         [Given(@"I am on the homepage")]
         public void GivenINavigateToHomepage()
         {

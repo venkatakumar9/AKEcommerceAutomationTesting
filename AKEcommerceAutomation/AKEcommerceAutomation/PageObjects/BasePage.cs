@@ -16,7 +16,7 @@ namespace AKEcommerceAutomation.PageObjects
     {
         protected IWebDriver _driver;
         //private IBasePageStrategy _skin;
-
+        private string topmenucontinetnames = null;
         protected BasePage(IWebDriver driver)
         {
             _driver = driver;
@@ -154,6 +154,7 @@ namespace AKEcommerceAutomation.PageObjects
                 string title = driver.Title;
                 driver.Navigate().Back();
                 mouseover(HomePageElements.Destinationlink);
+               
             }
 
             foreach (var continent in driver.FindElements(HomePageElements.Meganavmenubottom))

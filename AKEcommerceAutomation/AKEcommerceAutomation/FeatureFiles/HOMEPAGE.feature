@@ -52,6 +52,9 @@
  Given I am on the homepage
  When I Mouse Over on Destinations Link
  Then The Meganav Appears
+ | Value       |
+ | Africa      |
+ | The Americas |
  And When I click on Destination link I reach the Destinations Page
  And When I click on Journeys Link I reach Journeys Page
  And When I click on BeInspired Link I reach BeInspired Page
