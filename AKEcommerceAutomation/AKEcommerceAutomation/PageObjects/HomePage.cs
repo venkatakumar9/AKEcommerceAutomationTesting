@@ -12,9 +12,8 @@ namespace AKEcommerceAutomation.PageObjects
     using Object_Repository;
     using OpenQA.Selenium;
 
-    /// <summary>
-    ///     Cliking on all the Links of the HomePage and Verifies the Elements of the HomePage.
-    /// </summary>
+  
+   // Cliking on all the Links of the HomePage and Verifies the Elements of the HomePage.
     public class HomePage : BasePage
     {
         //Actions builder = new Actions(driver);
@@ -23,18 +22,14 @@ namespace AKEcommerceAutomation.PageObjects
             
         }
 
-        /// <summary>
-        ///     Clicking on Destination Link
-        /// </summary>
+       
         public DestinationsPage GetDestinationsPage()
         {
             _driver.FindElement(HomePageElements.Destinationlink).Click();
             return new DestinationsPage(_driver);
         }
 
-        /// <summary>
-        ///     Clicking on Journey Link
-        /// </summary>
+     
         public JourneysPage GetJourneysPage()
         {
           
@@ -43,17 +38,13 @@ namespace AKEcommerceAutomation.PageObjects
             return new JourneysPage(_driver);
         }
 
-        /// <summary>
-        ///     verifying the HomePage Image carousel.
-        /// </summary>
+       
         public bool VerifyHomepageCarouselMainImage()
         {
             return _driver.FindElement(HomePageElements.HomepageCarouselMainImage).Displayed;
         }
 
-        /// <summary>
-        ///     Clicking on BeInspired Link
-        /// </summary>
+       
         public BeInspired GetBeInspiredPage()
         {
             _driver.FindElement(HomePageElements.BeInspiredLink).Click();

@@ -1,22 +1,27 @@
-﻿using System;
-using System.Drawing.Imaging;
-using System.Globalization;
-using System.IO;
-using System.Text;
-using AKEcommerceAutomation.Framework;
-using AKEcommerceAutomation.PageObjects.Object_Repository;
-using gherkin.lexer;
-using ikvm.extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//     Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace AKEcommerceAutomation.PageObjects
 {
+    using System;
+    using System.Drawing.Imaging;
+    using System.Globalization;
+    using System.IO;
+    using System.Text;
+    using Framework;
+    using Object_Repository;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using OpenQA.Selenium;
+
     public class BasePage : SeleniumTestBase
     {
         protected IWebDriver _driver;
         //private IBasePageStrategy _skin;
         private string topmenucontinetnames = null;
+
         protected BasePage(IWebDriver driver)
         {
             _driver = driver;
@@ -139,25 +144,15 @@ namespace AKEcommerceAutomation.PageObjects
 
         public void mouseover(By Elemnent)
         {
-            ILocatable loc = (ILocatable)driver.FindElement(Elemnent);
-            IMouse mouse = ((IHasInputDevices)driver).Mouse;
+            var loc = (ILocatable) driver.FindElement(Elemnent);
+            IMouse mouse = ((IHasInputDevices) driver).Mouse;
             mouse.MouseMove(loc.Coordinates);
             mouse.ContextClick(loc.Coordinates);
         }
 
         public void Meganav()
         {
-            foreach (var continent in driver.FindElements(HomePageElements.Meganavmenutop))
-            {
-                string continentname = continent.Text;
-                continent.Click();
-                string title = driver.Title;
-                driver.Navigate().Back();
-                mouseover(HomePageElements.Destinationlink);
-               
-            }
-
-            foreach (var continent in driver.FindElements(HomePageElements.Meganavmenubottom))
+            foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenutop))
             {
                 string continentname = continent.Text;
                 continent.Click();
@@ -165,9 +160,17 @@ namespace AKEcommerceAutomation.PageObjects
                 driver.Navigate().Back();
                 mouseover(HomePageElements.Destinationlink);
             }
-           
 
+            foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
+            {
+                string continentname = continent.Text;
+                continent.Click();
+                string title = driver.Title;
+                driver.Navigate().Back();
+                mouseover(HomePageElements.Destinationlink);
+            }
         }
+
         //UN-Comment When JourneyPage is Written
         //public string GetJourneysPage()
         //{
