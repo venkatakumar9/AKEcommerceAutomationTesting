@@ -162,7 +162,7 @@
     <Compile Include="PageObjects\Object Repository\BeinspiredPageElements.cs" />
     <Compile Include="PageObjects\Object Repository\HomePageElements.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestSteps\BeInspiredLink.cs" />
+    <Compile Include="TestSteps\HomePage.MainNavigation.cs" />
     <Compile Include="TestSteps\Steps.HomePage.cs" />
   </ItemGroup>
   <ItemGroup>

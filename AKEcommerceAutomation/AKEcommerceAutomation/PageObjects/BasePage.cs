@@ -4,6 +4,9 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using AKEcommerceAutomation.Framework;
+using AKEcommerceAutomation.PageObjects.Object_Repository;
+using gherkin.lexer;
+using ikvm.extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 
@@ -134,6 +137,36 @@ namespace AKEcommerceAutomation.PageObjects
             return _driver.FindElement(By.XPath("//*[@id='footer']/div[2]/div/div/footer/p")).Text;
         }
 
+        public void mouseover(By Elemnent)
+        {
+            ILocatable loc = (ILocatable)driver.FindElement(Elemnent);
+            IMouse mouse = ((IHasInputDevices)driver).Mouse;
+            mouse.MouseMove(loc.Coordinates);
+            mouse.ContextClick(loc.Coordinates);
+        }
+
+        public void Meganav()
+        {
+            foreach (var continent in driver.FindElements(HomePageElements.Meganavmenutop))
+            {
+                string continentname = continent.Text;
+                continent.Click();
+                string title = driver.Title;
+                driver.Navigate().Back();
+                mouseover(HomePageElements.Destinationlink);
+            }
+
+            foreach (var continent in driver.FindElements(HomePageElements.Meganavmenubottom))
+            {
+                string continentname = continent.Text;
+                continent.Click();
+                string title = driver.Title;
+                driver.Navigate().Back();
+                mouseover(HomePageElements.Destinationlink);
+            }
+           
+
+        }
         //UN-Comment When JourneyPage is Written
         //public string GetJourneysPage()
         //{

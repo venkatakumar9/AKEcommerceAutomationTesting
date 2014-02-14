@@ -1,11 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//     Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace AKEcommerceAutomation.PageObjects.Object_Repository
 {
-    class BeinspiredPageElements
+    using OpenQA.Selenium;
+
+    public class BeinspiredPageElements
     {
+        /// <summary>
+        /// Title of the Page
+        /// </summary>
+        public static string BeInspiredTitle = "BeInspired";
+
     }
 }
