@@ -4,6 +4,17 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System.Collections;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System;
+using System.Threading;
+using com.sun.org.apache.bcel.@internal.generic;
+using gherkin.deps.com.google.gson.annotations;
+using ikvm.extensions;
+using OpenQA.Selenium.Support.UI;
+
 namespace AKEcommerceAutomation.PageObjects
 {
     using System;
@@ -20,8 +31,7 @@ namespace AKEcommerceAutomation.PageObjects
     {
         protected IWebDriver _driver;
         //private IBasePageStrategy _skin;
-        private string topmenucontinetnames = null;
-
+       
         protected BasePage(IWebDriver driver)
         {
             _driver = driver;
@@ -147,29 +157,73 @@ namespace AKEcommerceAutomation.PageObjects
             var loc = (ILocatable) driver.FindElement(Elemnent);
             IMouse mouse = ((IHasInputDevices) driver).Mouse;
             mouse.MouseMove(loc.Coordinates);
-            mouse.ContextClick(loc.Coordinates);
+            mouse.MouseMove(loc.Coordinates);
         }
 
-        public void Meganav()
+        public string[] Meganav_topcontinetnames()
         {
-            foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenutop))
+            var continetnamestop = new string[_driver.FindElements(HomePageElements.Meganavmenutop).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenutop).Count;)
             {
-                string continentname = continent.Text;
-                continent.Click();
-                string title = driver.Title;
-                driver.Navigate().Back();
-                mouseover(HomePageElements.Destinationlink);
+                waitforelement(HomePageElements.Meganavmenutop, 10);
+                Thread.Sleep(3000);
+                foreach (IWebElement continent in  driver.FindElements(HomePageElements.Meganavmenutop))
+                {
+                    continetnamestop[i] = continent.Text;
+                    i++;
+                }
+            }
+            return continetnamestop;
+            //return (string[]) continetnamesbottom.Union(continetnamestop);
+
+
+
+            //foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenutop))
+            //{
+            //    continent.Click();
+            //    string title = driver.Title;
+            //    driver.Navigate().Back();
+            //    mouseover(HomePageElements.Destinationlink);
+            //    ContinentTiltes = ContinentTiltes + "//n" + title;
+            //    return ContinentTiltes;
+            //}
+
+            //foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
+            //{
+            //    string continentname = continent.Text;
+            //    Continetnames = Continetnames + "//n " + continentname;
+            //    return Continetnames;
+            //}
+            //foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
+            //{
+            //    continent.Click();
+            //    string title = driver.Title;
+            //    driver.Navigate().Back();
+            //    mouseover(HomePageElements.Destinationlink);
+            //    ContinentTiltes = ContinentTiltes + "//n" + title;
+            //    return ContinentTiltes;
+            //}
+            //return ContinentTiltes + "//n"+ Continetnames;
+        }
+
+        public string[] Meganav_bottomcontinentnames()
+        {
+            
+            var continetnamesbottom = new string[_driver.FindElements(HomePageElements.Meganavmenubottom).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenubottom).Count; )
+            {
+                waitforelement(HomePageElements.Meganavmenubottom, 10);
+                foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
+                {
+                    continetnamesbottom[i] = continent.Text;
+                    i++;
+                }
             }
 
-            foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
-            {
-                string continentname = continent.Text;
-                continent.Click();
-                string title = driver.Title;
-                driver.Navigate().Back();
-                mouseover(HomePageElements.Destinationlink);
-            }
+            return continetnamesbottom;
         }
+
+
 
         //UN-Comment When JourneyPage is Written
         //public string GetJourneysPage()
@@ -242,6 +296,29 @@ namespace AKEcommerceAutomation.PageObjects
                 default:
                     return true;
             }
+        }
+
+        //Explicit wait
+        public  IWebElement waitforelement(By by, int timeinseconds)
+        {
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeinseconds));
+            
+            IWebElement myDynamicElement = wait.Until<IWebElement>((d) =>
+            {
+                try
+                {
+               
+                    return d.FindElement(by);
+                }
+                catch
+                {
+                 return null;
+                }
+              
+            });
+                
+            return myDynamicElement;
+
         }
     }
 }

@@ -4,8 +4,6 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using OpenQA.Selenium.Interactions;
-
 namespace AKEcommerceAutomation.PageObjects
 {
     using System;
@@ -21,7 +19,6 @@ namespace AKEcommerceAutomation.PageObjects
         {
             
         }
-
        
         public DestinationsPage GetDestinationsPage()
         {
@@ -29,11 +26,8 @@ namespace AKEcommerceAutomation.PageObjects
             return new DestinationsPage(_driver);
         }
 
-     
         public JourneysPage GetJourneysPage()
         {
-          
-
             _driver.FindElement(HomePageElements.JourneysLink).Click();
             return new JourneysPage(_driver);
         }

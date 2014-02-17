@@ -10,6 +10,7 @@ namespace AKEcommerceAutomation.TestSteps
 {
     using Framework;
     using PageObjects;
+    using NUnit.Framework;
     using OpenQA.Selenium;
     using TechTalk.SpecFlow;
 
@@ -38,10 +39,20 @@ namespace AKEcommerceAutomation.TestSteps
             }
 
             [Then(@"The Meganav Appears")]
-            public void ThenTheMeganavAppears()
+            public void ThenTheMeganavAppears(Table table)
             {
-                homepage.Meganav();
-              
+                string[]continetnames = homepage.Meganav_topcontinetnames();
+                for(int i=0; i<continetnames.Length;i++)
+                    Assert.AreEqual(table.Rows[i]["Value"], continetnames[i]);
+            }
+           
+
+            [Then(@"The Meganav bottom appears")]
+            public void ThenTheMeganavBottomAppears(Table table)
+            {
+                string[] continetnames = homepage.Meganav_bottomcontinentnames();
+                for (int i = 0; i < continetnames.Length; i++)
+                    Assert.AreEqual(table.Rows[i]["Value"], continetnames[i]);
             }
 
             [Then(@"When I click on Destination link I reach the Destinations Page")]
