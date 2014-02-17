@@ -4,34 +4,24 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using System.Collections;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 using System;
+using System.Drawing.Imaging;
+using System.Globalization;
+using System.IO;
+using System.Text;
 using System.Threading;
-using com.sun.org.apache.bcel.@internal.generic;
-using gherkin.deps.com.google.gson.annotations;
-using ikvm.extensions;
+using AKEcommerceAutomation.Framework;
+using AKEcommerceAutomation.PageObjects.Object_Repository;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
 namespace AKEcommerceAutomation.PageObjects
 {
-    using System;
-    using System.Drawing.Imaging;
-    using System.Globalization;
-    using System.IO;
-    using System.Text;
-    using Framework;
-    using Object_Repository;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using OpenQA.Selenium;
-
     public class BasePage : SeleniumTestBase
     {
         protected IWebDriver _driver;
         //private IBasePageStrategy _skin;
-       
         protected BasePage(IWebDriver driver)
         {
             _driver = driver;
@@ -60,7 +50,6 @@ namespace AKEcommerceAutomation.PageObjects
         //        return false;
         //    return true;
         //}
-
         public string GetHtmlTitle()
         {
             return _driver.Title;
@@ -84,7 +73,6 @@ namespace AKEcommerceAutomation.PageObjects
         //    _driver.WaitForPageToLoad();
         //    return new AKHomePage();
         //}
-
         public int GetHeaderNavigationCount()
         {
             return _driver.FindElements(By.XPath("//*[@id='page-wrapper']/div[2]/section/nav/a")).Count;
@@ -136,14 +124,12 @@ namespace AKEcommerceAutomation.PageObjects
         public string[] GetFooterLinkValues()
         {
             var footerLinkValues = new string[GetFooterCount()];
-
             for (int i = 0; i < GetFooterCount(); i++)
             {
                 footerLinkValues[i] =
                     _driver.FindElement(By.XPath("//*[@id='footer']/div[2]/div[" + (i + 1) + "]/a")).GetAttribute(
                         "href");
             }
-
             return footerLinkValues;
         }
 
@@ -174,43 +160,12 @@ namespace AKEcommerceAutomation.PageObjects
                 }
             }
             return continetnamestop;
-            //return (string[]) continetnamesbottom.Union(continetnamestop);
-
-
-
-            //foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenutop))
-            //{
-            //    continent.Click();
-            //    string title = driver.Title;
-            //    driver.Navigate().Back();
-            //    mouseover(HomePageElements.Destinationlink);
-            //    ContinentTiltes = ContinentTiltes + "//n" + title;
-            //    return ContinentTiltes;
-            //}
-
-            //foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
-            //{
-            //    string continentname = continent.Text;
-            //    Continetnames = Continetnames + "//n " + continentname;
-            //    return Continetnames;
-            //}
-            //foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
-            //{
-            //    continent.Click();
-            //    string title = driver.Title;
-            //    driver.Navigate().Back();
-            //    mouseover(HomePageElements.Destinationlink);
-            //    ContinentTiltes = ContinentTiltes + "//n" + title;
-            //    return ContinentTiltes;
-            //}
-            //return ContinentTiltes + "//n"+ Continetnames;
         }
 
         public string[] Meganav_bottomcontinentnames()
         {
-            
             var continetnamesbottom = new string[_driver.FindElements(HomePageElements.Meganavmenubottom).Count];
-            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenubottom).Count; )
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenubottom).Count;)
             {
                 waitforelement(HomePageElements.Meganavmenubottom, 10);
                 foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
@@ -219,30 +174,8 @@ namespace AKEcommerceAutomation.PageObjects
                     i++;
                 }
             }
-
             return continetnamesbottom;
         }
-
-
-
-        //UN-Comment When JourneyPage is Written
-        //public string GetJourneysPage()
-        //{
-        //    driver.FindElement(By.XPath("//*[@id='journeys']")).Click();
-        //    driver.WaitForPageToLoad();
-        //    return new JourneysPage(_driver);
-
-        //}
-
-
-        //private readonly string WebUrl;
-
-        //public void Navigate()
-        //{
-        //    driver.Navigate().GoToUrl(WebUrl);
-        //    driver.Manage().Window.Maximize();
-
-        //}
 
         public void GoBack()
         {
@@ -253,7 +186,6 @@ namespace AKEcommerceAutomation.PageObjects
         {
             return _driver.FindElement(By.XPath(".//*[@id='page-wrapper']/div[1]/ul")).Displayed;
         }
-
 
         //Broken Images
         public void BrokenImages(IWebElement ele)
@@ -299,26 +231,21 @@ namespace AKEcommerceAutomation.PageObjects
         }
 
         //Explicit wait
-        public  IWebElement waitforelement(By by, int timeinseconds)
+        public IWebElement waitforelement(By by, int timeinseconds)
         {
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeinseconds));
-            
-            IWebElement myDynamicElement = wait.Until<IWebElement>((d) =>
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeinseconds));
+            IWebElement myDynamicElement = wait.Until(d =>
             {
                 try
                 {
-               
                     return d.FindElement(by);
                 }
                 catch
                 {
-                 return null;
+                    return null;
                 }
-              
             });
-                
             return myDynamicElement;
-
         }
     }
 }

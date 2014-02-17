@@ -29,7 +29,7 @@ namespace AKEcommerceAutomation.TestSteps
             [Then(@"I Navigate to BeInspired Page")]
             public void ThenINavigateToBeInspiredPage()
             {
-                homepage.GetBeInspiredPage().beinspiredtitle();
+                homepage.GetBeInspiredPage().title();
             }
 
             [When(@"I Mouse Over on Destinations Link")]
@@ -58,19 +58,22 @@ namespace AKEcommerceAutomation.TestSteps
             [Then(@"When I click on Destination link I reach the Destinations Page")]
             public void ThenWhenIClickOnDestinationLinkIReachTheDestinationsPage()
             {
-                ScenarioContext.Current.Pending();
+               string title =  homepage.GetDestinationsPage().title();
+                Assert.AreEqual("Destinations",title);
             }
 
             [Then(@"When I click on Journeys Link I reach Journeys Page")]
             public void ThenWhenIClickOnJourneysLinkIReachJourneysPage()
             {
-                ScenarioContext.Current.Pending();
+                string title = homepage.GetJourneysPage().title();
+                Assert.AreEqual("Journeys", title);
             }
 
             [Then(@"When I click on BeInspired Link I reach BeInspired Page")]
             public void ThenWhenIClickOnBeInspiredLinkIReachBeInspiredPage()
             {
-                ScenarioContext.Current.Pending();
+                string title = homepage.GetBeInspiredPage().title();
+                Assert.AreEqual("BeInspired", title);
             }
         }
         [Binding]
@@ -89,7 +92,7 @@ namespace AKEcommerceAutomation.TestSteps
             [Then(@"I Navigate to BeInspired Page")]
             public void ThenINavigateToBeInspiredPage()
             {
-                homepage.GetBeInspiredPage().beinspiredtitle();
+                homepage.GetBeInspiredPage().title();
                
             }
 

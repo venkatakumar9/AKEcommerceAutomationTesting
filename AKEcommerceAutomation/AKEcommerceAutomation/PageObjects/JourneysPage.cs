@@ -7,5 +7,10 @@ namespace AKEcommerceAutomation.PageObjects
         public JourneysPage(IWebDriver driver) : base(driver)
         {
         }
+
+        public string title()
+        {
+            return driver.Title;
+        }
     }
 }
