@@ -11,9 +11,9 @@ namespace AKEcommerceAutomation.PageObjects
             
         }
 
-        public void beinspiredtitle()
+        public string title()
         {
-           Assert.AreEqual(BeinspiredPageElements.BeInspiredTitle, driver.Title);
+            return driver.Title;
         }
     }
 }

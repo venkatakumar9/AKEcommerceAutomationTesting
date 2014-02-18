@@ -213,3 +213,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+*.txt
+AKEcommerceAutomation/packages/NUnit.2.6.3/license.txt

@@ -10,6 +10,7 @@ namespace AKEcommerceAutomation.TestSteps
 {
     using Framework;
     using PageObjects;
+    using NUnit.Framework;
     using OpenQA.Selenium;
     using TechTalk.SpecFlow;
 
@@ -28,7 +29,7 @@ namespace AKEcommerceAutomation.TestSteps
             [Then(@"I Navigate to BeInspired Page")]
             public void ThenINavigateToBeInspiredPage()
             {
-                homepage.GetBeInspiredPage().beinspiredtitle();
+                homepage.GetBeInspiredPage().title();
             }
 
             [When(@"I Mouse Over on Destinations Link")]
@@ -38,28 +39,41 @@ namespace AKEcommerceAutomation.TestSteps
             }
 
             [Then(@"The Meganav Appears")]
-            public void ThenTheMeganavAppears()
+            public void ThenTheMeganavAppears(Table table)
             {
-                homepage.Meganav();
-              
+                string[]continetnames = homepage.Meganav_topcontinetnames();
+                for(int i=0; i<continetnames.Length;i++)
+                    Assert.AreEqual(table.Rows[i]["Value"], continetnames[i]);
+            }
+           
+
+            [Then(@"The Meganav bottom appears")]
+            public void ThenTheMeganavBottomAppears(Table table)
+            {
+                string[] continetnames = homepage.Meganav_bottomcontinentnames();
+                for (int i = 0; i < continetnames.Length; i++)
+                    Assert.AreEqual(table.Rows[i]["Value"], continetnames[i]);
             }
 
             [Then(@"When I click on Destination link I reach the Destinations Page")]
             public void ThenWhenIClickOnDestinationLinkIReachTheDestinationsPage()
             {
-                ScenarioContext.Current.Pending();
+               string title =  homepage.GetDestinationsPage().title();
+                Assert.AreEqual("Destinations",title);
             }
 
             [Then(@"When I click on Journeys Link I reach Journeys Page")]
             public void ThenWhenIClickOnJourneysLinkIReachJourneysPage()
             {
-                ScenarioContext.Current.Pending();
+                string title = homepage.GetJourneysPage().title();
+                Assert.AreEqual("Journeys", title);
             }
 
             [Then(@"When I click on BeInspired Link I reach BeInspired Page")]
             public void ThenWhenIClickOnBeInspiredLinkIReachBeInspiredPage()
             {
-                ScenarioContext.Current.Pending();
+                string title = homepage.GetBeInspiredPage().title();
+                Assert.AreEqual("BeInspired", title);
             }
         }
         [Binding]
@@ -78,7 +92,7 @@ namespace AKEcommerceAutomation.TestSteps
             [Then(@"I Navigate to BeInspired Page")]
             public void ThenINavigateToBeInspiredPage()
             {
-                homepage.GetBeInspiredPage().beinspiredtitle();
+                homepage.GetBeInspiredPage().title();
                
             }
 

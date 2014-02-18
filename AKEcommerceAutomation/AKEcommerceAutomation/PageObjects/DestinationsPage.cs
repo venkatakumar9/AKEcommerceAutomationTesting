@@ -9,6 +9,11 @@ namespace AKEcommerceAutomation.PageObjects
     {
         public DestinationsPage(IWebDriver driver) : base(driver)
         {
+           
+        }
+        public string title()
+        {
+            return driver.Title;
         }
     }
 }

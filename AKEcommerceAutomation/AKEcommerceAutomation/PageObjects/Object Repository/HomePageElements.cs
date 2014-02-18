@@ -42,8 +42,6 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
         /// <summary>
         /// Bottom Mega Nav links
         /// </summary>
-        public static By Meganavmenubottom = By.Id("[class='m-menu-bottom'] li [class='header-10'] a");
-
-
+        public static By Meganavmenubottom = By.CssSelector("[class='m-menu-bottom'] li [class='header-10'] a");
     }
 }
