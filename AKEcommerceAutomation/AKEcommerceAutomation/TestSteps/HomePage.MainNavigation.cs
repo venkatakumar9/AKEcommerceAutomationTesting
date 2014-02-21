@@ -98,9 +98,20 @@ namespace AKEcommerceAutomation.TestSteps
             #endregion
         }
         [Binding]
-        public class Countrylinks()
+        public class Countrylinks
         {
-           
+            [Then(@"All the coutries in the continents will appear\.")]
+            public void ThenAllTheCoutriesInTheContinentsWillAppear_()
+            {
+               
+            }
+
+            [Then(@"When I click on country link I reach respective country page")]
+            public void ThenWhenIClickOnCountryLinkIReachRespectiveCountryPage()
+            {
+                ScenarioContext.Current.Pending();
+            }
+
         }
     }
 }

@@ -177,9 +177,34 @@ namespace AKEcommerceAutomation.PageObjects
             return continetnamesbottom;
         }
 
-        public int Megamenu_topcountrycount()
+        public string[] Megamenu_topcounterynames()
         {
-            return driver.FindElements(HomePageElements.Meganavmenutopcountries).Count;
+            var countrytop = new string[_driver.FindElements(HomePageElements.Meganavmenutopcountries).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenutopcountries).Count; )
+            {
+                waitforelement(HomePageElements.Meganavmenutopcountries, 10);
+                foreach (IWebElement country in driver.FindElements(HomePageElements.Meganavmenutopcountries))
+                {
+                    countrytop[i] = country.Text;
+                    i++;
+                }
+            }
+            return countrytop;
+        }
+
+        public string[] Megamenu_bottomcountrynames()
+        {
+            var countrybottom = new string[_driver.FindElements(HomePageElements.Meganavmenubottomcountries).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenubottomcountries).Count; )
+            {
+                waitforelement(HomePageElements.Meganavmenubottomcountries, 10);
+                foreach (IWebElement country in driver.FindElements(HomePageElements.Meganavmenubottomcountries))
+                {
+                    countrybottom[i] = country.Text;
+                    i++;
+                }
+            }
+            return countrybottom;
         }
 
         public void GoBack()
