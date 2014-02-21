@@ -1,10 +1,8 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright company="Abercombie&kent">
-//     Copyright (c) Abercombie&Kent. All rights reserved.
+//  Copyright (c) Abercombie&Kent. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-
-using AKEcommerceAutomation.PageObjects.Object_Repository;
 
 namespace AKEcommerceAutomation.TestSteps
 {
@@ -13,6 +11,7 @@ namespace AKEcommerceAutomation.TestSteps
     using NUnit.Framework;
     using OpenQA.Selenium;
     using TechTalk.SpecFlow;
+    using AKEcommerceAutomation.PageObjects.Object_Repository;
 
     internal class MainNavigation : SeleniumTestBase
     {
@@ -98,8 +97,10 @@ namespace AKEcommerceAutomation.TestSteps
 
             #endregion
         }
-
-      
-
+        [Binding]
+        public class Countrylinks()
+        {
+           
+        }
     }
 }

@@ -177,6 +177,11 @@ namespace AKEcommerceAutomation.PageObjects
             return continetnamesbottom;
         }
 
+        public int Megamenu_topcountrycount()
+        {
+            return driver.FindElements(HomePageElements.Meganavmenutopcountries).Count;
+        }
+
         public void GoBack()
         {
             _driver.Navigate().Back();
