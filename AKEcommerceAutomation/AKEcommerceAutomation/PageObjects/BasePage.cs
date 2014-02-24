@@ -143,7 +143,6 @@ namespace AKEcommerceAutomation.PageObjects
             var loc = (ILocatable) driver.FindElement(Elemnent);
             IMouse mouse = ((IHasInputDevices) driver).Mouse;
             mouse.MouseMove(loc.Coordinates);
-            mouse.MouseMove(loc.Coordinates);
         }
 
         public string[] Meganav_topcontinetnames()
@@ -177,34 +176,39 @@ namespace AKEcommerceAutomation.PageObjects
             return continetnamesbottom;
         }
 
-        public string[] Megamenu_topcounterynames()
+        public string[] Megamenu_countrynames()
         {
-            var countrytop = new string[_driver.FindElements(HomePageElements.Meganavmenutopcountries).Count];
-            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenutopcountries).Count; )
+            var countryandcontinentname = new string[_driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count; )
             {
-                waitforelement(HomePageElements.Meganavmenutopcountries, 10);
-                foreach (IWebElement country in driver.FindElements(HomePageElements.Meganavmenutopcountries))
+                waitforelement(HomePageElements.Meganavmenu_countriesandcontinents, 10);
+                
+                foreach (IWebElement country in driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents))
                 {
-                    countrytop[i] = country.Text;
+                    countryandcontinentname[i] = country.Text;
                     i++;
                 }
             }
-            return countrytop;
+            return countryandcontinentname;
         }
 
-        public string[] Megamenu_bottomcountrynames()
+        public string[] Megamenu_countryandcontinetnametitles()
         {
-            var countrybottom = new string[_driver.FindElements(HomePageElements.Meganavmenubottomcountries).Count];
-            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenubottomcountries).Count; )
+            string[] title= null;
+            var countryandcontinentname = new string[_driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count; )
             {
-                waitforelement(HomePageElements.Meganavmenubottomcountries, 10);
-                foreach (IWebElement country in driver.FindElements(HomePageElements.Meganavmenubottomcountries))
+                waitforelement(HomePageElements.Meganavmenu_countriesandcontinents, 10);
+
+                foreach (var country in driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents))
                 {
-                    countrybottom[i] = country.Text;
+                    country.Click();
+                    title[i]= driver.Title;
                     i++;
                 }
             }
-            return countrybottom;
+            return (title);
+            
         }
 
         public void GoBack()

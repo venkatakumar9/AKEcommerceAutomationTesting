@@ -231,11 +231,7 @@ namespace AKEcommerceAutomation.FeatureFiles
 #line 73
  testRunner.When("I Mouse Over on Destinations Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 74
- testRunner.Then("The Meganav Appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 75
  testRunner.Then("All the coutries in the continents will appear.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 76
- testRunner.Then("When I click on country link I reach respective country page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

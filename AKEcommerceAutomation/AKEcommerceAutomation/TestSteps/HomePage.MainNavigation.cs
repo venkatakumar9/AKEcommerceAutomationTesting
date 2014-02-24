@@ -4,11 +4,15 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using com.sun.swing.@internal.plaf.synth.resources;
+using java.io;
+
 namespace AKEcommerceAutomation.TestSteps
 {
     using Framework;
     using PageObjects;
     using NUnit.Framework;
+    using System;
     using OpenQA.Selenium;
     using TechTalk.SpecFlow;
     using AKEcommerceAutomation.PageObjects.Object_Repository;
@@ -97,21 +101,22 @@ namespace AKEcommerceAutomation.TestSteps
 
             #endregion
         }
+
         [Binding]
         public class Countrylinks
         {
+            private readonly HomePage homepage = new HomePage(driver);
+
             [Then(@"All the coutries in the continents will appear\.")]
             public void ThenAllTheCoutriesInTheContinentsWillAppear_()
             {
-               
-            }
+                string[] countryandcontinetnames = homepage.Megamenu_countrynames();
+                foreach (var countryandcontinetname in countryandcontinetnames)
+                {
+                    Console.WriteLine(countryandcontinetname);
+                }
 
-            [Then(@"When I click on country link I reach respective country page")]
-            public void ThenWhenIClickOnCountryLinkIReachRespectiveCountryPage()
-            {
-                ScenarioContext.Current.Pending();
             }
-
         }
     }
 }

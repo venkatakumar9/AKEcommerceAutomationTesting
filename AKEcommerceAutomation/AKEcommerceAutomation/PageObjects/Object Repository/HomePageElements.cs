@@ -48,11 +48,8 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
         /// <summary>
         /// Bottom Mega Nav Country links
         /// </summary>
-        public static readonly By Meganavmenutopcountries = By.XPath("//*[@id='destinations-menu']/div[1]");
+        public static readonly By Meganavmenu_countriesandcontinents = By.CssSelector("[class='tc'] li");
 
-        /// <summary>
-        /// Bottom Mega Nav Country links
-        /// </summary>
-        public static readonly By Meganavmenubottomcountries = By.XPath("//*[@id='destinations-menu']/div[2]");
+      
     }
 }
