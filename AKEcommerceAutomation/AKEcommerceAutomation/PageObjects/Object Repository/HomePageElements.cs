@@ -4,6 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using com.sun.org.apache.regexp.@internal;
 using java.net;
 using OpenQA.Selenium;
 
@@ -17,31 +18,36 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
         /// <summary>
         /// Destination Link
         /// </summary>
-        public static By Destinationlink = By.XPath("//*[@id='destinations-hub']");
+        public static readonly By Destinationlink = By.XPath("//*[@id='destinations-hub']");
 
         /// <summary>
         ///  Journeys Link
         /// </summary>
-        public static By JourneysLink = By.XPath("//*[@id='journeys']");
+        public static readonly By JourneysLink = By.XPath("//*[@id='journeys']");
 
         /// <summary>
         /// HomePage Image Carousels
         /// </summary>
-        public static By HomepageCarouselMainImage = By.XPath("//div[@id='Content_C002_Col00']/section");
+        public static readonly By HomepageCarouselMainImage = By.XPath("//div[@id='Content_C002_Col00']/section");
 
         /// <summary>
         /// BeInpired link
         /// </summary>
-        public static By BeInspiredLink = By.Id("when-to-go");
+        public static readonly By BeInspiredLink = By.Id("when-to-go");
 
         /// <summary>
-        /// Top Mega Nav links
+        /// Top Mega Nav Continent links
         /// </summary>
-        public static By Meganavmenutop = By.CssSelector("[class='m-menu-top'] li [class='header-10'] a");
+        public static readonly By Meganavmenutop = By.CssSelector("[class='m-menu-top'] li [class='header-10'] a");
 
         /// <summary>
-        /// Bottom Mega Nav links
+        /// Bottom Mega Nav Continent links
         /// </summary>
-        public static By Meganavmenubottom = By.CssSelector("[class='m-menu-bottom'] li [class='header-10'] a");
+        public static readonly By Meganavmenubottom = By.CssSelector("[class='m-menu-bottom'] li [class='header-10'] a");
+
+        /// <summary>
+        /// Bottom Mega Nav Country links
+        /// </summary>
+        public static readonly By Meganavmenu_countriesandcontinents = By.CssSelector("[class='tc'] li");
     }
 }

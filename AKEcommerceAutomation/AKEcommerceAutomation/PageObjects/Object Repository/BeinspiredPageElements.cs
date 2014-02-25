@@ -14,6 +14,5 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
         /// Title of the Page
         /// </summary>
         public static string BeInspiredTitle = "BeInspired";
-
     }
 }

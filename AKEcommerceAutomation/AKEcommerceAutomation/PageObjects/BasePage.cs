@@ -143,7 +143,6 @@ namespace AKEcommerceAutomation.PageObjects
             var loc = (ILocatable) driver.FindElement(Elemnent);
             IMouse mouse = ((IHasInputDevices) driver).Mouse;
             mouse.MouseMove(loc.Coordinates);
-            mouse.MouseMove(loc.Coordinates);
         }
 
         public string[] Meganav_topcontinetnames()
@@ -175,6 +174,41 @@ namespace AKEcommerceAutomation.PageObjects
                 }
             }
             return continetnamesbottom;
+        }
+
+        public string[] Megamenu_countrynames()
+        {
+            var countryandcontinentname = new string[_driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count; )
+            {
+                waitforelement(HomePageElements.Meganavmenu_countriesandcontinents, 10);
+                
+                foreach (IWebElement country in driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents))
+                {
+                    countryandcontinentname[i] = country.Text;
+                    i++;
+                }
+            }
+            return countryandcontinentname;
+        }
+
+        public string[] Megamenu_countryandcontinetnametitles()
+        {
+            string[] title= null;
+            var countryandcontinentname = new string[_driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count; )
+            {
+                waitforelement(HomePageElements.Meganavmenu_countriesandcontinents, 10);
+
+                foreach (var country in driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents))
+                {
+                    country.Click();
+                    title[i]= driver.Title;
+                    i++;
+                }
+            }
+            return (title);
+            
         }
 
         public void GoBack()

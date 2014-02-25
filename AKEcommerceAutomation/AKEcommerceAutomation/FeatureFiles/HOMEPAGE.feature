@@ -18,7 +18,7 @@
  When I am in the AK Homepage
  Then SubMenu Appears:
  |Value|
- |DESTINATIONS|
+ |DESTINATION|
  |JOURNEYS|
  |BEINSPIRED|
  |WHEN TO GO|
@@ -67,6 +67,12 @@
  And When I click on Destination link I reach the Destinations Page
  And When I click on Journeys Link I reach Journeys Page
  And When I click on BeInspired Link I reach BeInspired Page
+
+ Scenario: Mega Menu Country Links Working
+ Given I am on the homepage
+ When I Mouse Over on Destinations Link
+ Then All the coutries in the continents will appear.
+
 
 
     

@@ -78,7 +78,7 @@ namespace AKEcommerceAutomation.FeatureFiles
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table1.AddRow(new string[] {
-                        "DESTINATIONS"});
+                        "DESTINATION"});
             table1.AddRow(new string[] {
                         "JOURNEYS"});
             table1.AddRow(new string[] {
@@ -215,6 +215,23 @@ namespace AKEcommerceAutomation.FeatureFiles
  testRunner.And("When I click on Journeys Link I reach Journeys Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
  testRunner.And("When I click on BeInspired Link I reach BeInspired Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Mega Menu Country Links Working")]
+        public virtual void MegaMenuCountryLinksWorking()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Mega Menu Country Links Working", ((string[])(null)));
+#line 71
+ this.ScenarioSetup(scenarioInfo);
+#line 72
+ testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 73
+ testRunner.When("I Mouse Over on Destinations Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 74
+ testRunner.Then("All the coutries in the continents will appear.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
