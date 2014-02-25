@@ -234,6 +234,44 @@ testRunner.Then("I reach the Indian ocean page", ((string)(null)), ((TechTalk.Sp
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("When I Click on the The Arctic")]
+        public virtual void WhenIClickOnTheTheArctic()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I Click on the The Arctic", ((string[])(null)));
+#line 65
+this.ScenarioSetup(scenarioInfo);
+#line 66
+testRunner.Given("I am on the destination page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 67
+testRunner.And("The Vector Map is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+testRunner.When("I click on The Arctic in Vector map", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 69
+testRunner.Then("I reach the Arctic page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("When I Click on the Antarctica")]
+        public virtual void WhenIClickOnTheAntarctica()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I Click on the Antarctica", ((string[])(null)));
+#line 71
+this.ScenarioSetup(scenarioInfo);
+#line 72
+testRunner.Given("I am on the destination page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 73
+testRunner.And("The Vector Map is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+testRunner.When("I click on The Antarctica in Vector map", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 75
+testRunner.Then("I reach the Antarctica page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

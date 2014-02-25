@@ -61,3 +61,15 @@ Given I am on the destination page
 And The Vector Map is present
 When I click on The Indian ocean in Vector map
 Then I reach the Indian ocean page
+
+Scenario: When I Click on the The Arctic
+Given I am on the destination page
+And The Vector Map is present
+When I click on The Arctic in Vector map
+Then I reach the Arctic page
+
+Scenario: When I Click on the Antarctica
+Given I am on the destination page
+And The Vector Map is present
+When I click on The Antarctica in Vector map
+Then I reach the Antarctica page
