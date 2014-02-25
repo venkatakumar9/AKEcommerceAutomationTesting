@@ -17,7 +17,7 @@ namespace AKEcommerceAutomation.TestSteps
     using TechTalk.SpecFlow;
     using AKEcommerceAutomation.PageObjects.Object_Repository;
 
-    internal class MainNavigation : SeleniumTestBase
+    sealed internal class MainNavigation : SeleniumTestBase
     {
         [Binding]
         public class Mainnavigation

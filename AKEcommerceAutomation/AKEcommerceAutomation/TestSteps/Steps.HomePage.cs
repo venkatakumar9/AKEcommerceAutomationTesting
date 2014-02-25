@@ -13,7 +13,7 @@ using TechTalk.SpecFlow;
 namespace AKEcommerceAutomation.TestSteps
 {
     [Binding]
-    public class HOMEPAGESteps : SeleniumTestBase
+    sealed class HOMEPAGESteps : SeleniumTestBase
     {
         public HomePage homePage;
 
@@ -34,7 +34,6 @@ namespace AKEcommerceAutomation.TestSteps
                 Assert.AreEqual(table.Rows[i]["Value"], headerValues[i]);
             }
         }
-
 
         //Verifying the SideBar on the Page
         [Given(@"I am on the homepage")]

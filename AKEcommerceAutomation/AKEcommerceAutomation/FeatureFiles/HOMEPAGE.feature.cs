@@ -78,7 +78,7 @@ namespace AKEcommerceAutomation.FeatureFiles
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table1.AddRow(new string[] {
-                        "DESTINATIONS"});
+                        "DESTINATION"});
             table1.AddRow(new string[] {
                         "JOURNEYS"});
             table1.AddRow(new string[] {

@@ -49,7 +49,5 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
         /// Bottom Mega Nav Country links
         /// </summary>
         public static readonly By Meganavmenu_countriesandcontinents = By.CssSelector("[class='tc'] li");
-
-      
     }
 }

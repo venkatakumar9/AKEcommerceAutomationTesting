@@ -18,7 +18,7 @@
  When I am in the AK Homepage
  Then SubMenu Appears:
  |Value|
- |DESTINATIONS|
+ |DESTINATION|
  |JOURNEYS|
  |BEINSPIRED|
  |WHEN TO GO|
