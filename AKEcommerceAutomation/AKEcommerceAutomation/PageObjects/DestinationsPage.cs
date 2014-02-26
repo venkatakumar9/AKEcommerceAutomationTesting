@@ -13,6 +13,7 @@ namespace AKEcommerceAutomation.PageObjects
         public DestinationsPage(IWebDriver driver) : base(driver)
         {
             
+<<<<<<< HEAD
         }
 
 <<<<<<< HEAD
@@ -126,6 +127,10 @@ namespace AKEcommerceAutomation.PageObjects
 =======
 >>>>>>> 912cc867cadbf31346164713ad09be5e9424e333
 >>>>>>> Vector map
+=======
+        }
+
+>>>>>>> master
 
     }
 }
