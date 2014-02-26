@@ -66,76 +66,37 @@ namespace AKEcommerceAutomation.FeatureFiles
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Sub Navigation Menu in Homepage")]
-        public virtual void VerifySubNavigationMenuInHomepage()
+        [NUnit.Framework.DescriptionAttribute("Verify Footer High Level Links in the Homepage")]
+        public virtual void VerifyFooterHighLevelLinksInTheHomepage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Sub Navigation Menu in Homepage", ((string[])(null)));
-#line 17
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Footer High Level Links in the Homepage", ((string[])(null)));
+#line 13
  this.ScenarioSetup(scenarioInfo);
+#line 14
+ testRunner.When("I Navigate to Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.Then("Footer Links should Display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify the SideBar, middlesection and journeys appearing on the Homepage")]
+        public virtual void VerifyTheSideBarMiddlesectionAndJourneysAppearingOnTheHomepage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the SideBar, middlesection and journeys appearing on the Homepage", ((string[])(null)));
 #line 18
- testRunner.When("I am in the AK Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Value"});
-            table1.AddRow(new string[] {
-                        "DESTINATION"});
-            table1.AddRow(new string[] {
-                        "JOURNEYS"});
-            table1.AddRow(new string[] {
-                        "BEINSPIRED"});
-            table1.AddRow(new string[] {
-                        "WHEN TO GO"});
-            table1.AddRow(new string[] {
-                        "SEARCH"});
+ this.ScenarioSetup(scenarioInfo);
 #line 19
- testRunner.Then("SubMenu Appears:", ((string)(null)), table1, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify the SideBar appears on the page")]
-        public virtual void VerifyTheSideBarAppearsOnThePage()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the SideBar appears on the page", ((string[])(null)));
-#line 27
- this.ScenarioSetup(scenarioInfo);
-#line 28
  testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 29
+#line 20
  testRunner.Then("SideBar Displays", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 30
- testRunner.And("Carousel Main image displays", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Top Header links in homepage")]
-        public virtual void TopHeaderLinksInHomepage()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Top Header links in homepage", ((string[])(null)));
-#line 32
- this.ScenarioSetup(scenarioInfo);
-#line 33
- testRunner.When("I am on the Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Value"});
-            table2.AddRow(new string[] {
-                        "About Us"});
-            table2.AddRow(new string[] {
-                        "Specials"});
-            table2.AddRow(new string[] {
-                        "Media centre"});
-            table2.AddRow(new string[] {
-                        "Contact us"});
-            table2.AddRow(new string[] {
-                        "More"});
-            table2.AddRow(new string[] {
-                        "Sign in"});
-#line 34
- testRunner.Then("Top Headerlinks displays", ((string)(null)), table2, "Then ");
+#line 21
+ testRunner.And("Middle Section of the Homepage Appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.And("Guided Group Journeys section Displays", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And("Tailor Made Journeys section Displays", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -145,93 +106,12 @@ namespace AKEcommerceAutomation.FeatureFiles
         public virtual void NavigateToDestinationsHomepage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to Destinations Homepage", ((string[])(null)));
-#line 43
+#line 25
  this.ScenarioSetup(scenarioInfo);
-#line 44
+#line 26
  testRunner.When("I Click on Destinations Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 45
+#line 27
  testRunner.Then("I navigate to Destinations homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Navigate to BeInspired Page")]
-        public virtual void NavigateToBeInspiredPage()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigate to BeInspired Page", ((string[])(null)));
-#line 47
- this.ScenarioSetup(scenarioInfo);
-#line 48
- testRunner.When("I click on BeInspired link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 49
- testRunner.Then("I Navigate to BeInspired Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Main Navigation Links Working")]
-        public virtual void MainNavigationLinksWorking()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Main Navigation Links Working", ((string[])(null)));
-#line 51
- this.ScenarioSetup(scenarioInfo);
-#line 52
- testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 53
- testRunner.When("I Mouse Over on Destinations Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Value"});
-            table3.AddRow(new string[] {
-                        "AFRICA"});
-            table3.AddRow(new string[] {
-                        "THE AMERICAS"});
-            table3.AddRow(new string[] {
-                        "ASIA"});
-            table3.AddRow(new string[] {
-                        "CARIBBEAN"});
-            table3.AddRow(new string[] {
-                        "EUROPE"});
-#line 54
- testRunner.Then("The Meganav Appears", ((string)(null)), table3, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Value"});
-            table4.AddRow(new string[] {
-                        "MIDDLE EAST & NORTH AFRICA"});
-            table4.AddRow(new string[] {
-                        "AUSTRALIASIA"});
-            table4.AddRow(new string[] {
-                        "ANTARCTICA & THE ARCTIC"});
-            table4.AddRow(new string[] {
-                        "INDIA, HIMALAYAS & INDIAN OCEAN"});
-#line 61
- testRunner.Then("The Meganav bottom appears", ((string)(null)), table4, "Then ");
-#line 67
- testRunner.And("When I click on Destination link I reach the Destinations Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.And("When I click on Journeys Link I reach Journeys Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
- testRunner.And("When I click on BeInspired Link I reach BeInspired Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Mega Menu Country Links Working")]
-        public virtual void MegaMenuCountryLinksWorking()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Mega Menu Country Links Working", ((string[])(null)));
-#line 71
- this.ScenarioSetup(scenarioInfo);
-#line 72
- testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 73
- testRunner.When("I Mouse Over on Destinations Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 74
- testRunner.Then("All the coutries in the continents will appear.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
