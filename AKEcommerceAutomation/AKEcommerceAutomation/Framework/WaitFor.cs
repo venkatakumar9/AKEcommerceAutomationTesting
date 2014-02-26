@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using gherkin.lexer.i18n;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -24,13 +29,13 @@ namespace AKEcommerceAutomation.Framework
 
         public static void WaitForPageToLoad(this IWebDriver driver)
         {
-            var timeout = new TimeSpan(0, 0, 100);
-            var wait = new WebDriverWait(driver, timeout);
-            var javaScript = driver as IJavaScriptExecutor;
+            TimeSpan timeout = new TimeSpan(0, 0, 100);
+            WebDriverWait wait = new WebDriverWait(driver, timeout);
+            IJavaScriptExecutor javaScript = driver as IJavaScriptExecutor;
             if (javaScript == null)
                 throw new ArgumentException("driver", "driver must support javascript execution");
 
-            wait.Until(d =>
+            wait.Until((d) =>
             {
                 try
                 {
@@ -54,5 +59,6 @@ namespace AKEcommerceAutomation.Framework
                 }
             });
         }
+
     }
 }

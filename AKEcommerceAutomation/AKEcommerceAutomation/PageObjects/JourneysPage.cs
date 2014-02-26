@@ -1,4 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
 {
@@ -6,11 +10,7 @@ namespace AKEcommerceAutomation.PageObjects
     {
         public JourneysPage(IWebDriver driver) : base(driver)
         {
-        }
-
-        public string title()
-        {
-            return driver.Title;
+            
         }
     }
 }

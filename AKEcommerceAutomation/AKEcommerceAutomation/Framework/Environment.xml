@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <Environments>
   <Environment name="QA">
     <Variables>
-      <URL>http://akwebqa01/en-gb/</URL>
+      <URL>http://akwebqa01/en-gb</URL>
       <Browser>FIREFOX</Browser>
       <!--LOGIN_USERNAME>Add Username</LOGIN_USERNAME>
       <LOGIN_PASSWORD>Add Password</LOGIN_PASSWORD>-->
@@ -14,7 +13,7 @@
   </Environment>
   <Environment name="UAT">
     <Variables>
-      <URL>http://akwebqa01/en-gb/</URL>
+      <URL>http://akwebuat01/</URL>
       <Browser>FIREFOX</Browser>
       <!--<LOGIN_USERNAME>Add Username</LOGIN_USERNAME>
       <LOGIN_PASSWORD>Add Password</LOGIN_PASSWORD>-->
