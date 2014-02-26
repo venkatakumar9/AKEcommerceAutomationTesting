@@ -4,32 +4,32 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using AKEcommerceAutomation.Framework;
-using AKEcommerceAutomation.PageObjects;
-using AKEcommerceAutomation.PageObjects.Object_Repository;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TechTalk.SpecFlow;
-
 namespace AKEcommerceAutomation.TestSteps
 {
+    using Framework;
+    using PageObjects;
+    using PageObjects.Object_Repository;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using TechTalk.SpecFlow;
+
     [Binding]
-    sealed class HOMEPAGESteps : SeleniumTestBase
+    sealed class HomepageSteps : SeleniumTestBase
     {
-        public HomePage homePage;
+        private HomePage _homePage;
 
         //Verify Sub-Navigation-Menu 
         [When(@"I am in the AK Homepage")]
         public void WhenIAmInTheAkHomepage()
         {
-            homePage = new HomePage(driver);
-            ScenarioContext.Current.Set(homePage);
+            _homePage = new HomePage(driver);
+            ScenarioContext.Current.Set(_homePage);
         }
 
         [Then(@"SubMenu Appears:")]
         public void ThenTheSubMenuAppears(Table table)
         {
-            string[] headerValues = homePage.GetHeaderValues();
-            for (int i = 0; i < homePage.GetHeaderNavigationCount(); i++)
+            string[] headerValues = _homePage.GetHeaderValues();
+            for (int i = 0; i < _homePage.GetHeaderNavigationCount(); i++)
             {
                 Assert.AreEqual(table.Rows[i]["Value"], headerValues[i]);
             }
@@ -45,15 +45,14 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"SideBar Displays")]
         public void ThenSideBarDisplays()
         {
-            Assert.IsTrue(homePage.GetRightHandSideBar());
+            Assert.IsTrue(_homePage.GetRightHandSideBar());
         }
 
         [Then(@"Carousel Main image displays")]
         public void ThenCarouselMainImageDisplayed()
         {
-            Assert.IsTrue(homePage.HasElement(HomePageElements.HomepageCarouselMainImage));
+            Assert.IsTrue(_homePage.HasElement(HomePageElements.HomepageCarouselMainImage));
         }
-
 
         //Header links in homepage
         [When(@"I am on the Homepage")]
@@ -65,8 +64,8 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"Top Headerlinks displays")]
         public void ThenTopHeaderLinksDisplays(Table table)
         {
-            string[] headerlinksValues = homePage.GetHeaderLinksValues();
-            for (int i = 0; i < homePage.GetHeaderLinks(); i++)
+            string[] headerlinksValues = _homePage.GetHeaderLinksValues();
+            for (int i = 0; i < _homePage.GetHeaderLinks(); i++)
             {
                 Assert.AreEqual(table.Rows[i]["Value"], headerlinksValues[i]);
             }
@@ -77,7 +76,7 @@ namespace AKEcommerceAutomation.TestSteps
         public void WhenIClickOnDestinationsLink()
         {
             WhenIAmInTheAkHomepage();
-            ScenarioContext.Current.Set(homePage.GetDestinationsPage());
+            ScenarioContext.Current.Set(_homePage.GetDestinationsPage());
         }
 
         [Then(@"I navigate to Destinations homepage")]
