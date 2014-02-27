@@ -4,8 +4,6 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using com.sun.org.apache.regexp.@internal;
-using java.net;
 using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects.Object_Repository

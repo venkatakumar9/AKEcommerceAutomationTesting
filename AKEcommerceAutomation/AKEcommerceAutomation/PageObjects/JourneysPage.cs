@@ -12,5 +12,10 @@ namespace AKEcommerceAutomation.PageObjects
         {
             
         }
+
+        public string title()
+        {
+            return driver.Title;
+        }
     }
 }

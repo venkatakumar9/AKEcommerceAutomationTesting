@@ -3,9 +3,12 @@ using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Threading;
 using AKEcommerceAutomation.Framework;
+using AKEcommerceAutomation.PageObjects.Object_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace AKEcommerceAutomation.PageObjects
 {
@@ -155,7 +158,79 @@ namespace AKEcommerceAutomation.PageObjects
         {
             return _driver.FindElement(By.XPath("//*[@id='footer']/div[8]/div/div/footer/p")).Text;
         }
-       
+
+        public void mouseover(By Elemnent)
+        {
+            var loc = (ILocatable)driver.FindElement(Elemnent);
+            IMouse mouse = ((IHasInputDevices)driver).Mouse;
+            mouse.MouseMove(loc.Coordinates);
+        }
+
+        public string[] Meganav_topcontinetnames()
+        {
+            var continetnamestop = new string[_driver.FindElements(HomePageElements.Meganavmenutop).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenutop).Count; )
+            {
+                waitforelement(HomePageElements.Meganavmenutop, 10);
+                Thread.Sleep(3000);
+                foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenutop))
+                {
+                    continetnamestop[i] = continent.Text;
+                    i++;
+                }
+            }
+            return continetnamestop;
+        }
+
+        public string[] Meganav_bottomcontinentnames()
+        {
+            var continetnamesbottom = new string[_driver.FindElements(HomePageElements.Meganavmenubottom).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenubottom).Count; )
+            {
+                waitforelement(HomePageElements.Meganavmenubottom, 10);
+                foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
+                {
+                    continetnamesbottom[i] = continent.Text;
+                    i++;
+                }
+            }
+            return continetnamesbottom;
+        }
+
+        public string[] Megamenu_countrynames()
+        {
+            var countryandcontinentname = new string[_driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count; )
+            {
+                waitforelement(HomePageElements.Meganavmenu_countriesandcontinents, 10);
+
+                foreach (IWebElement country in driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents))
+                {
+                    countryandcontinentname[i] = country.Text;
+                    i++;
+                }
+            }
+            return countryandcontinentname;
+        }
+
+        public string[] Megamenu_countryandcontinetnametitles()
+        {
+            string[] title = null;
+            var countryandcontinentname = new string[_driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count];
+            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count; )
+            {
+                waitforelement(HomePageElements.Meganavmenu_countriesandcontinents, 10);
+
+                foreach (var country in driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents))
+                {
+                    country.Click();
+                    title[i] = driver.Title;
+                    i++;
+                }
+            }
+            return (title);
+
+        }
 
         //JourneyPage 
         //public string GetJourneysPage()
@@ -228,6 +303,23 @@ namespace AKEcommerceAutomation.PageObjects
                 default:
                     return true;
             }
+        }
+        //Explicit wait
+        public IWebElement waitforelement(By by, int timeinseconds)
+        {
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeinseconds));
+            IWebElement myDynamicElement = wait.Until(d =>
+            {
+                try
+                {
+                    return d.FindElement(by);
+                }
+                catch
+                {
+                    return null;
+                }
+            });
+            return myDynamicElement;
         }
     }
 }

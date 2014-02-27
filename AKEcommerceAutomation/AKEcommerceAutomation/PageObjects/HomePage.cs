@@ -1,5 +1,6 @@
 ﻿using System;
 using AKEcommerceAutomation.Framework;
+using AKEcommerceAutomation.PageObjects.Object_Repository;
 using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
@@ -60,10 +61,12 @@ namespace AKEcommerceAutomation.PageObjects
             return _driver.FindElement(By.XPath("//div[@id='footer']/div[6]")).Displayed;
         }
 
-        //public Be_InspiredPage GetBeInspiredPage()
-        //{
-        //    _driver
-        //}
+        public BeInspired GetBeInspiredPage()
+        {
+            _driver.FindElement(HomePageElements.BeInspiredLink).Click();
+            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
+            return new BeInspired(_driver);
+        }
         
     }
 }

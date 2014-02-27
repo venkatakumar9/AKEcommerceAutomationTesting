@@ -4,8 +4,6 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using com.sun.swing.@internal.plaf.synth.resources;
-using java.io;
 
 namespace AKEcommerceAutomation.TestSteps
 {
