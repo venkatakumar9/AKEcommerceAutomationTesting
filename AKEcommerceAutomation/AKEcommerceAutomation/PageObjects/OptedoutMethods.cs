@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Globalization;
-using System.IO;
-using System.Runtime.InteropServices;
-using System.Text;
 using AKEcommerceAutomation.Framework;
-using Castle.Components.DictionaryAdapter;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
