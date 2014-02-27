@@ -1,49 +1,69 @@
-﻿//-----------------------------------------------------------------------
-// <copyright company="Abercombie&kent">
-//     Copyright (c) Abercombie&Kent. All rights reserved.
-// </copyright>
-//-----------------------------------------------------------------------
+﻿using System;
+using AKEcommerceAutomation.Framework;
+using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
 {
-    using System;
-    using Object_Repository;
-    using OpenQA.Selenium;
-
-  
-   // Cliking on all the Links of the HomePage and Verifies the Elements of the HomePage.
     public class HomePage : BasePage
     {
+        public const string HomepageCarouselMainImage = "//div[@class = 'sf_colsOut sf_1col_1_100']/div/section";
         //Actions builder = new Actions(driver);
         public HomePage(IWebDriver driver) : base(driver)
         {
-            
         }
-       
+
         public DestinationsPage GetDestinationsPage()
         {
-            _driver.FindElement(HomePageElements.Destinationlink).Click();
+            _driver.FindElement(By.XPath("//*[@id='destinations-hub']")).Click();
+            //_driver.WaitForPageToLoad();
             return new DestinationsPage(_driver);
         }
 
         public JourneysPage GetJourneysPage()
         {
-            _driver.FindElement(HomePageElements.JourneysLink).Click();
+            _driver.FindElement(By.XPath("//*[@id='journeys']")).Click();
             return new JourneysPage(_driver);
         }
 
-       
         public bool VerifyHomepageCarouselMainImage()
         {
-            return _driver.FindElement(HomePageElements.HomepageCarouselMainImage).Displayed;
+            return _driver.FindElement(By.XPath("//div[@id = 'Content_C002_Col00']/section")).Displayed;
         }
 
-       
-        public BeInspired GetBeInspiredPage()
+        public string GetHomepagemiddle_sectionText()
         {
-            _driver.FindElement(HomePageElements.BeInspiredLink).Click();
-            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
-            return new BeInspired(_driver);
+           return driver.FindElement(By.XPath("//*[@id='Footer_C019_Col00']/div/div")).Text;
         }
+
+        public bool GetGetHomePageMiddle_Section()
+        {
+            return _driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[6]")).Displayed;
+        }
+
+        public string GetGuidedgroupjourneys_Homepage()
+        {
+           return driver.FindElement(By.XPath("//*[@id='Footer_C021_Col00']/h3")).Text;
+        }
+
+        public bool GetGuidedGroupJourneysInHomepage_Section()
+        {
+            return _driver.FindElement(By.XPath("//div[@id='footer']/div[4]")).Displayed;
+        }
+
+        public string GetTailormadejourneys_Homepage()
+        {
+            return driver.FindElement(By.XPath("//*[@id='Footer_C023_Col00']/h3")).Text;
+        }
+
+        public bool GetTailorMadeJourneysInHomepage_Section()
+        {
+            return _driver.FindElement(By.XPath("//div[@id='footer']/div[6]")).Displayed;
+        }
+
+        //public Be_InspiredPage GetBeInspiredPage()
+        //{
+        //    _driver
+        //}
+        
     }
 }

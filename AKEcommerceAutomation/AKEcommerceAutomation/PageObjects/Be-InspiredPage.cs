@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AKEcommerceAutomation.Framework;
 using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
 {
-    public class JourneysPage : BasePage
+    public class Be_InspiredPage : BasePage
     {
-        public JourneysPage(IWebDriver driver) : base(driver)
+        public Be_InspiredPage(IWebDriver driver) : base(driver)
         {
             
         }

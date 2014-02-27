@@ -1,20 +1,11 @@
-﻿//-----------------------------------------------------------------------
-// <copyright company="Abercombie&kent">
-//     Copyright (c) Abercombie&Kent. All rights reserved.
-// </copyright>
-//-----------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Threading;
 using AKEcommerceAutomation.Framework;
-using AKEcommerceAutomation.PageObjects.Object_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
 namespace AKEcommerceAutomation.PageObjects
 {
@@ -22,7 +13,9 @@ namespace AKEcommerceAutomation.PageObjects
     {
         protected IWebDriver _driver;
         //private IBasePageStrategy _skin;
+
         protected BasePage(IWebDriver driver)
+
         {
             _driver = driver;
         }
@@ -50,6 +43,7 @@ namespace AKEcommerceAutomation.PageObjects
         //        return false;
         //    return true;
         //}
+
         public string GetHtmlTitle()
         {
             return _driver.Title;
@@ -73,14 +67,10 @@ namespace AKEcommerceAutomation.PageObjects
         //    _driver.WaitForPageToLoad();
         //    return new AKHomePage();
         //}
+
         public int GetHeaderNavigationCount()
         {
             return _driver.FindElements(By.XPath("//*[@id='page-wrapper']/div[2]/section/nav/a")).Count;
-        }
-
-        public int GetFooterCount()
-        {
-            return _driver.FindElements(By.XPath("//*[@id='footer']/div[2]/div")).Count;
         }
 
         public int GetHeaderLinks()
@@ -111,105 +101,80 @@ namespace AKEcommerceAutomation.PageObjects
             return headerValues;
         }
 
-        public string[] GetFooterValues()
+
+        public void GetPreFooter_QuickLinks()
         {
-            var footerValues = new string[GetFooterCount()];
-            for (int i = 0; i < GetFooterCount(); i++)
+            int QuickLinks = _driver.FindElements(By.XPath("//div[@class = 'qick-links']/ul")).Count;
+            for (int i = 1; i <= QuickLinks; i++)
             {
-                footerValues[i] = _driver.FindElement(By.XPath("//*[@id='footer']/div[2]/div[" + (i + 1) + "]/a")).Text;
+                Console.WriteLine(driver.FindElement(By.XPath("//div[@class = 'qick-links']/ul[" + i + "]")).Text);
             }
-            return footerValues;
         }
 
-        public string[] GetFooterLinkValues()
+        public void GetPreFooter_CountryLinks()
         {
-            var footerLinkValues = new string[GetFooterCount()];
-            for (int i = 0; i < GetFooterCount(); i++)
+            int Footerlinks_country = _driver.FindElements(By.XPath("//div[@class = 'country']/ul/li")).Count;
+            for (int i = 1; i <= Footerlinks_country; i++)
             {
-                footerLinkValues[i] =
-                    _driver.FindElement(By.XPath("//*[@id='footer']/div[2]/div[" + (i + 1) + "]/a")).GetAttribute(
-                        "href");
+                Console.WriteLine(driver.FindElement(By.XPath("//div[@class = 'country']/ul/li[" + i + "]")).Text);
             }
-            return footerLinkValues;
         }
+
+        public void GetPreFooter_Sociallinks()
+        {
+            int Sociallinks_footer = _driver.FindElements(By.XPath("//div[@class = 'follow']/ul[1]/li/a/img")).Count;
+            int SocialLinks2_footer = _driver.FindElements(By.XPath("//div[@class = 'follow']/ul[2]/li/a/img")).Count;
+            for (int i = 1; i <= Sociallinks_footer; i++)
+
+            {
+                Console.WriteLine(driver.FindElement(By.XPath("//div[@class = 'follow']/ul[1]/li[" + i + "]/a/img")).GetAttribute("title").ToString());
+            }
+            for (int j = 1; j <= SocialLinks2_footer; j++)
+            {
+                Console.WriteLine(driver.FindElement(By.XPath("//div[@class = 'follow']/ul[2]/li[" + j + "]/a/img")).GetAttribute("title").ToString());
+            }
+        }
+
+        public bool GetPreFooter_SignUpforenews()
+        {
+            return _driver.FindElement(By.XPath("//*[@id='eNews']")).Displayed;
+        }
+
+        public void FooterLinks()
+        {
+            int footerlinks = _driver.FindElements(By.XPath("//*[@id='footer']/div[8]/div/div/footer/ul/li/a")).Count;
+            for (int i = 1; i <= footerlinks; i++)
+            {
+                Console.WriteLine(driver.FindElement(By.XPath("//*[@id='footer']/div[8]/div/div/footer/ul/li["+i+"]/a")).Text);
+            }
+        }
+      
+        public const string CopyRightText = "All rights reserved. Copyright Abercombie & Kent 2013";
 
         public string GetCopyRightText()
         {
-            return _driver.FindElement(By.XPath("//*[@id='footer']/div[2]/div/div/footer/p")).Text;
+            return _driver.FindElement(By.XPath("//*[@id='footer']/div[8]/div/div/footer/p")).Text;
         }
+       
 
-        public void mouseover(By Elemnent)
-        {
-            var loc = (ILocatable) driver.FindElement(Elemnent);
-            IMouse mouse = ((IHasInputDevices) driver).Mouse;
-            mouse.MouseMove(loc.Coordinates);
-        }
+        //JourneyPage 
+        //public string GetJourneysPage()
+        //{
+        //    driver.FindElement(By.XPath("//*[@id='journeys']")).Click();
+        //    driver.WaitForPageToLoad();
+        //    return new JourneysPage(_driver);
 
-        public string[] Meganav_topcontinetnames()
-        {
-            var continetnamestop = new string[_driver.FindElements(HomePageElements.Meganavmenutop).Count];
-            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenutop).Count;)
-            {
-                waitforelement(HomePageElements.Meganavmenutop, 10);
-                Thread.Sleep(3000);
-                foreach (IWebElement continent in  driver.FindElements(HomePageElements.Meganavmenutop))
-                {
-                    continetnamestop[i] = continent.Text;
-                    i++;
-                }
-            }
-            return continetnamestop;
-        }
+        //}
 
-        public string[] Meganav_bottomcontinentnames()
-        {
-            var continetnamesbottom = new string[_driver.FindElements(HomePageElements.Meganavmenubottom).Count];
-            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenubottom).Count;)
-            {
-                waitforelement(HomePageElements.Meganavmenubottom, 10);
-                foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
-                {
-                    continetnamesbottom[i] = continent.Text;
-                    i++;
-                }
-            }
-            return continetnamesbottom;
-        }
 
-        public string[] Megamenu_countrynames()
-        {
-            var countryandcontinentname = new string[_driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count];
-            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count; )
-            {
-                waitforelement(HomePageElements.Meganavmenu_countriesandcontinents, 10);
-                
-                foreach (IWebElement country in driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents))
-                {
-                    countryandcontinentname[i] = country.Text;
-                    i++;
-                }
-            }
-            return countryandcontinentname;
-        }
+        //private readonly string WebUrl;
 
-        public string[] Megamenu_countryandcontinetnametitles()
-        {
-            string[] title= null;
-            var countryandcontinentname = new string[_driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count];
-            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count; )
-            {
-                waitforelement(HomePageElements.Meganavmenu_countriesandcontinents, 10);
+        //public void Navigate()
+        //{
+        //    driver.Navigate().GoToUrl(WebUrl);
+        //    driver.Manage().Window.Maximize();
 
-                foreach (var country in driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents))
-                {
-                    country.Click();
-                    title[i]= driver.Title;
-                    i++;
-                }
-            }
-            return (title);
-            
-        }
+        //}
 
         public void GoBack()
         {
@@ -218,8 +183,9 @@ namespace AKEcommerceAutomation.PageObjects
 
         public bool GetRightHandSideBar()
         {
-            return _driver.FindElement(By.XPath(".//*[@id='page-wrapper']/div[1]/ul")).Displayed;
+            return _driver.FindElement(By.ClassName("side-bar")).Displayed;
         }
+
 
         //Broken Images
         public void BrokenImages(IWebElement ele)
@@ -262,24 +228,6 @@ namespace AKEcommerceAutomation.PageObjects
                 default:
                     return true;
             }
-        }
-
-        //Explicit wait
-        public IWebElement waitforelement(By by, int timeinseconds)
-        {
-            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeinseconds));
-            IWebElement myDynamicElement = wait.Until(d =>
-            {
-                try
-                {
-                    return d.FindElement(by);
-                }
-                catch
-                {
-                    return null;
-                }
-            });
-            return myDynamicElement;
         }
     }
 }
