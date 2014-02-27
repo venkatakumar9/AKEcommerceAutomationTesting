@@ -145,7 +145,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PageObjects\OptedoutMethods.cs" />
     <Compile Include="TestSteps\DestinationpageSteps.cs" />
     <Compile Include="FeatureFiles\Destinationpage.feature.cs">
       <AutoGen>True</AutoGen>
