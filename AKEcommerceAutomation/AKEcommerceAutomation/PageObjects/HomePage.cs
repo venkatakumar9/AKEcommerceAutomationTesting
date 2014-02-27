@@ -61,11 +61,11 @@ namespace AKEcommerceAutomation.PageObjects
             return _driver.FindElement(By.XPath("//div[@id='footer']/div[6]")).Displayed;
         }
 
-        public BeInspired GetBeInspiredPage()
+        public BeInspiredpage GetBeInspiredPage()
         {
             _driver.FindElement(HomePageElements.BeInspiredLink).Click();
             driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
-            return new BeInspired(_driver);
+            return new BeInspiredpage(_driver);
         }
         
     }

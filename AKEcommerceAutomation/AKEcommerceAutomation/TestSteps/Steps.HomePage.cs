@@ -1,13 +1,14 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//  Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System.Collections.Generic;
-using OpenQA.Selenium.Chrome;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace AKEcommerceAutomation.TestSteps
 {
@@ -16,14 +17,14 @@ namespace AKEcommerceAutomation.TestSteps
     {
         public HomePage homePage;
 
-     
+
         //Verify Footer High Level Links in the Homepage
-        
+
         [When(@"I Navigate to Homepage")]
         public void WhenINavigateToHomepage()
         {
             homePage = new HomePage(driver);
-            ScenarioContext.Current.Set(homePage); 
+            ScenarioContext.Current.Set(homePage);
         }
 
         [Then(@"Footer Links should Display")]
@@ -36,7 +37,6 @@ namespace AKEcommerceAutomation.TestSteps
             homePage.FooterLinks();
             Assert.AreEqual(BasePage.CopyRightText, homePage.GetCopyRightText());
             Console.WriteLine("Sign up for news section displayed");
-
         }
 
         // Verifying the SideBar, 
@@ -46,21 +46,21 @@ namespace AKEcommerceAutomation.TestSteps
         [Given(@"I am on the homepage")]
         public void GivenINavigateToHomepage()
         {
-
             WhenINavigateToHomepage();
         }
 
         [Then(@"SideBar Displays")]
         public void ThenSideBarDisplays()
         {
-           
             Assert.IsTrue(homePage.GetRightHandSideBar());
         }
 
         [Then(@"Middle Section of the Homepage Appears")]
         public void ThenCarouselMainImageDisplayed()
         {
-           Assert.AreEqual("Luxury travel with Abercrombie & Kent, celebrating over 50 years of inspiring experiences", homePage.GetHomepagemiddle_sectionText());
+            Assert.AreEqual(
+                "Luxury travel with Abercrombie & Kent, celebrating over 50 years of inspiring experiences",
+                homePage.GetHomepagemiddle_sectionText());
             Assert.IsTrue(homePage.GetGetHomePageMiddle_Section());
             Console.WriteLine("Middle Section Text and Images are Displayed");
         }
@@ -82,7 +82,6 @@ namespace AKEcommerceAutomation.TestSteps
         }
 
 
-      
         //Navigating to Destinations Homepage
         [When(@"I Click on Destinations Link")]
         public void WhenIClickOnDestinationsLink()
@@ -94,8 +93,7 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"I navigate to Destinations homepage")]
         public void ThenINavigateToDestinationsPage()
         {
-         
-           driver.PageSource.Contains("Destinations");
+            driver.PageSource.Contains("Destinations");
         }
 
 
@@ -110,7 +108,5 @@ namespace AKEcommerceAutomation.TestSteps
         //{
         //    driver.Close();
         //}
-
-     
     }
 }

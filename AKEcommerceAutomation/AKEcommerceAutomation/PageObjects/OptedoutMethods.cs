@@ -9,7 +9,8 @@ using AKEcommerceAutomation.Framework;
 using Castle.Components.DictionaryAdapter;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-
+                                    //*** This Class Does Nothing- All the previous methods which are un-used saved here ***//
+                                                                   // *** ---- ***//
 namespace AKEcommerceAutomation.PageObjects
 {
    public class OptedoutMethods : SeleniumTestBase
