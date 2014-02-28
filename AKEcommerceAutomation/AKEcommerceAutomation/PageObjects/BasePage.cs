@@ -8,7 +8,6 @@ using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects.Object_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
 namespace AKEcommerceAutomation.PageObjects
@@ -178,7 +177,6 @@ namespace AKEcommerceAutomation.PageObjects
                 foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenutop))
                 {
                     continetnamestop[i] = continent.Text;
-                    driver.FindElement(By.LinkText(continetnamestop[i])).Click();
                     i++;
                 }
             }
@@ -194,7 +192,6 @@ namespace AKEcommerceAutomation.PageObjects
                 foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
                 {
                     continetnamesbottom[i] = continent.Text;
-                    driver.FindElement(By.LinkText(continetnamesbottom[i])).Click();
                     i++;
                 }
             }
@@ -311,19 +308,12 @@ namespace AKEcommerceAutomation.PageObjects
         //Explicit wait
         public IWebElement waitforelement(By by, int timeinseconds)
         {
-            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeinseconds));
-            IWebElement myDynamicElement = wait.Until(d =>
-            {
-                try
-                {
-                    return d.FindElement(by);
-                }
-                catch
-                {
-                    return null;
-                }
-            });
-            return myDynamicElement;
+           WebDriverWait wait = new WebDriverWait(_driver,TimeSpan.FromMilliseconds(10));
+        IWebElement elementToWait = wait.Until<IWebElement>((d) =>
+          {
+             return d.FindElement(by);
+          });
+            return null;
         }
     }
 }

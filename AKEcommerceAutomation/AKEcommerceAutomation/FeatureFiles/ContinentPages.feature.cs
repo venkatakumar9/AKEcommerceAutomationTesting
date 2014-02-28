@@ -19,20 +19,20 @@ namespace AKEcommerceAutomation.FeatureFiles
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.2.1")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Continent Page")]
-    public partial class ContinentPageFeature
+    [NUnit.Framework.DescriptionAttribute("ContinentPages")]
+    public partial class ContinentPagesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ContinentPage.feature"
+#line 1 "ContinentPages.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Continent Page", "In order to avoid silly mistakes\r\nAs a math idiot\r\nI want to be told the sum of t" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ContinentPages", "In order to avoid silly mistakes\r\nAs a math idiot\r\nI want to be told the sum of t" +
                     "wo numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -75,15 +75,28 @@ namespace AKEcommerceAutomation.FeatureFiles
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 14
-testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
-testRunner.When("I Mouse Over on Destinations Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I Mouse Over on Destinations Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "AFRICA"});
+            table1.AddRow(new string[] {
+                        "THE AMERICAS"});
+            table1.AddRow(new string[] {
+                        "ASIA"});
+            table1.AddRow(new string[] {
+                        "CARIBBEAN"});
+            table1.AddRow(new string[] {
+                        "EUROPE"});
 #line 16
-testRunner.Then("The Meganav Appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 17
-testRunner.When("I click on The Africa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 18
-testRunner.Then("I reach the Africa Continent Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The Meganav Appears", ((string)(null)), table1, "Then ");
+#line 23
+ testRunner.When("I click on The Africa Continent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+ testRunner.Then("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

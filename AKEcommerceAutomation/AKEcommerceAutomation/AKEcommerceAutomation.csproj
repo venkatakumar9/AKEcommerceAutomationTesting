@@ -38,10 +38,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core">
-      <HintPath>..\..\..\..\..\..\..\Repositories\A&amp;K.com\blessed\AK.Ecommerce.Reservations\packages\Castle.Core.3.2.1\lib\net40-client\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Gherkin, Version=2.6.5.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\specflow\tools\Gherkin.dll</HintPath>
@@ -49,12 +45,10 @@
     <Reference Include="Ionic.Zip">
       <HintPath>..\Lib\Ionic.Zip.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v4.0\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\..\..\..\Repositories\A&amp;K.com\blessed\AK.Ecommerce.Reservations\packages\Newtonsoft.Json.4.5.10\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.core">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.3\bin\lib\nunit.core.dll</HintPath>
@@ -70,17 +64,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.3\bin\framework\nunit.mocks.dll</HintPath>
     </Reference>
-    <Reference Include="NUnit.VisualStudio.TestAdapter">
-      <HintPath>..\..\..\..\..\..\..\Repositories\A&amp;K.com\blessed\AK.Ecommerce.Reservations\packages\NUnitTestAdapter.0.96.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
-    </Reference>
     <Reference Include="Selenium.WebDriverBackedSelenium, Version=2.35.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Results\selenium-dotnet-2.40.0\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="specflow, Version=1.9.0.77, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\specflow\tools\specflow.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -119,12 +106,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestSteps\ContinentPageSteps.cs" />
-    <Compile Include="FeatureFiles\ContinentPage.feature.cs">
+    <Compile Include="FeatureFiles\ContinentsPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ContinentPage.feature</DependentUpon>
+      <DependentUpon>ContinentsPage.feature</DependentUpon>
     </Compile>
+    <Compile Include="TestSteps\ContinentPageSteps.cs" />
     <Compile Include="FeatureFiles\Destinationpage1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,9 +145,9 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="FeatureFiles\ContinentPage.feature">
+    <None Include="FeatureFiles\ContinentsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ContinentPage.feature.cs</LastGenOutput>
+      <LastGenOutput>ContinentsPage.feature.cs</LastGenOutput>
     </None>
     <None Include="FeatureFiles\Destinationpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -171,17 +158,6 @@
       <LastGenOutput>HOMEPAGE.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="AutoItX3Lib">
-      <Guid>{F8937E53-D444-4E71-9275-35B64210CC3B}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
