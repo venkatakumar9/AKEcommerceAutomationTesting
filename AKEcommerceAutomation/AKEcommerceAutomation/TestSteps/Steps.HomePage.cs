@@ -1,6 +1,7 @@
 ﻿using System;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
+using AKEcommerceAutomation.PageObjects.Object_Repository;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -80,8 +81,6 @@ namespace AKEcommerceAutomation.TestSteps
             Assert.IsTrue(homePage.GetTailorMadeJourneysInHomepage_Section());
             Console.WriteLine("Tailor Made Journeys Section and Images Displayed");
         }
-
-
       
         //Navigating to Destinations Homepage
         [When(@"I Click on Destinations Link")]
@@ -111,6 +110,48 @@ namespace AKEcommerceAutomation.TestSteps
         //    driver.Close();
         //}
 
-     
+        //Verify Sub-Navigation-Menu 
+        [When(@"I am in the AK Homepage")]
+        public void WhenIAmInTheAkHomepage()
+        {
+            homePage = new HomePage(driver);
+            ScenarioContext.Current.Set(homePage);
+        }
+
+        [Then(@"SubMenu Appears:")]
+        public void ThenTheSubMenuAppears(Table table)
+        {
+            string[] headerValues = homePage.GetHeaderValues();
+            for (int i = 0; i < homePage.GetHeaderNavigationCount(); i++)
+            {
+                Assert.AreEqual(table.Rows[i]["Value"], headerValues[i]);
+            }
+        }
+       
+
+        //Header links in homepage
+        [When(@"I am on the Homepage")]
+        public void WhenIamOnTheHomepage()
+        {
+            WhenIAmInTheAkHomepage();
+        }
+
+        [Then(@"Top Headerlinks displays")]
+        public void ThenTopHeaderLinksDisplays(Table table)
+        {
+            string[] headerlinksValues = homePage.GetHeaderLinksValues();
+            for (int i = 0; i < homePage.GetHeaderLinks(); i++)
+            {
+                Assert.AreEqual(table.Rows[i]["Value"], headerlinksValues[i]);
+            }
+        }
+      
+        //[AfterScenario]
+        //public void CloseBrowser()
+        //{
+        //    driver.Close();
+        //}
+
+      
     }
 }

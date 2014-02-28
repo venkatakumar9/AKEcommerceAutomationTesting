@@ -106,12 +106,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FeatureFiles\ContinentsPage.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ContinentsPage.feature</DependentUpon>
-    </Compile>
-    <Compile Include="TestSteps\ContinentPageSteps.cs" />
     <Compile Include="FeatureFiles\Destinationpage1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -144,10 +138,6 @@
   <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="FeatureFiles\ContinentsPage.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ContinentsPage.feature.cs</LastGenOutput>
     </None>
     <None Include="FeatureFiles\Destinationpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
