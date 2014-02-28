@@ -1,60 +1,16 @@
-﻿//-----------------------------------------------------------------------
-// <copyright company="Abercombie&kent">
-//  Copyright (c) Abercombie&Kent. All rights reserved.
-// </copyright>
-//-----------------------------------------------------------------------
-
-
-using System;
+﻿using System;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
 using AKEcommerceAutomation.PageObjects.Object_Repository;
-using NUnit.Framework;
 using TechTalk.SpecFlow;
+using NUnit.Framework;
 
-namespace AKEcommerceAutomation.TestSteps
+namespace AKEcommerceAutomation
 {
-    internal sealed class MainNavigation : SeleniumTestBase
+    [Binding]
+    public class HomepagenavigationSteps : SeleniumTestBase
     {
-        [Binding]
-        public class Beisnpiredlink
-        {
-            #region BeInspired Link Navigation
-
-            private readonly HomePage homepage = new HomePage(driver);
-
-            [When(@"I click on BeInspired link")]
-            public void WhenIClickOnBeInspiredLink()
-            {
-                homepage.GetBeInspiredPage();
-            }
-
-            [Then(@"I Navigate to BeInspired Page")]
-            public void ThenINavigateToBeInspiredPage()
-            {
-                homepage.GetBeInspiredPage().title();
-            }
-
-            #endregion
-        }
-
-        [Binding]
-        public class Countrylinks
-        {
-            private readonly HomePage homepage = new HomePage(driver);
-
-            [Then(@"All the coutries in the continents will appear\.")]
-            public void ThenAllTheCoutriesInTheContinentsWillAppear_()
-            {
-                string[] countryandcontinetnames = homepage.Megamenu_countrynames();
-                foreach (string countryandcontinetname in countryandcontinetnames)
-                {
-                    Console.WriteLine(countryandcontinetname);
-                }
-            }
-        }
-
-        [Binding]
+       [Binding]
         public class Mainnavigation
         {
             private readonly HomePage homepage = new HomePage(driver);
@@ -113,6 +69,46 @@ namespace AKEcommerceAutomation.TestSteps
             {
                 string title = homepage.GetBeInspiredPage().title();
                 Assert.AreEqual("BeInspired", title);
+            }
+        }
+
+        [Binding]
+        public class Beisnpiredlink
+        {
+            #region BeInspired Link Navigation
+
+            private readonly HomePage homepage = new HomePage(driver);
+
+            [When(@"I click on BeInspired link")]
+            public void WhenIClickOnBeInspiredLink()
+            {
+                homepage.GetBeInspiredPage();
+            }
+
+            [Then(@"I Navigate to BeInspired Page")]
+            public void ThenINavigateToBeInspiredPage()
+            {
+                homepage.GetBeInspiredPage().title();
+
+            }
+
+            #endregion
+        }
+
+        [Binding]
+        public class Countrylinks
+        {
+            private readonly HomePage homepage = new HomePage(driver);
+
+            [Then(@"All the coutries in the continents will appear\.")]
+            public void ThenAllTheCoutriesInTheContinentsWillAppear_()
+            {
+                string[] countryandcontinetnames = homepage.Megamenu_countrynames();
+                foreach (var countryandcontinetname in countryandcontinetnames)
+                {
+                    Console.WriteLine(countryandcontinetname);
+                }
+
             }
         }
     }

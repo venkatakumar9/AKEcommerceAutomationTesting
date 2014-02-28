@@ -106,20 +106,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestSteps\ContinentPagesSteps.cs" />
+    <Compile Include="FeatureFiles\ContinentPages.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContinentPages.feature</DependentUpon>
+    </Compile>
     <Compile Include="FeatureFiles\Destinationpage1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Destinationpage.feature</DependentUpon>
     </Compile>
-    <Compile Include="FeatureFiles\HOMEPAGE.feature.cs">
+    <Compile Include="FeatureFiles\HomePage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HOMEPAGE.feature</DependentUpon>
+      <DependentUpon>HomePage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="FeatureFiles\Homepagenavigation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Homepagenavigation.feature</DependentUpon>
     </Compile>
     <Compile Include="Framework\EnvironmentConfiguration.cs" />
     <Compile Include="Framework\Extensions.cs" />
     <Compile Include="Framework\SeleniumTestBase.cs" />
     <Compile Include="Framework\WaitFor.cs" />
+    <Compile Include="TestSteps\HomepagenavigationSteps.cs" />
     <Compile Include="PageObjects\Be-InspiredPage.cs" />
     <Compile Include="PageObjects\BeInspired.cs" />
     <Compile Include="PageObjects\DestinationsPage.cs" />
@@ -132,20 +144,27 @@
     <Compile Include="PageObjects\OptedoutMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestSteps\DestinationpageSteps.cs" />
-    <Compile Include="TestSteps\HomePage.MainNavigation.cs" />
     <Compile Include="TestSteps\Steps.HomePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="FeatureFiles\ContinentPages.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ContinentPages.feature.cs</LastGenOutput>
+    </None>
     <None Include="FeatureFiles\Destinationpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Destinationpage1.feature.cs</LastGenOutput>
     </None>
-    <None Include="FeatureFiles\HOMEPAGE.feature">
+    <None Include="FeatureFiles\HomePage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>HOMEPAGE.feature.cs</LastGenOutput>
+      <LastGenOutput>HomePage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="FeatureFiles\Homepagenavigation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Homepagenavigation.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
