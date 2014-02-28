@@ -119,6 +119,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestSteps\ContinentPageSteps.cs" />
+    <Compile Include="FeatureFiles\ContinentPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContinentPage.feature</DependentUpon>
+    </Compile>
     <Compile Include="FeatureFiles\Destinationpage1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,6 +157,10 @@
   <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="FeatureFiles\ContinentPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ContinentPage.feature.cs</LastGenOutput>
     </None>
     <None Include="FeatureFiles\Destinationpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

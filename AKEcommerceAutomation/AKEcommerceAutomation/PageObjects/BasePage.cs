@@ -8,6 +8,7 @@ using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects.Object_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
 namespace AKEcommerceAutomation.PageObjects
@@ -159,11 +160,12 @@ namespace AKEcommerceAutomation.PageObjects
             return _driver.FindElement(By.XPath("//*[@id='footer']/div[8]/div/div/footer/p")).Text;
         }
 
-        public void mouseover(By Elemnent)
+        public void mouseover(By Element)
         {
-            var loc = (ILocatable)driver.FindElement(Elemnent);
+            var loc = (ILocatable)driver.FindElement(Element);
             IMouse mouse = ((IHasInputDevices)driver).Mouse;
-            mouse.MouseMove(loc.Coordinates);
+            mouse.ContextClick(loc.Coordinates);
+            Thread.Sleep(2000);
         }
 
         public string[] Meganav_topcontinetnames()
@@ -176,6 +178,7 @@ namespace AKEcommerceAutomation.PageObjects
                 foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenutop))
                 {
                     continetnamestop[i] = continent.Text;
+                    driver.FindElement(By.LinkText(continetnamestop[i])).Click();
                     i++;
                 }
             }
@@ -191,6 +194,7 @@ namespace AKEcommerceAutomation.PageObjects
                 foreach (IWebElement continent in driver.FindElements(HomePageElements.Meganavmenubottom))
                 {
                     continetnamesbottom[i] = continent.Text;
+                    driver.FindElement(By.LinkText(continetnamesbottom[i])).Click();
                     i++;
                 }
             }
