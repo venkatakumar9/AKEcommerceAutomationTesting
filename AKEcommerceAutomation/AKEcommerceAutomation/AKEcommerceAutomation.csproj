@@ -38,9 +38,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gherkin, Version=2.6.5.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+    <Reference Include="Gherkin, Version=2.12.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\specflow\tools\Gherkin.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Results\tools\Gherkin.dll</HintPath>
+    </Reference>
+    <Reference Include="ImpromptuInterface">
+      <HintPath>..\packages\ImpromptuInterface.5.6.7\lib\net40\ImpromptuInterface.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip">
       <HintPath>..\Lib\Ionic.Zip.dll</HintPath>
@@ -50,24 +53,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ReferenceAssemblies\v4.0\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.core">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.3\bin\lib\nunit.core.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.3\bin\lib\nunit.core.interfaces.dll</HintPath>
+    <Reference Include="Selenium.WebDriverBackedSelenium">
+      <HintPath>..\packages\Selenium.WebDriverBackedSelenium.2.40.0\lib\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nunit\NUnit-2.6.3\bin\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.mocks, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.3\bin\framework\nunit.mocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Selenium.WebDriverBackedSelenium, Version=2.35.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Results\selenium-dotnet-2.40.0\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="SpecFlow.Assist.Dynamic">
+      <HintPath>..\packages\SpecFlow.Assist.Dynamic.1.0.2\lib\40\SpecFlow.Assist.Dynamic.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -79,39 +72,26 @@
     <Reference Include="System.Xml" />
     <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\specflow\tools\TechTalk.SpecFlow.dll</HintPath>
+      <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
-    <Reference Include="TechTalk.SpecFlow.Generator, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Results\SpecFlow.1.9.0\tools\TechTalk.SpecFlow.Generator.dll</HintPath>
+    <Reference Include="ThoughtWorks.Selenium.Core">
+      <HintPath>..\packages\Selenium.RC.2.40.0\lib\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
     </Reference>
-    <Reference Include="TechTalk.SpecFlow.Reporting, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Results\SpecFlow.1.9.0\tools\TechTalk.SpecFlow.Reporting.dll</HintPath>
-    </Reference>
-    <Reference Include="TechTalk.SpecFlow.Utils">
-      <HintPath>..\..\..\..\..\..\..\Results\SpecFlow.1.9.0\tools\TechTalk.SpecFlow.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="ThoughtWorks.Selenium.Core, Version=2.35.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Results\selenium-dotnet-2.40.0\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="WebDriver, Version=2.40.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="WebDriver">
       <HintPath>..\packages\Selenium.WebDriver.2.40.0\lib\net40\WebDriver.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=2.39.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Selenium.Support.2.39.0\lib\net40\WebDriver.Support.dll</HintPath>
+    <Reference Include="WebDriver.Support">
+      <HintPath>..\packages\Selenium.Support.2.40.0\lib\net40\WebDriver.Support.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestSteps\ContinentPagesSteps.cs" />
-    <Compile Include="FeatureFiles\ContinentPages.feature.cs">
+    <Compile Include="FeatureFiles\AfricaContinentpage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ContinentPages.feature</DependentUpon>
+      <DependentUpon>AfricaContinentpage.feature</DependentUpon>
     </Compile>
+    <Compile Include="PageObjects\Object Repository\ContinentPageElements.cs" />
+    <Compile Include="TestSteps\ContinentPagesSteps.cs" />
     <Compile Include="FeatureFiles\Destinationpage1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,9 +130,9 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="FeatureFiles\ContinentPages.feature">
+    <None Include="FeatureFiles\AfricaContinentpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ContinentPages.feature.cs</LastGenOutput>
+      <LastGenOutput>AfricaContinentpage.feature.cs</LastGenOutput>
     </None>
     <None Include="FeatureFiles\Destinationpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -167,6 +147,7 @@
       <LastGenOutput>Homepagenavigation.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="TestSteps\packages.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
