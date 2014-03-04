@@ -25,7 +25,7 @@ namespace AKEcommerceAutomation.FeatureFiles
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Be-InspiredPage.feature"
+#line 1 "Beinspirerpage.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
@@ -72,12 +72,23 @@ namespace AKEcommerceAutomation.FeatureFiles
 #line 10
 this.ScenarioSetup(scenarioInfo);
 #line 11
-testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("I am on the AK homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
-testRunner.When("I click on BeInspired link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on BeInspired tab on homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
-testRunner.Then("Navigation appears in beinspired page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Be-inspired Navigation Links displayed:", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "PLACES TO VISIT"});
+            table1.AddRow(new string[] {
+                        "THINGS TO SEE & DO"});
+            table1.AddRow(new string[] {
+                        "WHERE TO STAY"});
+            table1.AddRow(new string[] {
+                        "MY PINBOARD"});
             this.ScenarioCleanup();
         }
     }

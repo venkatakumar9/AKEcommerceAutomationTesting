@@ -8,6 +8,11 @@
 #	Then the result should be 120 on the screen
 
 Scenario: Verifying the navigation in Be-inspired page
-Given I am on the homepage
-When I click on BeInspired link
-Then Navigation appears in beinspired page
+Given I am on the AK homepage
+When I click on BeInspired tab on homepage
+Then Be-inspired Navigation Links displayed:
+| Value              |
+| PLACES TO VISIT    |
+| THINGS TO SEE & DO |
+| WHERE TO STAY      |
+| MY PINBOARD        |

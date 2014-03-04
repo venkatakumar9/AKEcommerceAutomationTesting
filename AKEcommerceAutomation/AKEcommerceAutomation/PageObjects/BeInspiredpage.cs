@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium;
+using System;
 
 namespace AKEcommerceAutomation.PageObjects
 {
-    public class BeInspiredpage : BasePage
+    public class BeInspiredPage : BasePage
     {
-        public BeInspiredpage(IWebDriver driver) : base(driver)
+        public BeInspiredPage(IWebDriver driver)
+            : base(driver)
         {
         }
 
-        public List<BeInspired_Navigation> beinspirednavigation { get; set; }
-
-        public string title()
+       public string title()
         {
             return driver.Title;
         }
@@ -22,26 +22,18 @@ namespace AKEcommerceAutomation.PageObjects
             return _driver.FindElement(By.XPath("//*[@id='inspirerInstructionalText']/div/p")).Displayed;
         }
 
-        public void GetBeinspiredNavigation()
+       public int GetBeinspiredNavugationCount()
         {
-            beinspirednavigation = new List<BeInspired_Navigation>();
-            int count = _driver.FindElements(By.XPath("//div[@class = 'nav']/a")).Count();
-
-            if (count > 0)
-            {
-                for (int i = 1; i <= count; i++)
-                {
-                    beinspirednavigation.Add(new BeInspired_Navigation
-                    {
-                        altText = _driver.FindElement(By.XPath("//div[@class = 'nav']/a[" + i + "]")).Text
-                    });
-                }
-            }
+            return _driver.FindElements(By.XPath("//div[@class = 'nav']/a")).Count;
         }
-
-        public class BeInspired_Navigation
+        public string[] GetBeinspiredNavigationValues()
         {
-            public string altText { get; set; }
+            var beinspirednavigationValues = new string[GetBeinspiredNavugationCount()];
+            for (int i = 1; i < GetBeinspiredNavugationCount(); i++)
+            {
+                beinspirednavigationValues[i] = _driver.FindElement(By.XPath("//div[@class = 'nav']/a[" + (i+1) +"]")).Text;
+            }
+            return beinspirednavigationValues;
         }
     }
 }

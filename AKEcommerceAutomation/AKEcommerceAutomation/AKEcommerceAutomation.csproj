@@ -106,11 +106,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Be_InspiredPageSteps.cs" />
-    <Compile Include="FeatureFiles\Be-InspiredPage.feature.cs">
+    <Compile Include="FeatureFiles\Beinspirerpage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Be-InspiredPage.feature</DependentUpon>
+      <DependentUpon>Beinspirerpage.feature</DependentUpon>
     </Compile>
     <Compile Include="FeatureFiles\Destinationpage1.feature.cs">
       <AutoGen>True</AutoGen>
@@ -126,7 +125,7 @@
     <Compile Include="Framework\Extensions.cs" />
     <Compile Include="Framework\SeleniumTestBase.cs" />
     <Compile Include="Framework\WaitFor.cs" />
-    <Compile Include="PageObjects\BeInspiredpage.cs" />
+    <Compile Include="PageObjects\BeInspiredPage.cs" />
     <Compile Include="PageObjects\DestinationsPage.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="PageObjects\HomePage.cs" />
@@ -145,9 +144,9 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="FeatureFiles\Be-InspiredPage.feature">
+    <None Include="FeatureFiles\Beinspirerpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Be-InspiredPage.feature.cs</LastGenOutput>
+      <LastGenOutput>Beinspirerpage.feature.cs</LastGenOutput>
     </None>
     <None Include="FeatureFiles\Destinationpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -157,7 +156,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>HOMEPAGE.feature.cs</LastGenOutput>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AutoItX3Lib">
