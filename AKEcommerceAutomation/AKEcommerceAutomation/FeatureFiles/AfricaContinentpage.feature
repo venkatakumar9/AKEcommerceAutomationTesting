@@ -23,6 +23,7 @@ Scenario: When I Click on Africa in Megamenu I reach the Africa Continent Page
  When I click on The Africa Continent
  Then I reach Africa Continent page
 
+ Scenario: Verifying Vector map in the African Continent page
  Given I reach Africa Continent page
  Then Africa Country Vector map is present
  When I click on SouthAfrica in Vector map
