@@ -214,15 +214,15 @@ namespace AKEcommerceAutomation.PageObjects
             return countryandcontinentname;
         }
 
-        public string[] Megamenu_countryandcontinetnametitles()
+        public string[] Navlink_pagetitles(By elements)
         {
             string[] title = null;
-            var countryandcontinentname = new string[_driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count];
-            for (int i = 0; i < _driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents).Count; )
+            var countryandcontinentname = new string[_driver.FindElements(elements).Count];
+            for (int i = 0; i < _driver.FindElements(elements).Count; )
             {
-                waitforelement(HomePageElements.Meganavmenu_countriesandcontinents, 10);
+                waitforelement(elements, 10);
 
-                foreach (var country in driver.FindElements(HomePageElements.Meganavmenu_countriesandcontinents))
+                foreach (var country in driver.FindElements(elements))
                 {
                     country.Click();
                     title[i] = driver.Title;
