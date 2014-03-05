@@ -16,7 +16,7 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
         /// <summary>
         /// Destination Link
         /// </summary>
-        public static readonly By Destinationlink = By.XPath("//*[@id='destinations-hub']");
+        public static readonly By Destinationlink = By.Id("destinations-hub");
 
         /// <summary>
         ///  Journeys Link

@@ -159,11 +159,12 @@ namespace AKEcommerceAutomation.PageObjects
             return _driver.FindElement(By.XPath("//*[@id='footer']/div[8]/div/div/footer/p")).Text;
         }
 
-        public void mouseover(By Elemnent)
+        public void mouseover(By Element)
         {
-            var loc = (ILocatable)driver.FindElement(Elemnent);
+            var loc = (ILocatable)driver.FindElement(Element);
             IMouse mouse = ((IHasInputDevices)driver).Mouse;
-            mouse.MouseMove(loc.Coordinates);
+            mouse.ContextClick(loc.Coordinates);
+            Thread.Sleep(2000);
         }
 
         public string[] Meganav_topcontinetnames()
@@ -307,19 +308,12 @@ namespace AKEcommerceAutomation.PageObjects
         //Explicit wait
         public IWebElement waitforelement(By by, int timeinseconds)
         {
-            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeinseconds));
-            IWebElement myDynamicElement = wait.Until(d =>
-            {
-                try
-                {
-                    return d.FindElement(by);
-                }
-                catch
-                {
-                    return null;
-                }
-            });
-            return myDynamicElement;
+           WebDriverWait wait = new WebDriverWait(_driver,TimeSpan.FromMilliseconds(10));
+        IWebElement elementToWait = wait.Until<IWebElement>((d) =>
+          {
+             return d.FindElement(by);
+          });
+            return null;
         }
     }
 }
