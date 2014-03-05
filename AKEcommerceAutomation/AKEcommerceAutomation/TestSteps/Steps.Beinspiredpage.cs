@@ -14,13 +14,14 @@ namespace AKEcommerceAutomation.TestSteps
     public class BeInspiredSteps : SeleniumTestBase
     {
         
-        public HomePage homePage;
-        public BeInspiredPage beinspiredPage;
+       
+        HomePage homePage = new HomePage(driver);
+        BeInspiredPage beinspiredPage= new BeInspiredPage(driver);
 
         [Given(@"I am on the AK homepage")]
         public void GivenIamontheAKHomepage()
         {
-            homePage = new HomePage(driver);
+            
             ScenarioContext.Current.Set(homePage);
         }
 
@@ -34,7 +35,7 @@ namespace AKEcommerceAutomation.TestSteps
         public void ThenBe_InspiredNavigationLinksDisplayed(Table table)
         {
             var beinspirednavigationValues = beinspiredPage.GetBeinspiredNavigationValues();
-            for (int i = 1; i <= beinspiredPage.GetBeinspiredNavigationCount(); i++)
+            for (int i = 0; i < beinspiredPage.GetBeinspiredNavigationCount(); i++)
             {
                 Assert.AreEqual(table.Rows[i]["Value"], beinspirednavigationValues[i]);
             }
