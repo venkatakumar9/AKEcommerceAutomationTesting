@@ -40,6 +40,7 @@
   <ItemGroup>
     <Reference Include="Castle.Core">
       <HintPath>..\..\..\..\..\..\..\Repositories\A&amp;K.com\blessed\AK.Ecommerce.Reservations\packages\Castle.Core.3.2.1\lib\net40-client\Castle.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Gherkin, Version=2.6.5.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -56,17 +57,26 @@
       <HintPath>..\..\..\..\..\..\..\Repositories\A&amp;K.com\blessed\AK.Ecommerce.Reservations\packages\Newtonsoft.Json.4.5.10\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.core">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nunit\NUnit-2.6.3\bin\lib\nunit.core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.3\bin\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.3\bin\lib\nunit.core.interfaces.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Nunit\NUnit-2.6.3\bin\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.3\bin\framework\nunit.mocks.dll</HintPath>
     </Reference>
     <Reference Include="NUnit.VisualStudio.TestAdapter">
       <HintPath>..\..\..\..\..\..\..\Repositories\A&amp;K.com\blessed\AK.Ecommerce.Reservations\packages\NUnitTestAdapter.0.96.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
     </Reference>
     <Reference Include="Selenium.WebDriverBackedSelenium, Version=2.35.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Selenium\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Results\selenium-dotnet-2.40.0\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="specflow, Version=1.9.0.77, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -86,23 +96,26 @@
     </Reference>
     <Reference Include="TechTalk.SpecFlow.Generator, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\specflow\tools\TechTalk.SpecFlow.Generator.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Results\SpecFlow.1.9.0\tools\TechTalk.SpecFlow.Generator.dll</HintPath>
     </Reference>
     <Reference Include="TechTalk.SpecFlow.Reporting, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\specflow\tools\TechTalk.SpecFlow.Reporting.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Results\SpecFlow.1.9.0\tools\TechTalk.SpecFlow.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.Utils">
+      <HintPath>..\..\..\..\..\..\..\Results\SpecFlow.1.9.0\tools\TechTalk.SpecFlow.Utils.dll</HintPath>
     </Reference>
     <Reference Include="ThoughtWorks.Selenium.Core, Version=2.35.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Selenium\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Results\selenium-dotnet-2.40.0\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver, Version=2.40.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Selenium.WebDriver.2.40.0\lib\net40\WebDriver.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=2.35.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="WebDriver.Support, Version=2.39.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Selenium\net40\WebDriver.Support.dll</HintPath>
+      <HintPath>..\packages\Selenium.Support.2.39.0\lib\net40\WebDriver.Support.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
