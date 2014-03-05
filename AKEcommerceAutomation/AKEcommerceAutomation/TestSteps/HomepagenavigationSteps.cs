@@ -1,26 +1,20 @@
-﻿//-----------------------------------------------------------------------
-// <copyright company="Abercombie&kent">
-//  Copyright (c) Abercombie&Kent. All rights reserved.
-// </copyright>
-//-----------------------------------------------------------------------
+﻿using System;
+using AKEcommerceAutomation.Framework;
+using AKEcommerceAutomation.PageObjects;
+using AKEcommerceAutomation.PageObjects.Object_Repository;
+using TechTalk.SpecFlow;
+using NUnit.Framework;
 
-
-namespace AKEcommerceAutomation.TestSteps
+namespace AKEcommerceAutomation
 {
-    using Framework;
-    using PageObjects;
-    using NUnit.Framework;
-    using System;
-    using OpenQA.Selenium;
-    using TechTalk.SpecFlow;
-    using AKEcommerceAutomation.PageObjects.Object_Repository;
-
-    sealed internal class MainNavigation : SeleniumTestBase
+    [Binding]
+    public class HomepagenavigationSteps : SeleniumTestBase
     {
-        [Binding]
+       [Binding]
         public class Mainnavigation
         {
             private readonly HomePage homepage = new HomePage(driver);
+
             [When(@"I click on BeInspired link")]
             public void WhenIClickOnBeInspiredLink()
             {
@@ -42,11 +36,11 @@ namespace AKEcommerceAutomation.TestSteps
             [Then(@"The Meganav Appears")]
             public void ThenTheMeganavAppears(Table table)
             {
-                string[]continetnames = homepage.Meganav_topcontinetnames();
-                for(int i=0; i<continetnames.Length;i++)
+                string[] continetnames = homepage.Meganav_topcontinetnames();
+                for (int i = 0; i < continetnames.Length; i++)
                     Assert.AreEqual(table.Rows[i]["Value"], continetnames[i]);
             }
-           
+
 
             [Then(@"The Meganav bottom appears")]
             public void ThenTheMeganavBottomAppears(Table table)
@@ -59,8 +53,8 @@ namespace AKEcommerceAutomation.TestSteps
             [Then(@"When I click on Destination link I reach the Destinations Page")]
             public void ThenWhenIClickOnDestinationLinkIReachTheDestinationsPage()
             {
-               string title =  homepage.GetDestinationsPage().title();
-                Assert.AreEqual("Destinations",title);
+                string title = homepage.GetDestinationsPage().title();
+                Assert.AreEqual("Destinations", title);
             }
 
             [Then(@"When I click on Journeys Link I reach Journeys Page")]
@@ -77,8 +71,9 @@ namespace AKEcommerceAutomation.TestSteps
                 Assert.AreEqual("BeInspired", title);
             }
         }
+
         [Binding]
-        public class Beisnpiredlink 
+        public class Beisnpiredlink
         {
             #region BeInspired Link Navigation
 
@@ -94,7 +89,7 @@ namespace AKEcommerceAutomation.TestSteps
             public void ThenINavigateToBeInspiredPage()
             {
                 homepage.GetBeInspiredPage().title();
-               
+
             }
 
             #endregion
