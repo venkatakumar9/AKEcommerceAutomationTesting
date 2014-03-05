@@ -23,8 +23,24 @@ Scenario: When I Click on Africa in Megamenu I reach the Africa Continent Page
  When I click on The Africa Continent
  Then I reach Africa Continent page
 
+ Scenario: Verifying the navigation in the African continent page
+  Given I reach Africa Continent page
+  Then The Navigation links are present
+  | Value                 |
+  | OVERVIEW              |
+  | COUNTRIES             |
+  | GUIDED GROUP JOURNEYS |
+  | TAILOR MADE JOURNEYS  |
+  | INSIDER ACCESS        |
+  When I click on the navigation links
+  Then I reach the specific pages in the continent page 
+    
  Scenario: Verifying Vector map in the African Continent page
  Given I reach Africa Continent page
  Then Africa Country Vector map is present
  When I click on SouthAfrica in Vector map
  Then I reach South Africa Page
+
+ Scenario: Verifying Carousel Images in African Continet page
+ Given I reach Africa Continent page
+ Then the carousel Image is present

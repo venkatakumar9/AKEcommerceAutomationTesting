@@ -113,20 +113,67 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verifying the navigation in the African continent page")]
+        public virtual void VerifyingTheNavigationInTheAfricanContinentPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying the navigation in the African continent page", ((string[])(null)));
+#line 26
+ this.ScenarioSetup(scenarioInfo);
+#line 27
+  testRunner.Given("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Value"});
+            table2.AddRow(new string[] {
+                        "OVERVIEW"});
+            table2.AddRow(new string[] {
+                        "COUNTRIES"});
+            table2.AddRow(new string[] {
+                        "GUIDED GROUP JOURNEYS"});
+            table2.AddRow(new string[] {
+                        "TAILOR MADE JOURNEYS"});
+            table2.AddRow(new string[] {
+                        "INSIDER ACCESS"});
+#line 28
+  testRunner.Then("The Navigation links are present", ((string)(null)), table2, "Then ");
+#line 35
+  testRunner.When("I click on the navigation links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
+  testRunner.Then("I reach the specific pages in the continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verifying Vector map in the African Continent page")]
         public virtual void VerifyingVectorMapInTheAfricanContinentPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying Vector map in the African Continent page", ((string[])(null)));
-#line 26
+#line 38
  this.ScenarioSetup(scenarioInfo);
-#line 27
+#line 39
  testRunner.Given("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 28
+#line 40
  testRunner.Then("Africa Country Vector map is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 29
+#line 41
  testRunner.When("I click on SouthAfrica in Vector map", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
+#line 42
  testRunner.Then("I reach South Africa Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verifying Carousel Images in African Continet page")]
+        public virtual void VerifyingCarouselImagesInAfricanContinetPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying Carousel Images in African Continet page", ((string[])(null)));
+#line 44
+ this.ScenarioSetup(scenarioInfo);
+#line 45
+ testRunner.Given("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 46
+ testRunner.Then("the carousel Image is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

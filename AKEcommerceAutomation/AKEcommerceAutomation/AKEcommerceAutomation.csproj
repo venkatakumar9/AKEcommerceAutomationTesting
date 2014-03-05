@@ -90,6 +90,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AfricaContinentpage.feature</DependentUpon>
     </Compile>
+    <Compile Include="PageObjects\ContinentPage.cs" />
     <Compile Include="PageObjects\Object Repository\ContinentPageElements.cs" />
     <Compile Include="TestSteps\ContinentPagesSteps.cs" />
     <Compile Include="FeatureFiles\Destinationpage1.feature.cs">
@@ -146,8 +147,12 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Homepagenavigation.feature.cs</LastGenOutput>
     </None>
-    <None Include="packages.config" />
-    <None Include="TestSteps\packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TestSteps\packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

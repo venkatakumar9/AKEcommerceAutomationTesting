@@ -67,6 +67,11 @@ namespace AKEcommerceAutomation.PageObjects
             driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
             return new BeInspired(_driver);
         }
-        
+
+        public ContinentPage GetContinentPage()
+        {
+            return new ContinentPage(_driver);
+        }
+
     }
 }

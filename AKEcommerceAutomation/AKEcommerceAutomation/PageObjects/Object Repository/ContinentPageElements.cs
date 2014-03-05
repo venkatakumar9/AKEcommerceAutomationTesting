@@ -13,6 +13,11 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
     public class ContinentPageElements
     {
         /// <summary>
+        /// Africa continennt navigation link
+        /// </summary>
+        public static By Navigation = By.CssSelector("[class='page-nav'] li a");
+            
+        /// <summary>
         /// Africa continennt Vector map
         /// </summary>
         public static By Africacontinentmap = By.Id("Content_T7A9807F6015_Col00");

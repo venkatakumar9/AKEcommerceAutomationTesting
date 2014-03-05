@@ -1,16 +1,21 @@
-﻿using System;
-using AKEcommerceAutomation.Framework;
-using AKEcommerceAutomation.PageObjects;
-using AKEcommerceAutomation.PageObjects.Object_Repository;
-using AKEcommerceAutomation.TestSteps;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using TechTalk.SpecFlow;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//     Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace AKEcommerceAutomation
 {
+    using System;
+    using Framework;
+    using PageObjects;
+    using PageObjects.Object_Repository;
+    using TestSteps;
+    using NUnit.Framework;
+    using OpenQA.Selenium;
+    using TechTalk.SpecFlow;
     [Binding]
-    public class ContinentPagesSteps : SeleniumTestBase
+    sealed class ContinentPagesSteps : SeleniumTestBase
     {
         HomePage homepage = new HomePage(driver);
        
@@ -62,5 +67,32 @@ namespace AKEcommerceAutomation
             Assert.AreEqual("South Africa Luxury Holidays & Safaris 2013, 2014 - A&K", driver.Title);
         }
 
+        [Then(@"The Navigation links are present")]
+        public void ThenTheNavigationLinksArePresent(Table table)
+        {
+            string[] conitnetpagelinks = homepage.GetContinentPage().continentnavlinks();
+            for (int i = 0; i < homepage.GetHeaderNavigationCount(); i++)
+            {
+                Assert.AreEqual(table.Rows[i]["Value"], conitnetpagelinks[i]);
+            }
+        }
+
+        [When(@"I click on the navigation links")]
+        public void WhenIClickOnTheNavigationLinks()
+        {
+            homepage.Navlink_pagetitles(ContinentPageElements.Navigation);
+        }
+
+        [Then(@"I reach the specific pages in the continent page")]
+        public void ThenIReachTheSpecificPagesInTheContinentPage()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"the carousel Image is present")]
+        public void ThenTheCarouselImageIsPresent()
+        {
+            ScenarioContext.Current.Pending();
+        }
     }
 }
