@@ -227,6 +227,7 @@ namespace AKEcommerceAutomation.PageObjects
                     country.Click();
                     title[i] = driver.Title;
                     i++;
+                    driver.Navigate().Back();
                 }
             }
             return (title);

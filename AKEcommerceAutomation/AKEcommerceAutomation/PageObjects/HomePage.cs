@@ -66,6 +66,11 @@ namespace AKEcommerceAutomation.PageObjects
             _driver.FindElement(By.XPath("//*[@id='when-to-go']")).Click();
             return new BeInspiredPage(_driver);
         }
-        
+
+        public ContinentPage GetContinentPage()
+        {
+            return new ContinentPage(_driver);
+        }
+
     }
 }
