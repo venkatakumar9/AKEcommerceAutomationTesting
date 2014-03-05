@@ -7,9 +7,11 @@ namespace AKEcommerceAutomation.PageObjects
 {
     public class BeInspiredPage : BasePage
     {
+        //public BeInspiredPage beinspiredPage;
         public BeInspiredPage(IWebDriver driver)
             : base(driver)
         {
+            //beinspiredPage = new BeInspiredPage(driver);
         }
 
        public string title()
@@ -22,16 +24,16 @@ namespace AKEcommerceAutomation.PageObjects
             return _driver.FindElement(By.XPath("//*[@id='inspirerInstructionalText']/div/p")).Displayed;
         }
 
-       public int GetBeinspiredNavugationCount()
+       public int GetBeinspiredNavigationCount()
         {
-            return _driver.FindElements(By.XPath("//div[@class = 'nav']/a")).Count;
+            return _driver.FindElements(By.XPath("//*[@id='page-wrapper']/div[5]/div/a")).Count;
         }
         public string[] GetBeinspiredNavigationValues()
         {
-            var beinspirednavigationValues = new string[GetBeinspiredNavugationCount()];
-            for (int i = 1; i < GetBeinspiredNavugationCount(); i++)
+            var beinspirednavigationValues = new string[GetBeinspiredNavigationCount()];
+            for (int i = 1; i < GetBeinspiredNavigationCount(); i++)
             {
-                beinspirednavigationValues[i] = _driver.FindElement(By.XPath("//div[@class = 'nav']/a[" + (i+1) +"]")).Text;
+                beinspirednavigationValues[i] = _driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[" +(i+1) + "]")).Text;
             }
             return beinspirednavigationValues;
         }

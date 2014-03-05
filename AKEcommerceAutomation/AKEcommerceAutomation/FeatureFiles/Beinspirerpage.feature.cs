@@ -75,10 +75,7 @@ this.ScenarioSetup(scenarioInfo);
 testRunner.Given("I am on the AK homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
 testRunner.When("I click on BeInspired tab on homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 13
-testRunner.Then("Be-inspired Navigation Links displayed:", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table1.AddRow(new string[] {
@@ -89,6 +86,9 @@ testRunner.Then("Be-inspired Navigation Links displayed:", ((string)(null)), ((T
                         "WHERE TO STAY"});
             table1.AddRow(new string[] {
                         "MY PINBOARD"});
+#line 13
+testRunner.Then("Be-inspired Navigation Links displayed:", ((string)(null)), table1, "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
     }

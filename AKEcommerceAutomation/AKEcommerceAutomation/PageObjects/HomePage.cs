@@ -63,8 +63,7 @@ namespace AKEcommerceAutomation.PageObjects
 
         public BeInspiredPage GetBeInspiredPage()
         {
-            _driver.FindElement(HomePageElements.BeInspiredLink).Click();
-            driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
+            _driver.FindElement(By.XPath("//*[@id='when-to-go']")).Click();
             return new BeInspiredPage(_driver);
         }
         

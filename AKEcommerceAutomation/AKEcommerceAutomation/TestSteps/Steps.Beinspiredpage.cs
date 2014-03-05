@@ -11,7 +11,7 @@ namespace AKEcommerceAutomation.TestSteps
 {
 
     [Binding]
-    public class BeInspiredPage : SeleniumTestBase
+    public class BeInspiredSteps : SeleniumTestBase
     {
         
         public HomePage homePage;
@@ -31,16 +31,16 @@ namespace AKEcommerceAutomation.TestSteps
         }
 
         [Then(@"Be-inspired Navigation Links displayed:")]
-        public void ThenBeInspiredNavigationLinksDisplayed(Table table)
+        public void ThenBe_InspiredNavigationLinksDisplayed(Table table)
         {
-            var beinspirednavigationValues = homePage.GetBeInspiredPage().GetBeinspiredNavigationValues();
-            for (int i = 1; i <= homePage.GetBeInspiredPage().GetBeinspiredNavugationCount(); i++)
+            var beinspirednavigationValues = beinspiredPage.GetBeinspiredNavigationValues();
+            for (int i = 1; i <= beinspiredPage.GetBeinspiredNavigationCount(); i++)
             {
                 Assert.AreEqual(table.Rows[i]["Value"], beinspirednavigationValues[i]);
             }
             
         }
 
-        
-    }
+
+       }
 }
