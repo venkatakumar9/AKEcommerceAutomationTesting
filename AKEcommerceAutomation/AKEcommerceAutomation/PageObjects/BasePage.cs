@@ -321,5 +321,10 @@ namespace AKEcommerceAutomation.PageObjects
             });
             return myDynamicElement;
         }
+
+        public void InvokeBrowser()
+        {
+            Current().Navigate().GoToUrl(Url);
+        }
     }
 }

@@ -91,6 +91,27 @@ testRunner.Then("Be-inspired Navigation Links displayed:", ((string)(null)), tab
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Delete the Inspirer Instructional text and cookies to re-enable the Inspirer Inst" +
+            "ructional text")]
+        public virtual void DeleteTheInspirerInstructionalTextAndCookiesToRe_EnableTheInspirerInstructionalText()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete the Inspirer Instructional text and cookies to re-enable the Inspirer Inst" +
+                    "ructional text", ((string[])(null)));
+#line 20
+this.ScenarioSetup(scenarioInfo);
+#line 21
+testRunner.Given("I am on beinspired page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 22
+testRunner.When("I close the Inspirer Instructional text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+testRunner.And("I delete all the cookies in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+testRunner.Then("Inspirer Instructional text re-appears.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

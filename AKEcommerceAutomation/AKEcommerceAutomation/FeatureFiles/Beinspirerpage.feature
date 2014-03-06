@@ -17,3 +17,10 @@ Then Be-inspired Navigation Links displayed:
 | WHERE TO STAY      |
 | MY PINBOARD        |
 
+Scenario: Delete the Inspirer Instructional text and cookies to re-enable the Inspirer Instructional text
+Given I am on beinspired page
+When I close the Inspirer Instructional text
+And I delete all the cookies in the browser
+Then Inspirer Instructional text re-appears.
+
+

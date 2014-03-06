@@ -35,19 +35,22 @@ namespace AKEcommerceAutomation.PageObjects
             var beinspirednavigationValues = new string[GetBeinspiredNavigationCount()];
             for (int i = 0; i < GetBeinspiredNavigationCount(); i++)
             {
-               
-                    beinspirednavigationValues[i] =
+               beinspirednavigationValues[i] =
                         _driver.FindElement(By.XPath("//div[@class = 'nav']/a[" + (i + 1) + "]")).Text;
                 if (i == 3)
                 {
                    string[] split = beinspirednavigationValues[3].Split('\n');
                     beinspirednavigationValues[3] = split[1];
                 }
-              
-
-
             }
             return beinspirednavigationValues;
         }
+
+        public BeInspiredPage Closeinspirertext()
+        {
+            _driver.FindElement(By.CssSelector(".closeInspirerInstructionalText.close")).Click();
+            return new BeInspiredPage(_driver);
+        }
+
     }
 }

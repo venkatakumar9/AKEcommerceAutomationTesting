@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -28,7 +29,8 @@ namespace AKEcommerceAutomation.TestSteps
         [When(@"I click on BeInspired tab on homepage")]
         public void WhenIClickonbeinspiredlink()
         {
-            homePage.GetBeInspiredPage();
+            homePage.GetBeInspiredPage()
+                .GetInspirerInstructionalText();
         }
 
         [Then(@"Be-inspired Navigation Links displayed:")]
@@ -40,6 +42,40 @@ namespace AKEcommerceAutomation.TestSteps
                 Assert.AreEqual(table.Rows[i]["Value"], beinspirednavigationValues[i]);
             }
             
+        }
+
+        // Delete the Inspirer Instructional text,
+        // 
+        [Given(@"I am on beinspired page")]
+        public void GivenIAmOnBeinspiredPage()
+        {
+            homePage.GetBeInspiredPage();
+            ScenarioContext.Current.Set(beinspiredPage);
+        }
+
+        [When(@"I close the Inspirer Instructional text")]
+        public void WhenICloseTheInspirerInstructionalText()
+        {
+            beinspiredPage.Closeinspirertext();
+            //ScenarioContext.Current.Pending();
+        }
+
+        [When(@"I delete all the cookies in the browser")]
+        public void WhenIDeleteAllTheCookiesInTheBrowser()
+        {
+            driver.Manage().Cookies.DeleteAllCookies();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+        }
+
+        [Then(@"Inspirer Instructional text re-appears\.")]
+        public void ThenInspirerInstructionalTextRe_Appears_()
+        {
+            driver.Navigate().Refresh();
+            //driver.WaitForPageToLoad();
+            homePage.GetBeInspiredPage();
+            beinspiredPage.GetInspirerInstructionalText();
+            //Assert.IsTrue(beinspiredPage.GetInspirerInstructionalText());
+            //Assert.AreEqual(beinspiredPage.GetInspirerInstructionalText());
         }
 
 
