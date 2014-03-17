@@ -23,4 +23,13 @@ When I close the Inspirer Instructional text
 And I delete all the cookies in the browser
 Then Inspirer Instructional text re-appears.
 
+Scenario: Verify Inspirer Categories in Be-inspired page
+When I navigate to beinspired page
+Then inspirer category images appears
+
+Scenario: verifying inspirer images when clicked on a category
+When I click on inspirer category
+Then Inspirer images should appear
+
+
 

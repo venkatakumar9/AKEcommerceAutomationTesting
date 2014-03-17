@@ -112,6 +112,36 @@ testRunner.Then("Inspirer Instructional text re-appears.", ((string)(null)), ((T
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify Inspirer Categories in Be-inspired page")]
+        public virtual void VerifyInspirerCategoriesInBe_InspiredPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Inspirer Categories in Be-inspired page", ((string[])(null)));
+#line 26
+this.ScenarioSetup(scenarioInfo);
+#line 27
+testRunner.When("I navigate to beinspired page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+testRunner.Then("inspirer category images appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("verifying inspirer images when clicked on a category")]
+        public virtual void VerifyingInspirerImagesWhenClickedOnACategory()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("verifying inspirer images when clicked on a category", ((string[])(null)));
+#line 30
+this.ScenarioSetup(scenarioInfo);
+#line 31
+testRunner.When("I click on inspirer category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+testRunner.Then("Inspirer images should appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

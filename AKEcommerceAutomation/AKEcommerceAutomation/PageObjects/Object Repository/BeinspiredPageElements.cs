@@ -15,6 +15,6 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
         /// </summary>
         public static string BeInspiredTitle = "BeInspired";
 
-        public static By navlinks = By.CssSelector("[class='nav'] a");
+        public const string navlinks = "[class='nav'] a";
     }
 }

@@ -19,7 +19,7 @@ namespace AKEcommerceAutomation.PageObjects
         {
             return driver.Title;
         }
-
+        public const string backlinkininspirerimagesSection = "//div[@class = 'inspirer-back places-to-visit']/a/span";
         public bool GetInspirerInstructionalText()
         {
             return _driver.FindElement(By.XPath("//*[@id='inspirerInstructionalText']/div/p")).Displayed;
@@ -51,6 +51,19 @@ namespace AKEcommerceAutomation.PageObjects
             _driver.FindElement(By.CssSelector(".closeInspirerInstructionalText.close")).Click();
             return new BeInspiredPage(_driver);
         }
+
+       public void GetInspirerCategoryimagesSection()
+        {
+            int inspirerCategoryimages =
+                _driver.FindElements(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/div/img"))
+                    .Count;
+            for (int i = 1; i <= inspirerCategoryimages; i++)
+            {
+                Console.WriteLine(driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div["+i+"]/div/section/article/a/div/img")).Text);
+            }
+        }
+
+       
 
     }
 }
