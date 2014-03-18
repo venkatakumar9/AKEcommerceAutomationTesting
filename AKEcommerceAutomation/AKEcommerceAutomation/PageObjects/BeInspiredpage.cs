@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AKEcommerceAutomation.PageObjects.Object_Repository;
+using NUnit.Core;
 using OpenQA.Selenium;
 using System;
 
@@ -19,10 +20,13 @@ namespace AKEcommerceAutomation.PageObjects
         {
             return driver.Title;
         }
-        public const string backlinkininspirerimagesSection = "//div[@class = 'inspirer-back places-to-visit']/a/span";
+        public const string inspirerbackplacestovisit = "//div[@class = 'inspirer-back places-to-visit']/a/span";
+        public const string inspirerbackthingstosee = "//div[@class = 'inspirer-back things-to-see']/a/span";
+        public const string inspirerbackwheretostay = "//div[@class = 'inspirer-back where-to-stay']/a/span";
         public bool GetInspirerInstructionalText()
         {
             return _driver.FindElement(By.XPath("//*[@id='inspirerInstructionalText']/div/p")).Displayed;
+            
         }
 
        public int GetBeinspiredNavigationCount()
@@ -62,6 +66,22 @@ namespace AKEcommerceAutomation.PageObjects
                 Console.WriteLine(driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div["+i+"]/div/section/article/a/div/img")).Text);
             }
         }
+
+        public string InspirerCategory()
+        {
+           return _driver.FindElement(By.XPath("//div[@class = 'inspirer-back places-to-visit']/a/span")).Text;
+        }
+
+        public int GetInspirerImages_Category()
+        {
+            int inspirerimages = _driver.FindElements(By.XPath("//div[@class='pin-container']")).Count;
+
+            Console.WriteLine(inspirerimages);
+
+           return inspirerimages;
+        }
+
+       
 
        
 

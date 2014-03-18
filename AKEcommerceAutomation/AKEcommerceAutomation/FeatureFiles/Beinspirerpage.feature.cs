@@ -129,16 +129,46 @@ testRunner.Then("inspirer category images appears", ((string)(null)), ((TechTalk
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("verifying inspirer images when clicked on a category")]
-        public virtual void VerifyingInspirerImagesWhenClickedOnACategory()
+        [NUnit.Framework.DescriptionAttribute("verifying inspirer images when clicked on PLACES TO VISIT category")]
+        public virtual void VerifyingInspirerImagesWhenClickedOnPLACESTOVISITCategory()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("verifying inspirer images when clicked on a category", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("verifying inspirer images when clicked on PLACES TO VISIT category", ((string[])(null)));
 #line 30
 this.ScenarioSetup(scenarioInfo);
 #line 31
-testRunner.When("I click on inspirer category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on Places to visit inspirer category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32
 testRunner.Then("Inspirer images should appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verifying inspirer images when clicked on THINGS TO SEE & DO category")]
+        public virtual void VerifyingInspirerImagesWhenClickedOnTHINGSTOSEEDOCategory()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying inspirer images when clicked on THINGS TO SEE & DO category", ((string[])(null)));
+#line 34
+this.ScenarioSetup(scenarioInfo);
+#line 35
+testRunner.When("I click on THINGS TO SEE AND DO inspirer category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
+testRunner.Then("Inspirer images appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verifying inspirer images when clicked on WHERE TO STAY category")]
+        public virtual void VerifyingInspirerImagesWhenClickedOnWHERETOSTAYCategory()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying inspirer images when clicked on WHERE TO STAY category", ((string[])(null)));
+#line 38
+this.ScenarioSetup(scenarioInfo);
+#line 39
+testRunner.When("I click on where to stay inspirer category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+testRunner.Then("where to stay inspirer images displays", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

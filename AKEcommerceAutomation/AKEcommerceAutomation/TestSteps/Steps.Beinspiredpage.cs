@@ -95,29 +95,81 @@ namespace AKEcommerceAutomation.TestSteps
             //ScenarioContext.Current.Pending();
         }
 
-       //verifying inspirer images when clicked on inspirer category
+       //verifying inspirer images when clicked on Places TO Vist inspirer category
 
-        [When(@"I click on inspirer category")]
-        public void WhenIClickOnInspirerCategory()
+        [When(@"I click on Places to visit inspirer category")]
+        public void WhenIClickOnPlacesToVisitInspirerCategory()
         {
             homePage.GetBeInspiredPage().GetInspirerInstructionalText();
+            Assert.AreEqual("MOUNTAINS AND HIGHLANDS", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Text);
             driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Click();
-            //ScenarioContext.Current.Pending();
         }
 
         [Then(@"Inspirer images should appear")]
         public void ThenInspirerImagesShouldAppear()
         {
+
             Assert.IsTrue(driver.FindElement(By.XPath(BeinspiredPageElements.navlinks)).Displayed);
-            Assert.IsTrue(driver.FindElement(By.XPath(BeInspiredPage.backlinkininspirerimagesSection)).Displayed);
-            driver.FindElement(By.XPath(BeInspiredPage.backlinkininspirerimagesSection)).Click();
-            //var inspirerbackarrow = driver.FindElement(By.XPath("//div[@class = 'inspirer-back places-to-visit']/a")).Displayed;
+            Assert.IsTrue(driver.FindElement(By.XPath(BeInspiredPage.inspirerbackplacestovisit)).Displayed);
+            Assert.AreEqual("MOUNTAINS AND HIGHLANDS",
+            driver.FindElement(
+                    By.XPath("//*[@id='infiniteScrollItem']/article/section[1]/div[1]/div[1]/div[1]/div/a/h2")).Text);
+            int x = new BeInspiredPage(driver).GetInspirerImages_Category();
+            driver.FindElement(By.XPath(BeInspiredPage.inspirerbackplacestovisit)).Click();
+            beinspiredPage.GetInspirerCategoryimagesSection();
+           
+        }
 
+        ////verifying inspirer images when clicked on Things To See & Do inspirer category
 
-            //ScenarioContext.Current.Pending();
+        [When(@"I click on THINGS TO SEE AND DO inspirer category")]
+        public void WhenIClickOnTHINGSTOSEEANDDOInspirerCategory()
+        {
+            homePage.GetBeInspiredPage();
+            //driver.WaitForPageToLoad();
+            //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[2]")).Click();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3000));
+            Assert.AreEqual("PEOPLE & CULTURE", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span")).Text);
+            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span")).Click();
+        }
+
+        [Then(@"Inspirer images appear")]
+        public void ThenInspirerImagesAppear()
+        {
+            Assert.IsTrue(driver.FindElement(By.XPath(BeinspiredPageElements.navlinks)).Displayed);
+            Assert.IsTrue(driver.FindElement(By.XPath(BeInspiredPage.inspirerbackthingstosee)).Displayed);
+            Assert.AreEqual("PEOPLE & CULTURE", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/article/section[1]/div[1]/div[1]/div[1]/div/a/h2")).Text);
+            int y = new BeInspiredPage(driver).GetInspirerImages_Category();
+            driver.FindElement(By.XPath(BeInspiredPage.inspirerbackthingstosee)).Click();
+        }
+
+        //verifying inspirer images when clicked on Where To Stay inspirer category
+
+        [When(@"I click on where to stay inspirer category")]
+        public void WhenIClickOnWhereToStayInspirerCategory()
+        {
+            homePage.GetBeInspiredPage();
+            //driver.WaitForPageToLoad();
+            //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[3]")).Click();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(300));
+            Assert.AreEqual("HOTELS", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Text);
+            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Click();
+        }
+  
+        [Then(@"where to stay inspirer images displays")]
+        public void ThenWhereToStayInspirerImagesDisplays()
+        {
+            Assert.IsTrue(driver.FindElement(By.XPath(BeinspiredPageElements.navlinks)).Displayed);
+            Assert.IsTrue(driver.FindElement(By.XPath(BeInspiredPage.inspirerbackwheretostay)).Displayed);
+            Assert.AreEqual("HOTEL", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/article/section/div[1]/div[1]/div[1]/div/a/h2")).Text);
+            int y = new BeInspiredPage(driver).GetInspirerImages_Category();
+            driver.FindElement(By.XPath(BeInspiredPage.inspirerbackwheretostay)).Click();
         }
 
 
-
+        
        }
+
 }

@@ -27,9 +27,17 @@ Scenario: Verify Inspirer Categories in Be-inspired page
 When I navigate to beinspired page
 Then inspirer category images appears
 
-Scenario: verifying inspirer images when clicked on a category
-When I click on inspirer category
+Scenario: verifying inspirer images when clicked on PLACES TO VISIT category
+When I click on Places to visit inspirer category
 Then Inspirer images should appear
+
+Scenario: Verifying inspirer images when clicked on THINGS TO SEE & DO category
+When I click on THINGS TO SEE AND DO inspirer category
+Then Inspirer images appear
+
+Scenario: Verifying inspirer images when clicked on WHERE TO STAY category
+When I click on where to stay inspirer category
+Then where to stay inspirer images displays
 
 
 
