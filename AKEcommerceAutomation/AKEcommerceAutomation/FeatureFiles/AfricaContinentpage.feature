@@ -44,3 +44,4 @@ Scenario: When I Click on Africa in Megamenu I reach the Africa Continent Page
  Scenario: Verifying Carousel Images in African Continet page
  Given I reach Africa Continent page
  Then the carousel Image is present
+

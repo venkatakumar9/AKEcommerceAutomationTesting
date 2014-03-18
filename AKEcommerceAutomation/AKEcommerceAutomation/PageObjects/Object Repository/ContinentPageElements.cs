@@ -4,10 +4,8 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-
 namespace AKEcommerceAutomation.PageObjects.Object_Repository
 {
-
     using OpenQA.Selenium;
 
     public class ContinentPageElements
@@ -27,5 +25,10 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
         /// </summary>
         public static By southAfrica = By.CssSelector("area[alt='South Africa']");
 
+        /// <summary>
+        /// ID of the Carousel Image
+        /// </summary>
+        public static By CarouselImage = By.Id("Content_T7A9807F6017_Col00");       
+        
     }
 }

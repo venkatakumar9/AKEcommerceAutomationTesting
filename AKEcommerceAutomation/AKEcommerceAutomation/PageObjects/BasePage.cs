@@ -15,8 +15,7 @@ namespace AKEcommerceAutomation.PageObjects
     public class BasePage : SeleniumTestBase
     {
         protected IWebDriver _driver;
-        //private IBasePageStrategy _skin;
-
+      
         protected BasePage(IWebDriver driver)
 
         {
@@ -216,22 +215,17 @@ namespace AKEcommerceAutomation.PageObjects
 
         public string[] Navlink_pagetitles(By elements)
         {
-            string[] title = null;
             var countryandcontinentname = new string[_driver.FindElements(elements).Count];
             for (int i = 0; i < _driver.FindElements(elements).Count; )
-            {
-                waitforelement(elements, 10);
-
-                foreach (var country in driver.FindElements(elements))
+            { 
+                foreach(IWebElement navlink in driver.FindElements(ContinentPageElements.Navigation))
                 {
-                    country.Click();
-                    title[i] = driver.Title;
-                    i++;
-                    driver.Navigate().Back();
-                }
+                    countryandcontinentname[i] = navlink.Text;
+                     i++;                            
+                     
+                }                              
             }
-            return (title);
-
+            return (countryandcontinentname);
         }
 
         //JourneyPage 

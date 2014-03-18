@@ -27,7 +27,7 @@
  Then I navigate to Destinations homepage
 
   Scenario: Verify Sub Navigation Menu in Homepage
- When I am in the AK Homepage
+ #When I am in the AK Homepage
  Then SubMenu Appears:
  |Value|
  |DESTINATION|
