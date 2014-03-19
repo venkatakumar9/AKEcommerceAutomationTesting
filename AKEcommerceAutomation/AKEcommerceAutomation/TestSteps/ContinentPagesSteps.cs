@@ -96,5 +96,22 @@ namespace AKEcommerceAutomation
         {
             driver.FindElement(ContinentPageElements.CarouselImage);
         }
+
+        [When(@"I Click on the Countries link")]
+        public void WhenIClickOnTheCountriesLink()
+        {
+            driver.FindElement(By.LinkText("COUNTRIES")).Click();
+        }
+
+        [Then(@"All the countries with holiday packages are shown")]
+        public void ThenAllTheCountriesWithHolidayPackagesAreShown()
+        {
+            string[] countries = new ContinentPage(driver).countries();
+            foreach (string country in countries)
+            {
+                Console.WriteLine(country);
+            }
+        }
+
     }
 }

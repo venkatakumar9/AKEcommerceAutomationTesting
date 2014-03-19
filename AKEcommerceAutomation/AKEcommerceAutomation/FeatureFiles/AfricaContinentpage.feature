@@ -45,3 +45,7 @@ Scenario: When I Click on Africa in Megamenu I reach the Africa Continent Page
  Given I reach Africa Continent page
  Then the carousel Image is present
 
+ Scenario: Verify the Countries 
+ Given I reach Africa Continent page
+ When I Click on the Countries link
+ Then All the countries with holiday packages are shown
