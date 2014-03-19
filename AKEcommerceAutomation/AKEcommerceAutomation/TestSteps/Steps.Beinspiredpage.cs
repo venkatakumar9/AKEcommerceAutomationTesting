@@ -127,9 +127,8 @@ namespace AKEcommerceAutomation.TestSteps
         {
             homePage.GetBeInspiredPage();
             //driver.WaitForPageToLoad();
-            //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[2]")).Click();
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3000));
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Assert.AreEqual("PEOPLE & CULTURE", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span")).Text);
             driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span")).Click();
         }
@@ -153,7 +152,7 @@ namespace AKEcommerceAutomation.TestSteps
             //driver.WaitForPageToLoad();
             //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[3]")).Click();
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(300));
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
             Assert.AreEqual("HOTELS", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Text);
             driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Click();
         }
@@ -163,7 +162,7 @@ namespace AKEcommerceAutomation.TestSteps
         {
             Assert.IsTrue(driver.FindElement(By.XPath(BeinspiredPageElements.navlinks)).Displayed);
             Assert.IsTrue(driver.FindElement(By.XPath(BeInspiredPage.inspirerbackwheretostay)).Displayed);
-            Assert.AreEqual("HOTEL", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/article/section/div[1]/div[1]/div[1]/div/a/h2")).Text);
+            Assert.AreEqual("HOTELS", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/article/section/div[1]/div[1]/div[1]/div/a/h2")).Text);
             int y = new BeInspiredPage(driver).GetInspirerImages_Category();
             driver.FindElement(By.XPath(BeInspiredPage.inspirerbackwheretostay)).Click();
         }
