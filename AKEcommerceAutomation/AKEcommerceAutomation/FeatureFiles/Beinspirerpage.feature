@@ -39,5 +39,9 @@ Scenario: Verifying inspirer images when clicked on WHERE TO STAY category
 When I click on where to stay inspirer category
 Then where to stay inspirer images displays
 
+Scenario: Verifying the pinboard count in Mypinboard and in Right Hand Side Bar when user adds any image to Pinboard.
+When I add an image to my pinboard
+Then Pinboard count appears on My Pinboard and on Right Hand Bar
+
 
 

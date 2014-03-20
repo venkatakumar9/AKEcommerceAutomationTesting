@@ -172,6 +172,23 @@ testRunner.Then("where to stay inspirer images displays", ((string)(null)), ((Te
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verifying the pinboard count in Mypinboard and in Right Hand Side Bar when user a" +
+            "dds any image to Pinboard.")]
+        public virtual void VerifyingThePinboardCountInMypinboardAndInRightHandSideBarWhenUserAddsAnyImageToPinboard_()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying the pinboard count in Mypinboard and in Right Hand Side Bar when user a" +
+                    "dds any image to Pinboard.", ((string[])(null)));
+#line 42
+this.ScenarioSetup(scenarioInfo);
+#line 43
+testRunner.When("I add an image to my pinboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 44
+testRunner.Then("Pinboard count appears on My Pinboard and on Right Hand Bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

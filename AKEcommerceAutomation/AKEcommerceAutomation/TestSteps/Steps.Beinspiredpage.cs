@@ -3,6 +3,7 @@ using System.Threading;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
@@ -126,8 +127,9 @@ namespace AKEcommerceAutomation.TestSteps
         public void WhenIClickOnTHINGSTOSEEANDDOInspirerCategory()
         {
             homePage.GetBeInspiredPage();
-            //driver.WaitForPageToLoad();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[2]")).Click();
+            //new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists((By.Name("People & Culture"))));
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Assert.AreEqual("PEOPLE & CULTURE", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span")).Text);
             driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span")).Click();
@@ -150,9 +152,9 @@ namespace AKEcommerceAutomation.TestSteps
         {
             homePage.GetBeInspiredPage();
             //driver.WaitForPageToLoad();
-            //driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[3]")).Click();
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
             Assert.AreEqual("HOTELS", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Text);
             driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Click();
         }
@@ -167,6 +169,26 @@ namespace AKEcommerceAutomation.TestSteps
             driver.FindElement(By.XPath(BeInspiredPage.inspirerbackwheretostay)).Click();
         }
 
+        //Verifying the pinboard count in Mypinboard and in Right Hand Side Bar when user adds any image to Pinboard.
+
+        [When(@"I add an image to my pinboard")]
+        public void WhenIAddAnImageToMyPinboard()
+        {
+            homePage.GetBeInspiredPage().GetInspirerInstructionalText();
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
+            wait.Until(ExpectedConditions.ElementExists(By.XPath("//div[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span"))).Click();
+            homePage.mouseover(By.Id("inspirerImagePin-d91ff12c-e335-6b70-93c7-ff0000a0f14c"));
+            driver.FindElement(By.Id("inspirerImagePin-d91ff12c-e335-6b70-93c7-ff0000a0f14c")).Click();
+
+        }
+
+        [Then(@"Pinboard count appears on My Pinboard and on Right Hand Bar")]
+        public void ThenPinboardCountAppearsOnMyPinboardAndOnRightHandBar()
+        {
+            int PinboardCount = driver.FindElements(By.XPath("//span[@class = 'nav-count-wrapper']")).Count;
+            Assert.AreEqual(PinboardCount, driver.FindElement(By.XPath("//span[@class = 'sidePinboardValue nav-count']")).Text);
+            //ScenarioContext.Current.Pending();
+        }
 
         
        }
