@@ -106,8 +106,8 @@ namespace AKEcommerceAutomation
         [Then(@"All the countries with holiday packages are shown")]
         public void ThenAllTheCountriesWithHolidayPackagesAreShown()
         {
-            string[] countries = new ContinentPage(driver).countries();
-            foreach (string country in countries)
+            var countries = new ContinentPage(driver).countries();
+            foreach (var country in countries)
             {
                 Console.WriteLine(country);
             }

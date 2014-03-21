@@ -66,28 +66,17 @@ namespace AKEcommerceAutomation.FeatureFiles
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add two numbers")]
+        [NUnit.Framework.DescriptionAttribute("When I Click on Africa in Megamenu I reach the Africa Continent Page")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void AddTwoNumbers()
+        public virtual void WhenIClickOnAfricaInMegamenuIReachTheAfricaContinentPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I Click on Africa in Megamenu I reach the Africa Continent Page", new string[] {
                         "mytag"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("When I Click on Africa in Megamenu I reach the Africa Continent Page")]
-        public virtual void WhenIClickOnAfricaInMegamenuIReachTheAfricaContinentPage()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When I Click on Africa in Megamenu I reach the Africa Continent Page", ((string[])(null)));
-#line 13
-this.ScenarioSetup(scenarioInfo);
-#line 14
+#line 8
  testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 15
+#line 9
  testRunner.When("I Mouse Over on Destinations Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -102,11 +91,11 @@ this.ScenarioSetup(scenarioInfo);
                         "CARIBBEAN"});
             table1.AddRow(new string[] {
                         "EUROPE"});
-#line 16
+#line 10
  testRunner.Then("The Meganav Appears", ((string)(null)), table1, "Then ");
-#line 23
+#line 17
  testRunner.When("I click on The Africa Continent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
+#line 18
  testRunner.Then("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -117,9 +106,9 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyingTheNavigationInTheAfricanContinentPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying the navigation in the African continent page", ((string[])(null)));
-#line 26
+#line 20
  this.ScenarioSetup(scenarioInfo);
-#line 27
+#line 21
   testRunner.Given("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -134,11 +123,11 @@ this.ScenarioSetup(scenarioInfo);
                         "TAILOR MADE JOURNEYS"});
             table2.AddRow(new string[] {
                         "INSIDER ACCESS"});
-#line 28
+#line 22
   testRunner.Then("The Navigation links are present", ((string)(null)), table2, "Then ");
-#line 35
+#line 29
   testRunner.When("I click on the navigation links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 30
   testRunner.Then("I reach the specific pages in the continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -149,15 +138,15 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyingVectorMapInTheAfricanContinentPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying Vector map in the African Continent page", ((string[])(null)));
-#line 38
+#line 32
  this.ScenarioSetup(scenarioInfo);
-#line 39
+#line 33
  testRunner.Given("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 40
+#line 34
  testRunner.Then("Africa Country Vector map is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 41
+#line 35
  testRunner.When("I click on SouthAfrica in Vector map", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 42
+#line 36
  testRunner.Then("I reach South Africa Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -168,11 +157,11 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyingCarouselImagesInAfricanContinetPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying Carousel Images in African Continet page", ((string[])(null)));
-#line 44
+#line 38
  this.ScenarioSetup(scenarioInfo);
-#line 45
+#line 39
  testRunner.Given("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 46
+#line 40
  testRunner.Then("the carousel Image is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -183,14 +172,71 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyTheCountries()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the Countries", ((string[])(null)));
-#line 48
+#line 42
  this.ScenarioSetup(scenarioInfo);
-#line 49
+#line 43
  testRunner.Given("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 50
+#line 44
  testRunner.When("I Click on the Countries link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 51
+#line 45
  testRunner.Then("All the countries with holiday packages are shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Reaching the holiday Countries from the Continenet page")]
+        public virtual void ReachingTheHolidayCountriesFromTheContinenetPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reaching the holiday Countries from the Continenet page", ((string[])(null)));
+#line 47
+ this.ScenarioSetup(scenarioInfo);
+#line 48
+ testRunner.Given("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 49
+ testRunner.When("I Click on the Countries link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
+ testRunner.When("I click on the country image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 51
+ testRunner.Then("I reach the specific country page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("verify the Guided Group Journeys")]
+        public virtual void VerifyTheGuidedGroupJourneys()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("verify the Guided Group Journeys", ((string[])(null)));
+#line 53
+ this.ScenarioSetup(scenarioInfo);
+#line 54
+ testRunner.Given("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 55
+ testRunner.When("I click on Guided Group Journey Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 56
+ testRunner.Then("All the Guided Group Journeys Appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Reaching the Guided Group Journey page from the continet page")]
+        public virtual void ReachingTheGuidedGroupJourneyPageFromTheContinetPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reaching the Guided Group Journey page from the continet page", ((string[])(null)));
+#line 58
+ this.ScenarioSetup(scenarioInfo);
+#line 59
+ testRunner.Given("I reach Africa Continent page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 60
+ testRunner.When("I click on Guided Group Journey Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 61
+ testRunner.Then("All the Guided Group Journeys Appear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 62
+ testRunner.When("I click on Guided Group Journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 63
+ testRunner.Then("I reach the Guided Group Journey Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

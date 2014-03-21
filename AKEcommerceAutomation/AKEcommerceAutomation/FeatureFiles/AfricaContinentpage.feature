@@ -4,12 +4,6 @@
 	I want to be told the sum of two numbers
 
 @mytag
-Scenario: Add two numbers
-	#Given I have entered 50 into the calculator
-	#And I have entered 70 into the calculator
-	#When I press add
-	#Then the result should be 120 on the screen
-
 Scenario: When I Click on Africa in Megamenu I reach the Africa Continent Page
  Given I am on the homepage
  When I Mouse Over on Destinations Link
@@ -49,3 +43,23 @@ Scenario: When I Click on Africa in Megamenu I reach the Africa Continent Page
  Given I reach Africa Continent page
  When I Click on the Countries link
  Then All the countries with holiday packages are shown
+
+ Scenario: Reaching the holiday Countries from the Continenet page
+ Given I reach Africa Continent page
+ When I Click on the Countries link
+ When I click on the country image 
+ Then I reach the specific country page
+
+ Scenario: verify the Guided Group Journeys
+ Given I reach Africa Continent page
+ When I click on Guided Group Journey Link
+ Then All the Guided Group Journeys Appear
+
+ Scenario: Reaching the Guided Group Journey page from the continet page
+ Given I reach Africa Continent page
+ When I click on Guided Group Journey Link
+ Then All the Guided Group Journeys Appear
+ When I click on Guided Group Journey
+ Then I reach the Guided Group Journey Page
+
+ 
