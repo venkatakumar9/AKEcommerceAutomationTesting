@@ -1,0 +1,22 @@
+﻿Feature: BotswanaCountry Page
+	In order to avoid silly mistakes
+	As a math idiot
+	I want to be told the sum of two numbers
+
+@mytag
+Scenario: Verify the navigation links in the country page
+Given I reach the Botswana Page
+Then The Navigation Links are present
+|Value|
+| OVERVIEW              |
+| AREAS                 |
+| GUIDED GROUP JOURNEYS |
+| TAILOR MADE JOURNEYS  |
+| ACCOMMODATIONS         |
+| INSIDER ACCESS        |
+| USEFUL INFO           |
+
+Scenario: Verify the map in the Country Page
+Given I reach the Botswana Page
+When I click on the overview tab
+Then the map is present
