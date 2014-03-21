@@ -195,12 +195,27 @@ testRunner.Then("Pinboard count appears on My Pinboard and on Right Hand Bar", (
         public virtual void NavigatingToTheLightBoxAndVerifyingSuggestedJourneys()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigating to the Light box and verifying suggested Journeys", ((string[])(null)));
+#line 46
+this.ScenarioSetup(scenarioInfo);
+#line 47
+testRunner.When("I Click on Find Out More link on an image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 48
+testRunner.Then("Light box appears with Suggested Journeys", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verifying MyPinboard toolbar links.")]
+        public virtual void VerifyingMyPinboardToolbarLinks_()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying MyPinboard toolbar links.", ((string[])(null)));
 #line 50
 this.ScenarioSetup(scenarioInfo);
 #line 51
-testRunner.When("I Click on Find Out More link on an image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I click on MyPinboard Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
-testRunner.Then("Light box appears with Suggested Journeys", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("MyPinboard toolbar links appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

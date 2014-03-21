@@ -43,13 +43,13 @@ Scenario: Verifying the pinboard count in Mypinboard and in Right Hand Side Bar 
 When I add an image to my pinboard
 Then Pinboard count appears on My Pinboard and on Right Hand Bar
 
-#Scenario: Verifying MyPinboard toolbar links.
-#When I click on MyPinboard Page
-#Then MyPinboard toolbar links appears
-
 Scenario: Navigating to the Light box and verifying suggested Journeys
 When I Click on Find Out More link on an image
 Then Light box appears with Suggested Journeys
+
+Scenario: Verifying MyPinboard toolbar links.
+When I click on MyPinboard Page
+Then MyPinboard toolbar links appears
 
 
 

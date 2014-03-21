@@ -260,5 +260,22 @@ namespace AKEcommerceAutomation.TestSteps
             inspirerimagespage.GetTailorMadeJourneys_SuggestedJourneysinlightbox();
             inspirerimagespage.CloseLightBox();
         }
+
+        /// <summary>
+        /// Verifying MyPinboard toolbar links.
+        /// </summary>     
+        
+        [When(@"I click on MyPinboard Page")]
+        public void WhenIClickOnMyPinboardPage()
+        {
+           // ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"MyPinboard toolbar links appears")]
+        public void ThenMyPinboardToolbarLinksAppears()
+        {
+            // ScenarioContext.Current.Pending();
+        }
+
     }
 }
