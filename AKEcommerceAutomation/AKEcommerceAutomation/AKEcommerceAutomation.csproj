@@ -126,6 +126,7 @@
     <Compile Include="Framework\SeleniumTestBase.cs" />
     <Compile Include="Framework\WaitFor.cs" />
     <Compile Include="PageObjects\BeInspiredPage.cs" />
+    <Compile Include="PageObjects\BeInspired_inspirerpage.cs" />
     <Compile Include="PageObjects\DestinationsPage.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="PageObjects\HomePage.cs" />

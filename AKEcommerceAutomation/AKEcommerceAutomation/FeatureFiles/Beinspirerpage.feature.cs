@@ -189,6 +189,21 @@ testRunner.Then("Pinboard count appears on My Pinboard and on Right Hand Bar", (
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Navigating to the Light box and verifying suggested Journeys")]
+        public virtual void NavigatingToTheLightBoxAndVerifyingSuggestedJourneys()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Navigating to the Light box and verifying suggested Journeys", ((string[])(null)));
+#line 50
+this.ScenarioSetup(scenarioInfo);
+#line 51
+testRunner.When("I Click on Find Out More link on an image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 52
+testRunner.Then("Light box appears with Suggested Journeys", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

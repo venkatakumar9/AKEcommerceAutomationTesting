@@ -23,6 +23,8 @@ namespace AKEcommerceAutomation.PageObjects
         public const string inspirerbackplacestovisit = "//div[@class = 'inspirer-back places-to-visit']/a/span";
         public const string inspirerbackthingstosee = "//div[@class = 'inspirer-back things-to-see']/a/span";
         public const string inspirerbackwheretostay = "//div[@class = 'inspirer-back where-to-stay']/a/span";
+
+
         public bool GetInspirerInstructionalText()
         {
             return _driver.FindElement(By.XPath("//*[@id='inspirerInstructionalText']/div/p")).Displayed;
@@ -59,11 +61,11 @@ namespace AKEcommerceAutomation.PageObjects
        public void GetInspirerCategoryimagesSection()
         {
             int inspirerCategoryimages =
-                _driver.FindElements(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/div/img"))
+                _driver.FindElements(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span"))
                     .Count;
             for (int i = 1; i <= inspirerCategoryimages; i++)
             {
-                Console.WriteLine(driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div["+i+"]/div/section/article/a/div/img")).Text);
+                Console.WriteLine(driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div["+i+"]/div/section/article/a/span[2]/span")).Text);
             }
         }
 
@@ -81,9 +83,6 @@ namespace AKEcommerceAutomation.PageObjects
            return inspirerimages;
         }
 
-       
-
-       
-
+        
     }
 }

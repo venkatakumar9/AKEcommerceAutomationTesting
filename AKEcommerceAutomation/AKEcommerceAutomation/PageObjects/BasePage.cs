@@ -145,10 +145,10 @@ namespace AKEcommerceAutomation.PageObjects
 
         public void FooterLinks()
         {
-            int footerlinks = _driver.FindElements(By.XPath("//*[@id='footer']/div[8]/div/div/footer/ul/li/a")).Count;
+            int footerlinks = _driver.FindElements(By.XPath("//*[@id='footer']/div/div/div/footer/ul/li/a")).Count;
             for (int i = 1; i <= footerlinks; i++)
             {
-                Console.WriteLine(driver.FindElement(By.XPath("//*[@id='footer']/div[8]/div/div/footer/ul/li["+i+"]/a")).Text);
+                Console.WriteLine(driver.FindElement(By.XPath("//*[@id='footer']/div/div/div/footer/ul/li["+i+"]/a")).Text);
             }
         }
       
@@ -156,7 +156,7 @@ namespace AKEcommerceAutomation.PageObjects
 
         public string GetCopyRightText()
         {
-            return _driver.FindElement(By.XPath("//*[@id='footer']/div[8]/div/div/footer/p")).Text;
+            return _driver.FindElement(By.XPath("//*[@id='footer']/div/div/div/footer/p")).Text;
         }
 
         public void mouseover(By Elemnent)

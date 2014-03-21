@@ -1,30 +1,26 @@
 ﻿using System;
-using System.Threading;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
+using AKEcommerceAutomation.PageObjects.Object_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
-using OpenQA.Selenium;
-using TechTalk.SpecFlow;
-using AKEcommerceAutomation.PageObjects.Object_Repository;
-
 
 namespace AKEcommerceAutomation.TestSteps
 {
-
     [Binding]
     public class BeInspiredSteps : SeleniumTestBase
     {
-        
-       
-        HomePage homePage = new HomePage(driver);
-        BeInspiredPage beinspiredPage= new BeInspiredPage(driver);
+        private readonly BeInspiredPage beinspiredPage = new BeInspiredPage(driver);
+        private readonly HomePage homePage = new HomePage(driver);
+        private readonly BeInspired_inspirerpage inspirerimagespage = new BeInspired_inspirerpage(driver);
+
+        // Verifying the navigation in Be-inspired page
 
         [Given(@"I am on the AK homepage")]
         public void GivenIamontheAKHomepage()
         {
-            
             ScenarioContext.Current.Set(homePage);
         }
 
@@ -38,16 +34,15 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"Be-inspired Navigation Links displayed:")]
         public void ThenBe_InspiredNavigationLinksDisplayed(Table table)
         {
-            var beinspirednavigationValues = beinspiredPage.GetBeinspiredNavigationValues();
+            string[] beinspirednavigationValues = beinspiredPage.GetBeinspiredNavigationValues();
             for (int i = 0; i < beinspiredPage.GetBeinspiredNavigationCount(); i++)
             {
                 Assert.AreEqual(table.Rows[i]["Value"], beinspirednavigationValues[i]);
             }
-            
         }
 
-        // Delete the Inspirer Instructional text,
-        // 
+        // Delete the Inspirer Instructional text and cookies to re-enable the Inspirer Instructional text and Verifying the Footer Links
+
         [Given(@"I am on beinspired page")]
         public void GivenIAmOnBeinspiredPage()
         {
@@ -76,8 +71,13 @@ namespace AKEcommerceAutomation.TestSteps
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             homePage.GetBeInspiredPage();
             beinspiredPage.GetInspirerInstructionalText();
-            //Assert.IsTrue(beinspiredPage.GetInspirerInstructionalText());
-            //Assert.AreEqual(beinspiredPage.GetInspirerInstructionalText());
+            beinspiredPage.GetPreFooter_CountryLinks();
+            beinspiredPage.GetPreFooter_QuickLinks();
+            beinspiredPage.GetPreFooter_SignUpforenews();
+            beinspiredPage.GetPreFooter_Sociallinks();
+            beinspiredPage.GetRightHandSideBar();
+            beinspiredPage.FooterLinks();
+            Assert.AreEqual(BasePage.CopyRightText, beinspiredPage.GetCopyRightText());
         }
 
         //Inspirer Category images
@@ -96,29 +96,30 @@ namespace AKEcommerceAutomation.TestSteps
             //ScenarioContext.Current.Pending();
         }
 
-       //verifying inspirer images when clicked on Places TO Vist inspirer category
+        //verifying inspirer images when clicked on Places TO Vist inspirer category
 
         [When(@"I click on Places to visit inspirer category")]
         public void WhenIClickOnPlacesToVisitInspirerCategory()
         {
             homePage.GetBeInspiredPage().GetInspirerInstructionalText();
-            Assert.AreEqual("MOUNTAINS AND HIGHLANDS", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Text);
-            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Click();
+            Assert.AreEqual("MOUNTAINS AND HIGHLANDS",
+                driver.FindElement(
+                    By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Text);
+            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span"))
+                .Click();
         }
 
         [Then(@"Inspirer images should appear")]
         public void ThenInspirerImagesShouldAppear()
         {
-
             Assert.IsTrue(driver.FindElement(By.XPath(BeinspiredPageElements.navlinks)).Displayed);
             Assert.IsTrue(driver.FindElement(By.XPath(BeInspiredPage.inspirerbackplacestovisit)).Displayed);
             Assert.AreEqual("MOUNTAINS AND HIGHLANDS",
-            driver.FindElement(
+                driver.FindElement(
                     By.XPath("//*[@id='infiniteScrollItem']/article/section[1]/div[1]/div[1]/div[1]/div/a/h2")).Text);
             int x = new BeInspiredPage(driver).GetInspirerImages_Category();
             driver.FindElement(By.XPath(BeInspiredPage.inspirerbackplacestovisit)).Click();
             beinspiredPage.GetInspirerCategoryimagesSection();
-           
         }
 
         ////verifying inspirer images when clicked on Things To See & Do inspirer category
@@ -131,8 +132,11 @@ namespace AKEcommerceAutomation.TestSteps
             driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[2]")).Click();
             //new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists((By.Name("People & Culture"))));
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            Assert.AreEqual("PEOPLE & CULTURE", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span")).Text);
-            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span")).Click();
+            Assert.AreEqual("PEOPLE & CULTURE",
+                driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span"))
+                    .Text);
+            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span"))
+                .Click();
         }
 
         [Then(@"Inspirer images appear")]
@@ -140,7 +144,9 @@ namespace AKEcommerceAutomation.TestSteps
         {
             Assert.IsTrue(driver.FindElement(By.XPath(BeinspiredPageElements.navlinks)).Displayed);
             Assert.IsTrue(driver.FindElement(By.XPath(BeInspiredPage.inspirerbackthingstosee)).Displayed);
-            Assert.AreEqual("PEOPLE & CULTURE", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/article/section[1]/div[1]/div[1]/div[1]/div/a/h2")).Text);
+            Assert.AreEqual("PEOPLE & CULTURE",
+                driver.FindElement(
+                    By.XPath("//*[@id='infiniteScrollItem']/article/section[1]/div[1]/div[1]/div[1]/div/a/h2")).Text);
             int y = new BeInspiredPage(driver).GetInspirerImages_Category();
             driver.FindElement(By.XPath(BeInspiredPage.inspirerbackthingstosee)).Click();
         }
@@ -155,42 +161,93 @@ namespace AKEcommerceAutomation.TestSteps
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[3]")).Click();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(20));
-            Assert.AreEqual("HOTELS", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Text);
-            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Click();
+            Assert.AreEqual("HOTELS",
+                driver.FindElement(
+                    By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span")).Text);
+            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div/div[1]/div/section/article/a/span[2]/span"))
+                .Click();
         }
-  
+
         [Then(@"where to stay inspirer images displays")]
         public void ThenWhereToStayInspirerImagesDisplays()
         {
             Assert.IsTrue(driver.FindElement(By.XPath(BeinspiredPageElements.navlinks)).Displayed);
             Assert.IsTrue(driver.FindElement(By.XPath(BeInspiredPage.inspirerbackwheretostay)).Displayed);
-            Assert.AreEqual("HOTELS", driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/article/section/div[1]/div[1]/div[1]/div/a/h2")).Text);
+            Assert.AreEqual("HOTELS",
+                driver.FindElement(
+                    By.XPath("//*[@id='infiniteScrollItem']/article/section/div[1]/div[1]/div[1]/div/a/h2")).Text);
             int y = new BeInspiredPage(driver).GetInspirerImages_Category();
             driver.FindElement(By.XPath(BeInspiredPage.inspirerbackwheretostay)).Click();
         }
 
-        //Verifying the pinboard count in Mypinboard and in Right Hand Side Bar when user adds any image to Pinboard.
+ ///  <summary>
+ ///   Verifying the pinboard count in Mypinboard and in Right Hand Side Bar when user adds any image to Pinboard.
+ ///  </summary>
+       
 
         [When(@"I add an image to my pinboard")]
         public void WhenIAddAnImageToMyPinboard()
         {
             homePage.GetBeInspiredPage().GetInspirerInstructionalText();
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
-            wait.Until(ExpectedConditions.ElementExists(By.XPath("//div[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span"))).Click();
+            wait.Until(
+                ExpectedConditions.ElementExists(
+                    By.XPath("//div[@id='infiniteScrollItem']/div/div/div/section/article/a/span[2]/span"))).Click();
             homePage.mouseover(By.Id("inspirerImagePin-d91ff12c-e335-6b70-93c7-ff0000a0f14c"));
             driver.FindElement(By.Id("inspirerImagePin-d91ff12c-e335-6b70-93c7-ff0000a0f14c")).Click();
-
         }
 
         [Then(@"Pinboard count appears on My Pinboard and on Right Hand Bar")]
         public void ThenPinboardCountAppearsOnMyPinboardAndOnRightHandBar()
         {
-            int PinboardCount = driver.FindElements(By.XPath("//span[@class = 'nav-count-wrapper']")).Count;
-            Assert.AreEqual(PinboardCount, driver.FindElement(By.XPath("//span[@class = 'sidePinboardValue nav-count']")).Text);
-            //ScenarioContext.Current.Pending();
-        }
+            int PinboardCount_MyPinboard =
+                driver.FindElements(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[4]/span")).Count;
+            int PinboardCount_RighthandBar =
+                driver.FindElements(By.XPath("//*[@id='page-wrapper']/div[1]/ul/li[5]/a/span[3]")).Count;
+            Assert.AreEqual(PinboardCount_MyPinboard.ToString(), PinboardCount_RighthandBar.ToString());
+            if (PinboardCount_MyPinboard == PinboardCount_RighthandBar)
+            {
+                Console.WriteLine(true);
+                Console.WriteLine(PinboardCount_MyPinboard);
+                Console.WriteLine(PinboardCount_RighthandBar);
+            }
+            else
+            {
+                Console.WriteLine(false);
+            }
+
+            }
 
         
-       }
+  /// <summary>
+  /// Navigating to the Light box and verifying suggested Journeys 
+  /// </summary>
 
+        [When(@"I Click on Find Out More link on an image")]
+        public void WhenIClickOnFindOutMoreLinkOnAnImage()
+        {
+            homePage.GetBeInspiredPage().GetInspirerCategoryimagesSection();
+            inspirerimagespage.GetInspirerimagespage();
+            string str1 = driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/article/section[1]/div[1]/div[1]/div[2]/div/section/article/span[2]")).Text;
+            homePage.mouseover(By.XPath("//*[@id='infiniteScrollItem']/article/section[1]/div[1]/div[1]/div[2]/div/section/article/div[1]/img"));
+            driver.FindElement(By.LinkText("FIND OUT MORE")).Click();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            var clickedimage = driver.FindElement(By.XPath("//div[@id = 'about']/div/h1")).Text;
+            Console.WriteLine(clickedimage, str1);
+        }
+
+        [Then(@"Light box appears with Suggested Journeys")]
+        public void ThenLightBoxAppearsWithSuggestedJourneys()
+        {
+            var lightboxnav = driver.FindElement(By.XPath("//div[@class = 'inner-popup-top olu-tab-nav nav']")).Displayed;
+            driver.FindElement(By.XPath("//article[@class = 'popup-overlay']/div/div/a[2]")).Click();
+            inspirerimagespage.GetGuidedGroupJourneys_SuggestedJourneysinlightbox();
+            //string guidedgroup_Journeys = driver.FindElement(By.XPath("//*[@id='guidedGroupJourneys']/div/div/div/section/article/a/span[1]")).Text;
+            //Console.WriteLine(guidedgroup_Journeys);
+            // Console.WriteLine(clickedimage);
+
+
+
+        }
+    }
 }
