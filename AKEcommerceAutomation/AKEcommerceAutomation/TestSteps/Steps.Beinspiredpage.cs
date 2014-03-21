@@ -16,7 +16,10 @@ namespace AKEcommerceAutomation.TestSteps
         private readonly HomePage homePage = new HomePage(driver);
         private readonly BeInspired_inspirerpage inspirerimagespage = new BeInspired_inspirerpage(driver);
 
-        // Verifying the navigation in Be-inspired page
+
+        /// <summary>
+        /// Verifying the navigation in Be-inspired page
+        /// </summary>
 
         [Given(@"I am on the AK homepage")]
         public void GivenIamontheAKHomepage()
@@ -40,8 +43,9 @@ namespace AKEcommerceAutomation.TestSteps
                 Assert.AreEqual(table.Rows[i]["Value"], beinspirednavigationValues[i]);
             }
         }
-
-        // Delete the Inspirer Instructional text and cookies to re-enable the Inspirer Instructional text and Verifying the Footer Links
+        ///<summary>
+        /// Delete the Inspirer Instructional text and cookies to re-enable the Inspirer Instructional text and Verifying the Footer Links
+        /// </summary>
 
         [Given(@"I am on beinspired page")]
         public void GivenIAmOnBeinspiredPage()
@@ -54,7 +58,7 @@ namespace AKEcommerceAutomation.TestSteps
         public void WhenICloseTheInspirerInstructionalText()
         {
             beinspiredPage.Closeinspirertext();
-            //ScenarioContext.Current.Pending();
+           
         }
 
         [When(@"I delete all the cookies in the browser")]
@@ -79,24 +83,27 @@ namespace AKEcommerceAutomation.TestSteps
             beinspiredPage.FooterLinks();
             Assert.AreEqual(BasePage.CopyRightText, beinspiredPage.GetCopyRightText());
         }
-
-        //Inspirer Category images
+    ///<summary>
+    ///Inspirer Category images
+    /// </summary>
 
         [When(@"I navigate to beinspired page")]
         public void WhenINavigateToBeinspiredPage()
         {
             homePage.GetBeInspiredPage();
-            //ScenarioContext.Current.Pending();
+            
         }
 
         [Then(@"inspirer category images appears")]
         public void ThenInspirerCategoryImagesAppears()
         {
             beinspiredPage.GetInspirerCategoryimagesSection();
-            //ScenarioContext.Current.Pending();
         }
-
-        //verifying inspirer images when clicked on Places TO Vist inspirer category
+   
+        
+    ///<summary>
+   ///verifying inspirer images when clicked on Places TO Vist inspirer category
+   /// </summary>
 
         [When(@"I click on Places to visit inspirer category")]
         public void WhenIClickOnPlacesToVisitInspirerCategory()
@@ -122,7 +129,10 @@ namespace AKEcommerceAutomation.TestSteps
             beinspiredPage.GetInspirerCategoryimagesSection();
         }
 
-        ////verifying inspirer images when clicked on Things To See & Do inspirer category
+  
+    /// <summary>
+   ///verifying inspirer images when clicked on Things To See & Do inspirer category
+   /// </summary>
 
         [When(@"I click on THINGS TO SEE AND DO inspirer category")]
         public void WhenIClickOnTHINGSTOSEEANDDOInspirerCategory()
@@ -151,7 +161,9 @@ namespace AKEcommerceAutomation.TestSteps
             driver.FindElement(By.XPath(BeInspiredPage.inspirerbackthingstosee)).Click();
         }
 
-        //verifying inspirer images when clicked on Where To Stay inspirer category
+        /// <summary>
+        ///verifying inspirer images when clicked on Where To Stay inspirer category
+        /// </summary>
 
         [When(@"I click on where to stay inspirer category")]
         public void WhenIClickOnWhereToStayInspirerCategory()
@@ -242,12 +254,11 @@ namespace AKEcommerceAutomation.TestSteps
             var lightboxnav = driver.FindElement(By.XPath("//div[@class = 'inner-popup-top olu-tab-nav nav']")).Displayed;
             driver.FindElement(By.XPath("//article[@class = 'popup-overlay']/div/div/a[2]")).Click();
             inspirerimagespage.GetGuidedGroupJourneys_SuggestedJourneysinlightbox();
-            //string guidedgroup_Journeys = driver.FindElement(By.XPath("//*[@id='guidedGroupJourneys']/div/div/div/section/article/a/span[1]")).Text;
-            //Console.WriteLine(guidedgroup_Journeys);
-            // Console.WriteLine(clickedimage);
-
-
-
+            inspirerimagespage.GetguidedGroupJourneys_Section();
+            Console.WriteLine("-----------------------------------");
+            inspirerimagespage.GetTailorMadeJourneys_Section();
+            inspirerimagespage.GetTailorMadeJourneys_SuggestedJourneysinlightbox();
+            inspirerimagespage.CloseLightBox();
         }
     }
 }

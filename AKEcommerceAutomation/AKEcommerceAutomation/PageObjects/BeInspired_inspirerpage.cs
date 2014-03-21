@@ -24,20 +24,40 @@ namespace AKEcommerceAutomation.PageObjects
 
           public void GetGuidedGroupJourneys_SuggestedJourneysinlightbox()
           {
-              int guidedgroupjourneys = _driver.FindElements(By.XPath("//*[@id='guidedGroupJourneys']/div/div/div/section/article/a/span[1]")).Count;
+              int guidedgroupjourneys = _driver.FindElements(By.XPath("//*[@id='guidedGroupJourneys']/div/div/div/section/article/a/span[2]/span/span[1]")).Count;
               for (int i = 1; i <= guidedgroupjourneys; i++)
               {
-                  Console.WriteLine(driver.FindElement(By.XPath("//*[@id='guidedGroupJourneys']/div/div[" + i + "]/div/section/article/a/span[1]")).Text);
+                  Console.WriteLine(driver.FindElement(By.XPath("//*[@id='guidedGroupJourneys']/div/div[" + i + "]/div/section/article/a/span[2]/span/span")).Text);
               }
           }
 
-          //public void GetLightBox_inspirerimagespage()
-          //{
-          //    string str1 = driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/article/section[1]/div[1]/div[1]/div[2]/div/section/article/span[2]")).Text;
-          //    homePage.mouseover(By.XPath("//*[@id='infiniteScrollItem']/article/section[1]/div[1]/div[1]/div[2]/div/section/article/div[1]/img"));
-          //    driver.FindElement(By.LinkText("FIND OUT MORE")).Click();
-          //    driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-          //}
+          public bool GetguidedGroupJourneys_Section()
+          {
+              return _driver.FindElement(By.XPath("//*[@id='guidedGroupJourneys']/h2")).Displayed;
+          }
+
+          public bool GetTailorMadeJourneys_Section()
+          {
+              return _driver.FindElement(By.XPath("//*[@id='tailorMadeJourneys']")).Displayed;
+          }
+
+          public void GetTailorMadeJourneys_SuggestedJourneysinlightbox()
+          {
+              int tailormadejourneys =
+                  _driver.FindElements(
+                      By.XPath("//*[@id='tailorMadeJourneys']/div/div/div/section/article/a/span[2]/span/span[1]"))
+                      .Count;
+              for (int i = 1; i <= tailormadejourneys; i++)
+              {
+                  Console.WriteLine(driver.FindElement(By.XPath("//*[@id='tailorMadeJourneys']/div/div["+i+"]/div/section/article/a/span[2]/span/span[1]")).Text);
+              }
+          }
+
+          public void CloseLightBox()
+          {
+              driver.FindElement(By.XPath("//article[@class = 'popup-overlay']/div/a")).Click();
+
+          }
     }
 
 }
