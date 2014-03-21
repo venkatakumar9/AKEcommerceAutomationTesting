@@ -14,6 +14,7 @@ namespace AKEcommerceAutomation
     using NUnit.Framework;
     using OpenQA.Selenium;
     using TechTalk.SpecFlow;
+
     [Binding]
     sealed class ContinentPagesSteps : SeleniumTestBase
     {
@@ -86,13 +87,31 @@ namespace AKEcommerceAutomation
         [Then(@"I reach the specific pages in the continent page")]
         public void ThenIReachTheSpecificPagesInTheContinentPage()
         {
-            ScenarioContext.Current.Pending();
+            homepage.Navlink_pagetitles(ContinentPageElements.Navigation);
+            
         }
 
         [Then(@"the carousel Image is present")]
         public void ThenTheCarouselImageIsPresent()
         {
-            ScenarioContext.Current.Pending();
+            driver.FindElement(ContinentPageElements.CarouselImage);
         }
+
+        [When(@"I Click on the Countries link")]
+        public void WhenIClickOnTheCountriesLink()
+        {
+            driver.FindElement(By.LinkText("COUNTRIES")).Click();
+        }
+
+        [Then(@"All the countries with holiday packages are shown")]
+        public void ThenAllTheCountriesWithHolidayPackagesAreShown()
+        {
+            var countries = new ContinentPage(driver).countries();
+            foreach (var country in countries)
+            {
+                Console.WriteLine(country);
+            }
+        }
+
     }
 }

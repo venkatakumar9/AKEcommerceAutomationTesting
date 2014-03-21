@@ -16,7 +16,6 @@ namespace AKEcommerceAutomation.Framework
     public class EnvironmentConfiguration
     {
         private static EnvironmentConfiguration instance;
-
         public static EnvironmentConfiguration Instance
         {
             get

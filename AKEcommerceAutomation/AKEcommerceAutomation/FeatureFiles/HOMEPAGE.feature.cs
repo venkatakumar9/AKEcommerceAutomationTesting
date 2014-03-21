@@ -123,8 +123,6 @@ namespace AKEcommerceAutomation.FeatureFiles
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Sub Navigation Menu in Homepage", ((string[])(null)));
 #line 29
   this.ScenarioSetup(scenarioInfo);
-#line 30
- testRunner.When("I am in the AK Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
