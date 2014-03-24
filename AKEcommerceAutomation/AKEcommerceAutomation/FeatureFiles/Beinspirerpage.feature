@@ -51,6 +51,18 @@ Scenario: Verifying MyPinboard toolbar links.
 When I click on MyPinboard Page
 Then MyPinboard toolbar links appears
 
+Scenario: Delete images in my pinboard
+When I Navigate to Mypinboard
+And I click on delete button
+Then Images are deleted from MyPinboard
 
+Scenario: Delete entire images in Pinboard
+When I add image to my pinboard
+And I click on delete button on pinboard toolbar
+Then Entire images are deleted from MyPinboard page
 
+Scenario: Verifying the Share Pinboard navigating to Right pages
+Given I am on MyPinboard page
+When I Click on Share Pinboard Icons
+Then Each Icon Navigates to right page
 

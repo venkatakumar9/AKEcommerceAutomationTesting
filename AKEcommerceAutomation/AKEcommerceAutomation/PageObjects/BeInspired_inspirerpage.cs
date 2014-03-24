@@ -58,6 +58,8 @@ namespace AKEcommerceAutomation.PageObjects
               driver.FindElement(By.XPath("//article[@class = 'popup-overlay']/div/a")).Click();
 
           }
+
+          
     }
 
 }

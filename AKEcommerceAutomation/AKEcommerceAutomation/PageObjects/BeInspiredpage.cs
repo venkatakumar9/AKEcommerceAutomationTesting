@@ -83,6 +83,19 @@ namespace AKEcommerceAutomation.PageObjects
            return inspirerimages;
         }
 
+        public void GetMyPinboard()
+        {
+            _driver.FindElement(By.XPath("//*[@id='pinboardNavTitle']")).Click();
+        }
+
+        public void GetMyPinboard_NavLinks()
+        {
+            int mypinboardlinks = _driver.FindElements(By.XPath("//div[@class = 'pinboard-toolbar']/div")).Count;
+            for (int i = 1; i <= mypinboardlinks; i++)
+            {
+                Console.WriteLine(driver.FindElement(By.XPath("//div[@class = 'pinboard-toolbar']/div[" + i + "]")).Text);
+            }
+        }
         
     }
 }

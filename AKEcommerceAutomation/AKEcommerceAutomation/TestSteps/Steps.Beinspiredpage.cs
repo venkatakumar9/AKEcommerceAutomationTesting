@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
 using AKEcommerceAutomation.PageObjects.Object_Repository;
@@ -268,14 +270,101 @@ namespace AKEcommerceAutomation.TestSteps
         [When(@"I click on MyPinboard Page")]
         public void WhenIClickOnMyPinboardPage()
         {
-           // ScenarioContext.Current.Pending();
+            homePage.GetBeInspiredPage().GetMyPinboard();
+
         }
 
         [Then(@"MyPinboard toolbar links appears")]
         public void ThenMyPinboardToolbarLinksAppears()
         {
-            // ScenarioContext.Current.Pending();
+            beinspiredPage.GetMyPinboard_NavLinks();
         }
 
+
+        /// <summary>
+        /// Delete images in my pinboard
+        /// </summary>
+
+        [When(@"I Navigate to Mypinboard")]
+        public void WhenINavigateToMypinboard()
+        {
+            homePage.GetBeInspiredPage().GetInspirerInstructionalText();
+            beinspiredPage.GetInspirerCategoryimagesSection();
+            inspirerimagespage.GetInspirerimagespage();
+            homePage.mouseover(By.XPath("//*[@id='infiniteScrollItem']/article/section[1]/div[2]/div[1]/div/div/section/article/div[1]"));
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            string str1 =
+               driver.FindElement(
+                   By.XPath(
+                       "//*[@id='infiniteScrollItem']/article/section[1]/div[2]/div[1]/div/div/section/article/span[2]/span"))
+                   .Text;
+            driver.FindElement(By.Id("inspirerImagePin-3108fc2c-e335-6b70-93c7-ff0000a0f14c")).Click();
+            beinspiredPage.GetMyPinboard();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            homePage.mouseover(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/div/section/article/div[1]/img"));
+            string pinboardedimage =
+                driver.FindElement(
+                    By.XPath("//*[@id='infiniteScrollItem']/div/div/div[1]/div/section/article/span[2]/span")).Text;
+           Assert.AreEqual(str1, pinboardedimage);
+           
+        }
+
+        [When(@"I click on delete button")]
+        public void WhenIClickOnDeleteButton()
+        {
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            homePage.mouseover(By.XPath("//*[@id='infiniteScrollItem']/div/div/div/div/section/article/div[1]/img"));
+            driver.FindElement(By.Id("inspirerImageUnPin-3108fc2c-e335-6b70-93c7-ff0000a0f14c")).Click();
+
+        }
+
+        [Then(@"Images are deleted from MyPinboard")]
+        public void ThenImagesAreDeletedFromMyPinboard()
+        {
+            string noImages = driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/p")).Text;
+            Assert.AreEqual(noImages, "No more image in your pinboard. Please pin at least one.");
+            Console.WriteLine(noImages);
+        }
+
+  ///<summary>
+  /// Delete entire images in Pinboard
+  /// </summary>
+
+
+
+        [When(@"I add image to my pinboard")]
+        public void WhenIAddImageToMyPinboard()
+        {
+            homePage.GetBeInspiredPage().GetInspirerInstructionalText();
+            beinspiredPage.GetInspirerCategoryimagesSection();
+            inspirerimagespage.GetInspirerimagespage();
+            driver.FindElement(By.XPath("//*[@id='inspirerImagePin-d91ff12c-e335-6b70-93c7-ff0000a0f14c']/a")).Click();
+            driver.FindElement(By.XPath("//*[@id='inspirerImagePin-3108fc2c-e335-6b70-93c7-ff0000a0f14c']/a")).Click();
+            driver.FindElement(By.XPath("//*[@id='inspirerImagePin-2108fc2c-e335-6b70-93c7-ff0000a0f14c']/a")).Click();
+            beinspiredPage.GetMyPinboard();
+        }
+
+        [When(@"I click on delete button on pinboard toolbar")]
+        public void WhenIClickOnDeleteButtonOnPinboardToolbar()
+        {
+            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div[1]/div[3]/div[2]/a")).Click();
+            driver.FindElement(By.Id("deletePinboardAction")).Click();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+        }
+
+        [Then(@"Entire images are deleted from MyPinboard page")]
+        public void ThenEntireImagesAreDeletedFromMyPinboardPage()
+        {
+           beinspiredPage.GetInspirerCategoryimagesSection();
+           beinspiredPage.GetMyPinboard();
+            //*** This step will be changed when the navigation changed. i.e. after deleting page should stay in MyPinboard Page with text displayed.
+        }
+
+        ///<summary>
+        /// Verifying the Share Pinboard navigating to Right pages 
+        /// </summary>
+        
+
+        
     }
 }

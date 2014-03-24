@@ -219,6 +219,57 @@ testRunner.Then("MyPinboard toolbar links appears", ((string)(null)), ((TechTalk
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Delete images in my pinboard")]
+        public virtual void DeleteImagesInMyPinboard()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete images in my pinboard", ((string[])(null)));
+#line 54
+this.ScenarioSetup(scenarioInfo);
+#line 55
+testRunner.When("I Navigate to Mypinboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 56
+testRunner.And("I click on delete button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+testRunner.Then("Images are deleted from MyPinboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Delete entire images in Pinboard")]
+        public virtual void DeleteEntireImagesInPinboard()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete entire images in Pinboard", ((string[])(null)));
+#line 59
+this.ScenarioSetup(scenarioInfo);
+#line 60
+testRunner.When("I add image to my pinboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 61
+testRunner.And("I click on delete button on pinboard toolbar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+testRunner.Then("Entire images are deleted from MyPinboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verifying the Share Pinboard navigating to Right pages")]
+        public virtual void VerifyingTheSharePinboardNavigatingToRightPages()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying the Share Pinboard navigating to Right pages", ((string[])(null)));
+#line 64
+this.ScenarioSetup(scenarioInfo);
+#line 65
+testRunner.Given("I am on MyPinboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 66
+testRunner.When("I Click on Share Pinboard Icons", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 67
+testRunner.Then("Each Icon Navigates to right page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

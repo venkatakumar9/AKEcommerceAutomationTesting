@@ -326,5 +326,11 @@ namespace AKEcommerceAutomation.PageObjects
         {
             Current().Navigate().GoToUrl(Url);
         }
+
+        public static String TooltipText(IWebDriver driver, By locator)
+        {
+            String tooltip = driver.FindElement(locator).GetAttribute("title");
+            return tooltip;
+        }
     }
 }
