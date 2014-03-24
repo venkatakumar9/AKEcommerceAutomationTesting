@@ -361,9 +361,28 @@ namespace AKEcommerceAutomation.TestSteps
         }
 
         ///<summary>
-        /// Verifying the Share Pinboard navigating to Right pages 
+        /// Verifying the Share Pinboard links navigating to Right pages 
         /// </summary>
-        
+
+        [Given(@"I am on MyPinboard page")]
+        public void GivenIAmOnMyPinboardPage()
+        {
+            homePage.GetBeInspiredPage().GetMyPinboard();
+        }
+
+        [When(@"I Click on Share Pinboard Icons")]
+        public void WhenIClickOnSharePinboardIcons()
+        {
+            string parentwindow = driver.getWindowHandle();
+            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div[1]/div[4]/a[1]/img")).Click();
+        }
+
+        [Then(@"Each Icon Navigates to right page")]
+        public void ThenEachIconNavigatesToRightPage()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
 
         
     }

@@ -61,7 +61,7 @@ When I add image to my pinboard
 And I click on delete button on pinboard toolbar
 Then Entire images are deleted from MyPinboard page
 
-Scenario: Verifying the Share Pinboard navigating to Right pages
+Scenario: Verifying the Share Pinboard links navigating to Right pages
 Given I am on MyPinboard page
 When I Click on Share Pinboard Icons
 Then Each Icon Navigates to right page

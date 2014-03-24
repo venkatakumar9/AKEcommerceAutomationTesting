@@ -255,10 +255,10 @@ testRunner.Then("Entire images are deleted from MyPinboard page", ((string)(null
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verifying the Share Pinboard navigating to Right pages")]
-        public virtual void VerifyingTheSharePinboardNavigatingToRightPages()
+        [NUnit.Framework.DescriptionAttribute("Verifying the Share Pinboard links navigating to Right pages")]
+        public virtual void VerifyingTheSharePinboardLinksNavigatingToRightPages()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying the Share Pinboard navigating to Right pages", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying the Share Pinboard links navigating to Right pages", ((string[])(null)));
 #line 64
 this.ScenarioSetup(scenarioInfo);
 #line 65
