@@ -1,4 +1,4 @@
-﻿Feature: BotswanaCountry Page
+﻿Feature: Botswana Country Page
 	In order to avoid silly mistakes
 	As a math idiot
 	I want to be told the sum of two numbers
@@ -20,3 +20,13 @@ Scenario: Verify the map in the Country Page
 Given I reach the Botswana Page
 When I click on the overview tab
 Then the map is present
+
+Scenario: Verify the hero Image
+Given There is a country image in the continent page
+When I reach the Botswana Page
+Then the Hero image is present
+
+Scenario: Validate the Area Page in the Country Page
+Given I reach the Botswana Page
+When I Click on AREAS 
+Then All the Areas with offers are available
