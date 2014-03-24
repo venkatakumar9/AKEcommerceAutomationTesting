@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using OpenQA.Selenium;
-using System;
+﻿using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
 {
@@ -14,7 +11,7 @@ namespace AKEcommerceAutomation.PageObjects
             //beinspiredPage = new BeInspiredPage(driver);
         }
 
-       public string title()
+        public string title()
         {
             return driver.Title;
         }
@@ -24,16 +21,18 @@ namespace AKEcommerceAutomation.PageObjects
             return _driver.FindElement(By.XPath("//*[@id='inspirerInstructionalText']/div/p")).Displayed;
         }
 
-       public int GetBeinspiredNavigationCount()
+        public int GetBeinspiredNavigationCount()
         {
             return _driver.FindElements(By.XPath("//*[@id='page-wrapper']/div[5]/div/a")).Count;
         }
+
         public string[] GetBeinspiredNavigationValues()
         {
             var beinspirednavigationValues = new string[GetBeinspiredNavigationCount()];
             for (int i = 1; i < GetBeinspiredNavigationCount(); i++)
             {
-                beinspirednavigationValues[i] = _driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[" +(i+1) + "]")).Text;
+                beinspirednavigationValues[i] =
+                    _driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[" + (i + 1) + "]")).Text;
             }
             return beinspirednavigationValues;
         }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using AKEcommerceAutomation;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
 using AKEcommerceAutomation.PageObjects.Object_Repository;
@@ -98,15 +97,13 @@ namespace AKEcommerceAutomation
             }
             else
             {
-                foreach (var area in areas)
+                foreach (string area in areas)
                 {
                     Console.WriteLine(area);
                 }
             }
         }
-
     }
-
 
     [Binding]
     public class BotwswanaGGJTab : SeleniumTestBase
@@ -122,7 +119,6 @@ namespace AKEcommerceAutomation
         {
             new BotswanaAreaTab().ThenAllTheAreasWithOffersAreAvailable();
         }
-
     }
 
     [Binding]
@@ -155,8 +151,5 @@ namespace AKEcommerceAutomation
         {
             new BotswanaAreaTab().ThenAllTheAreasWithOffersAreAvailable();
         }
-
     }
 }
-
-

@@ -5,22 +5,60 @@
 //-----------------------------------------------------------------------
 
 
+using System;
+using AKEcommerceAutomation.Framework;
+using AKEcommerceAutomation.PageObjects;
+using AKEcommerceAutomation.PageObjects.Object_Repository;
+using NUnit.Framework;
+using TechTalk.SpecFlow;
+
 namespace AKEcommerceAutomation.TestSteps
 {
-    using Framework;
-    using PageObjects;
-    using NUnit.Framework;
-    using System;
-    using OpenQA.Selenium;
-    using TechTalk.SpecFlow;
-    using AKEcommerceAutomation.PageObjects.Object_Repository;
-
-    sealed internal class MainNavigation : SeleniumTestBase
+    internal sealed class MainNavigation : SeleniumTestBase
     {
+        [Binding]
+        public class Beisnpiredlink
+        {
+            #region BeInspired Link Navigation
+
+            private readonly HomePage homepage = new HomePage(driver);
+
+            [When(@"I click on BeInspired link")]
+            public void WhenIClickOnBeInspiredLink()
+            {
+                homepage.GetBeInspiredPage();
+            }
+
+            [Then(@"I Navigate to BeInspired Page")]
+            public void ThenINavigateToBeInspiredPage()
+            {
+                homepage.GetBeInspiredPage().title();
+            }
+
+            #endregion
+        }
+
+        [Binding]
+        public class Countrylinks
+        {
+            private readonly HomePage homepage = new HomePage(driver);
+
+            [Then(@"All the coutries in the continents will appear\.")]
+            public void ThenAllTheCoutriesInTheContinentsWillAppear_()
+            {
+                string[] countryandcontinetnames = homepage.Megamenu_countrynames();
+                foreach (string countryandcontinetname in countryandcontinetnames)
+                {
+                    Console.WriteLine(countryandcontinetname);
+                }
+            }
+        }
+
         [Binding]
         public class Mainnavigation
         {
             private readonly HomePage homepage = new HomePage(driver);
+
             [When(@"I click on BeInspired link")]
             public void WhenIClickOnBeInspiredLink()
             {
@@ -42,11 +80,11 @@ namespace AKEcommerceAutomation.TestSteps
             [Then(@"The Meganav Appears")]
             public void ThenTheMeganavAppears(Table table)
             {
-                string[]continetnames = homepage.Meganav_topcontinetnames();
-                for(int i=0; i<continetnames.Length;i++)
+                string[] continetnames = homepage.Meganav_topcontinetnames();
+                for (int i = 0; i < continetnames.Length; i++)
                     Assert.AreEqual(table.Rows[i]["Value"], continetnames[i]);
             }
-           
+
 
             [Then(@"The Meganav bottom appears")]
             public void ThenTheMeganavBottomAppears(Table table)
@@ -59,8 +97,8 @@ namespace AKEcommerceAutomation.TestSteps
             [Then(@"When I click on Destination link I reach the Destinations Page")]
             public void ThenWhenIClickOnDestinationLinkIReachTheDestinationsPage()
             {
-               string title =  homepage.GetDestinationsPage().title();
-                Assert.AreEqual("Destinations",title);
+                string title = homepage.GetDestinationsPage().title();
+                Assert.AreEqual("Destinations", title);
             }
 
             [Then(@"When I click on Journeys Link I reach Journeys Page")]
@@ -75,45 +113,6 @@ namespace AKEcommerceAutomation.TestSteps
             {
                 string title = homepage.GetBeInspiredPage().title();
                 Assert.AreEqual("BeInspired", title);
-            }
-        }
-        [Binding]
-        public class Beisnpiredlink 
-        {
-            #region BeInspired Link Navigation
-
-            private readonly HomePage homepage = new HomePage(driver);
-
-            [When(@"I click on BeInspired link")]
-            public void WhenIClickOnBeInspiredLink()
-            {
-                homepage.GetBeInspiredPage();
-            }
-
-            [Then(@"I Navigate to BeInspired Page")]
-            public void ThenINavigateToBeInspiredPage()
-            {
-                homepage.GetBeInspiredPage().title();
-               
-            }
-
-            #endregion
-        }
-
-        [Binding]
-        public class Countrylinks
-        {
-            private readonly HomePage homepage = new HomePage(driver);
-
-            [Then(@"All the coutries in the continents will appear\.")]
-            public void ThenAllTheCoutriesInTheContinentsWillAppear_()
-            {
-                string[] countryandcontinetnames = homepage.Megamenu_countrynames();
-                foreach (var countryandcontinetname in countryandcontinetnames)
-                {
-                    Console.WriteLine(countryandcontinetname);
-                }
-
             }
         }
     }
