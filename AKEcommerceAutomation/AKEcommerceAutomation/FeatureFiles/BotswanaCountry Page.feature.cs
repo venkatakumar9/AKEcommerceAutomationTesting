@@ -149,6 +149,57 @@ testRunner.Then("All the Areas with offers are available", ((string)(null)), ((T
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate the Guided Group Jouneys")]
+        public virtual void ValidateTheGuidedGroupJouneys()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate the Guided Group Jouneys", ((string[])(null)));
+#line 34
+this.ScenarioSetup(scenarioInfo);
+#line 35
+testRunner.Given("I reach the Botswana Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 36
+testRunner.When("I click on Guided Group journeys", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
+testRunner.Then("All the Guided Group Journeys with offers are Appeared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate the Tailor Made Journeys")]
+        public virtual void ValidateTheTailorMadeJourneys()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate the Tailor Made Journeys", ((string[])(null)));
+#line 39
+this.ScenarioSetup(scenarioInfo);
+#line 40
+testRunner.Given("I reach the Botswana Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 41
+testRunner.When("I click on Tailor Made Journeys", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 42
+testRunner.Then("All the Taiolor made Journeys with offers are appeared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate Accomodations in the country page")]
+        public virtual void ValidateAccomodationsInTheCountryPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Accomodations in the country page", ((string[])(null)));
+#line 44
+this.ScenarioSetup(scenarioInfo);
+#line 45
+testRunner.Given("I reach the Botswana Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 46
+testRunner.When("I Click on Accomodations", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 47
+testRunner.Then("I can view all the Accomodations available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using AKEcommerceAutomation;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
 using AKEcommerceAutomation.PageObjects.Object_Repository;
@@ -91,20 +92,71 @@ namespace AKEcommerceAutomation
         public void ThenAllTheAreasWithOffersAreAvailable()
         {
             string[] areas = new ContinentPage(driver).countries();
-            if (areas != null)
+            if (areas[1] == null)
             {
-                    foreach (var area in areas)
-                    {
-                        Console.WriteLine(area);
-                    }
-                
+                Console.WriteLine("No data available");
             }
             else
             {
-                Console.WriteLine("No Areas in Country page");
+                foreach (var area in areas)
+                {
+                    Console.WriteLine(area);
+                }
             }
         }
 
     }
 
+
+    [Binding]
+    public class BotwswanaGGJTab : SeleniumTestBase
+    {
+        [When(@"I click on Guided Group journeys")]
+        public void WhenIClickOnGuidedGroupJourneys()
+        {
+            driver.FindElement(By.LinkText("GUIDED GROUP JOURNEYS")).Click();
+        }
+
+        [Then(@"All the Guided Group Journeys with offers are Appeared")]
+        public void ThenAllTheGuidedGroupJourneysWithOffersAreAppeared()
+        {
+            new BotswanaAreaTab().ThenAllTheAreasWithOffersAreAvailable();
+        }
+
+    }
+
+    [Binding]
+    public class BotswanaTGJtab : SeleniumTestBase
+    {
+        [When(@"I click on Tailor Made Journeys")]
+        public void WhenIClickOnTailorMadeJourneys()
+        {
+            driver.FindElement(By.LinkText("TAILOR MADE JOURNEYS")).Click();
+        }
+
+        [Then(@"All the Taiolor made Journeys with offers are appeared")]
+        public void ThenAllTheTaiolorMadeJourneysWithOffersAreAppeared()
+        {
+            new BotswanaAreaTab().ThenAllTheAreasWithOffersAreAvailable();
+        }
+    }
+
+    [Binding]
+    public class BotswanaAccmtab : SeleniumTestBase
+    {
+        [When(@"I Click on Accomodations")]
+        public void WhenIClickOnAccomodations()
+        {
+            driver.FindElement(By.LinkText("ACCOMMODATIONS")).Click();
+        }
+
+        [Then(@"I can view all the Accomodations available")]
+        public void ThenICanViewAllTheAccomodationsAvailable()
+        {
+            new BotswanaAreaTab().ThenAllTheAreasWithOffersAreAvailable();
+        }
+
+    }
 }
+
+
