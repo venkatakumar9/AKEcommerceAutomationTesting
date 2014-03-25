@@ -94,10 +94,10 @@ namespace AKEcommerceAutomation
         }
 
         [Then(@"All the Areas with offers are available")]
-        public void ThenAllTheAreasWithOffersAreAvailable()
+        public string[] ThenAllTheAreasWithOffersAreAvailable()
         {
             string[] areas = new ContinentPage(driver).countries();
-            if (areas[1] == null)
+            if (areas.Length<1)
             {
                 Console.WriteLine("No data available");
             }
@@ -108,6 +108,7 @@ namespace AKEcommerceAutomation
                     Console.WriteLine(area);
                 }
             }
+            return areas;
         }
     }
 

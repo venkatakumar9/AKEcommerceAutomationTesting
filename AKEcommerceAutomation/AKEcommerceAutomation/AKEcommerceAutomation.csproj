@@ -87,6 +87,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestSteps\ChobeAreaPageSteps.cs" />
+    <Compile Include="FeatureFiles\ChobeAreaPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChobeAreaPage.feature</DependentUpon>
+    </Compile>
     <Compile Include="PageObjects\CountryPagecs.cs" />
     <Compile Include="PageObjects\Object Repository\CountryPageElements.cs" />
     <Compile Include="TestSteps\BotswanaCountryPageSteps.cs" />
@@ -159,6 +165,10 @@
     <None Include="FeatureFiles\BotswanaCountry Page.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BotswanaCountry Page.feature.cs</LastGenOutput>
+    </None>
+    <None Include="FeatureFiles\ChobeAreaPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ChobeAreaPage.feature.cs</LastGenOutput>
     </None>
     <None Include="FeatureFiles\Destinationpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
