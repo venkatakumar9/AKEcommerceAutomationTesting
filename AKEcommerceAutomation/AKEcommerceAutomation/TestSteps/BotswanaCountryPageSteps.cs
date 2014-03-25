@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//  Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Linq;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
@@ -40,7 +46,7 @@ namespace AKEcommerceAutomation
         [Then(@"the map is present")]
         public void ThenTheMapIsPresent()
         {
-            driver.FindElement(CountryPageElements.mapid);
+            driver.FindElement(CountryPageElements.Enquirebutton);
         }
     }
 
@@ -151,5 +157,52 @@ namespace AKEcommerceAutomation
         {
             new BotswanaAreaTab().ThenAllTheAreasWithOffersAreAvailable();
         }
+    }
+
+    [Binding]
+    public class BotswanaInsidertab : SeleniumTestBase
+    {
+        [When(@"I click on Insider Access")]
+        public void WhenIClickOnInsiderAccess()
+        {
+            driver.FindElement(By.LinkText("INSIDER ACCESS")).Click();
+        }
+
+        [Then(@"Enquire button is present")]
+        public void ThenEnquireButtonIsPresent()
+        {
+            string enquire = driver.FindElement(CountryPageElements.Enquirebutton).Text;
+            Assert.AreEqual("ENQUIRE", enquire);
+        }
+    }
+
+    [Binding]
+    public class BotswanaUsefultab : SeleniumTestBase
+    {
+        [When(@"I click on useful info")]
+        public void WhenIClickOnUsefulInfo()
+        {
+            driver.FindElement(By.LinkText("INSIDER ACCESS")).Click();
+        }
+
+        [Then(@"Enquire, Print buttons are present")]
+        public void ThenEnquirePrintButtonsArePresent()
+        {
+            string enquire = driver.FindElement(CountryPageElements.Enquirebutton).Text;
+            Assert.AreEqual("ENQUIRE", enquire);
+            try
+            {
+                driver.FindElement(CountryPageElements.PrintButton);
+                Console.WriteLine("Print Buttton is Present");
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            
+
+        }
+
     }
 }

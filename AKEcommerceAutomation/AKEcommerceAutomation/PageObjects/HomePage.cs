@@ -1,6 +1,9 @@
-﻿using System;
-using AKEcommerceAutomation.Framework;
-using AKEcommerceAutomation.PageObjects.Object_Repository;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//  Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
 using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
@@ -33,7 +36,7 @@ namespace AKEcommerceAutomation.PageObjects
 
         public string GetHomepagemiddle_sectionText()
         {
-           return driver.FindElement(By.XPath("//*[@id='Footer_C019_Col00']/div/div")).Text;
+            return driver.FindElement(By.XPath("//*[@id='Footer_C019_Col00']/div/div")).Text;
         }
 
         public bool GetGetHomePageMiddle_Section()
@@ -43,7 +46,7 @@ namespace AKEcommerceAutomation.PageObjects
 
         public string GetGuidedgroupjourneys_Homepage()
         {
-           return driver.FindElement(By.XPath("//*[@id='Footer_C021_Col00']/h3")).Text;
+            return driver.FindElement(By.XPath("//*[@id='Footer_C021_Col00']/h3")).Text;
         }
 
         public bool GetGuidedGroupJourneysInHomepage_Section()
@@ -71,6 +74,5 @@ namespace AKEcommerceAutomation.PageObjects
         {
             return new ContinentPage(_driver);
         }
-
     }
 }

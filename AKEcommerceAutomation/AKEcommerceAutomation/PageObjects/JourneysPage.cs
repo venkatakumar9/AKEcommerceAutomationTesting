@@ -1,4 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//  Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
 {

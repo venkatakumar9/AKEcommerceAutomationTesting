@@ -1,4 +1,10 @@
-﻿using AKEcommerceAutomation.PageObjects.Object_Repository;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//  Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using AKEcommerceAutomation.PageObjects.Object_Repository;
 using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
