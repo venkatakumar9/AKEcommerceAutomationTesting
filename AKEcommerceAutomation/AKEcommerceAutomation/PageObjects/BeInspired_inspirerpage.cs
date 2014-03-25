@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AKEcommerceAutomation.PageObjects.Object_Repository;
-using NUnit.Core;
 using OpenQA.Selenium;
 using System;
 

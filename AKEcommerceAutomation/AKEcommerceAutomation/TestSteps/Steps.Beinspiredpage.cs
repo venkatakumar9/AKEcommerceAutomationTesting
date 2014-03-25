@@ -1,24 +1,12 @@
-<<<<<<< HEAD
-﻿//-----------------------------------------------------------------------
-// <copyright company="Abercombie&kent">
-//  Copyright (c) Abercombie&Kent. All rights reserved.
-// </copyright>
-//-----------------------------------------------------------------------
-
-=======
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
->>>>>>> Be-inspired
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
 using AKEcommerceAutomation.PageObjects.Object_Repository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-<<<<<<< HEAD
-=======
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
->>>>>>> Be-inspired
 using TechTalk.SpecFlow;
 
 namespace AKEcommerceAutomation.TestSteps
@@ -108,10 +96,6 @@ namespace AKEcommerceAutomation.TestSteps
             
         }
 
-<<<<<<< HEAD
-   }
-}
-=======
         [Then(@"inspirer category images appears")]
         public void ThenInspirerCategoryImagesAppears()
         {
@@ -389,18 +373,20 @@ namespace AKEcommerceAutomation.TestSteps
         [When(@"I Click on Share Pinboard Icons")]
         public void WhenIClickOnSharePinboardIcons()
         {
-            string parentwindow = driver.getWindowHandle();
+            
             driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div[1]/div[4]/a[1]/img")).Click();
+            
+            
         }
 
         [Then(@"Each Icon Navigates to right page")]
         public void ThenEachIconNavigatesToRightPage()
         {
-            ScenarioContext.Current.Pending();
+            //driver.SwitchTo().Window();
+            //ScenarioContext.Current.Pending();
         }
 
 
         
     }
 }
->>>>>>> Be-inspired

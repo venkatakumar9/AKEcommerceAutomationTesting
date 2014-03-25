@@ -1,16 +1,15 @@
-<<<<<<< HEAD
+
 ﻿//-----------------------------------------------------------------------
 // <copyright company="Abercombie&kent">
 //  Copyright (c) Abercombie&Kent. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
-=======
+
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AKEcommerceAutomation.PageObjects.Object_Repository;
-using NUnit.Core;
->>>>>>> Be-inspired
+using System;
 using OpenQA.Selenium;
 
 namespace AKEcommerceAutomation.PageObjects
@@ -50,10 +49,9 @@ namespace AKEcommerceAutomation.PageObjects
             var beinspirednavigationValues = new string[GetBeinspiredNavigationCount()];
             for (int i = 0; i < GetBeinspiredNavigationCount(); i++)
             {
-<<<<<<< HEAD
-                beinspirednavigationValues[i] =
+                 beinspirednavigationValues[i] =
                     _driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[" + (i + 1) + "]")).Text;
-=======
+
                beinspirednavigationValues[i] =
                         _driver.FindElement(By.XPath("//div[@class = 'nav']/a[" + (i + 1) + "]")).Text;
                 if (i == 3)
@@ -61,7 +59,7 @@ namespace AKEcommerceAutomation.PageObjects
                    string[] split = beinspirednavigationValues[3].Split('\n');
                     beinspirednavigationValues[3] = split[1];
                 }
->>>>>>> Be-inspired
+
             }
             return beinspirednavigationValues;
         }
