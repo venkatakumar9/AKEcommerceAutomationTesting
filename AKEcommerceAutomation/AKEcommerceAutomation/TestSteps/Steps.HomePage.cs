@@ -7,16 +7,8 @@
 using System;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AKEcommerceAutomation.PageObjects.Object_Repository;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System.Collections.Generic;
-using OpenQA.Selenium.Chrome;
-
 using TechTalk.SpecFlow;
-using Assert = NUnit.Framework.Assert;
 
 namespace AKEcommerceAutomation.TestSteps
 {
@@ -133,7 +125,7 @@ namespace AKEcommerceAutomation.TestSteps
                 Assert.AreEqual(table.Rows[i]["Value"], headerValues[i]);
             }
         }
-       
+
 
         //Header links in homepage
         [When(@"I am on the Homepage")]
@@ -151,12 +143,11 @@ namespace AKEcommerceAutomation.TestSteps
                 Assert.AreEqual(table.Rows[i]["Value"], headerlinksValues[i]);
             }
         }
-      
+
         //[AfterScenario]
         //public void CloseBrowser()
         //{
         //    driver.Close();
         //}
-
     }
 }

@@ -1,22 +1,20 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright company="Abercombie&kent">
-//  Copyright (c) Abercombie&Kent. All rights reserved.
+//     Copyright (c) Abercombie&Kent. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
-using OpenQA.Selenium;
-
 namespace AKEcommerceAutomation.PageObjects
 {
-    public class JourneysPage : BasePage
+    using OpenQA.Selenium;
+
+    public class CountryPagecs : BasePage
     {
-        public JourneysPage(IWebDriver driver) : base(driver)
+        public CountryPagecs(IWebDriver driver): base(driver)
         {
+            
         }
 
-        public string title()
-        {
-            return driver.Title;
-        }
+        
     }
 }

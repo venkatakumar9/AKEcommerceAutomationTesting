@@ -34,6 +34,11 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
         /// css selector of country elements
         /// </summary>
         public static By countries = By.CssSelector("[class='header-2 sf_2cols-show']");
-        
+
+        /// <summary>
+        /// css selector of country Images 
+        /// </summary>
+        public static By CountryImages = By.XPath("//*[@id='infiniteScrollItem']/div[1]/div[1]/div/section/article/a/div");
+
     }
 }

@@ -1,4 +1,10 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//  Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;

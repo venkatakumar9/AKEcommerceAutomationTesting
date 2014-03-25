@@ -20,9 +20,6 @@ namespace AKEcommerceAutomation
         [When(@"I click on the country image")]
         public void WhenIClickOnTheCountryImage()
         {
-            var countries = new string[driver.FindElements(ContinentPageElements.countries).Count];
-            for (int i = 0; i < driver.FindElements(ContinentPageElements.countries).Count;)
-            {
                 foreach (IWebElement country in driver.FindElements(ContinentPageElements.countries))
                 {
                     try
@@ -30,14 +27,13 @@ namespace AKEcommerceAutomation
                         country.Click();
                         string title = driver.Title;
                         Console.WriteLine(title);
-                        i++;
                         break;
                     }
                     catch (Exception ex)
                     {
                         string e = ex.ToString();
                     }
-                }
+                
             }
         }
 

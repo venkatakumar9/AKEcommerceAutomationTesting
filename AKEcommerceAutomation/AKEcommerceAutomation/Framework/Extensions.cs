@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//  Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
+using System.Collections.ObjectModel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -20,7 +22,6 @@ namespace AKEcommerceAutomation.Framework
             }
             catch (NoSuchElementException)
             {
-
                 return false;
             }
         }
@@ -33,19 +34,18 @@ namespace AKEcommerceAutomation.Framework
 
         public static bool VisibleElementExists(this IWebDriver driver, By by, Int32 implicitWait)
         {
-            var visibleElements = -1;
+            int visibleElements = -1;
             try
             {
                 driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 0));
-                var elements = driver.FindElements(by);
+                ReadOnlyCollection<IWebElement> elements = driver.FindElements(by);
                 visibleElements = elements.Count;
                 driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, implicitWait));
                 return visibleElements != 0;
             }
             catch (Exception e)
             {
-
-                Console.WriteLine("Element not found -->" + by.ToString() + " _ " + e.Message);
+                Console.WriteLine("Element not found -->" + @by + " _ " + e.Message);
                 return visibleElements == 0;
             }
         }

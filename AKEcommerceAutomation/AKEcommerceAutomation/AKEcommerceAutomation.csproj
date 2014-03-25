@@ -87,10 +87,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageObjects\CountryPagecs.cs" />
+    <Compile Include="PageObjects\Object Repository\CountryPageElements.cs" />
+    <Compile Include="TestSteps\BotswanaCountryPageSteps.cs" />
     <Compile Include="FeatureFiles\Beinspirerpage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Beinspirerpage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="FeatureFiles\BotswanaCountry Page.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BotswanaCountry Page.feature</DependentUpon>
     </Compile>
     <Compile Include="TestSteps\AfricaContinentpageSteps.cs" />
     <Compile Include="FeatureFiles\AfricaContinentpage.feature.cs">
@@ -148,6 +156,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AfricaContinentpage.feature.cs</LastGenOutput>
     </None>
+    <None Include="FeatureFiles\BotswanaCountry Page.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BotswanaCountry Page.feature.cs</LastGenOutput>
+    </None>
     <None Include="FeatureFiles\Destinationpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Destinationpage1.feature.cs</LastGenOutput>
@@ -160,16 +172,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Homepagenavigation.feature.cs</LastGenOutput>
     </None>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
     <None Include="TestSteps\packages.config" />
-    <None Include="TestSteps\packages.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

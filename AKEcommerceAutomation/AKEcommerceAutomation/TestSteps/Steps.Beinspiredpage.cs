@@ -1,9 +1,12 @@
-﻿using System;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//  Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TechTalk.SpecFlow;
-using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 
@@ -41,6 +44,5 @@ namespace AKEcommerceAutomation.TestSteps
             
         }
 
-
-       }
+   }
 }

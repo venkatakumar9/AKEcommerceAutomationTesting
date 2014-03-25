@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿//-----------------------------------------------------------------------
+// <copyright company="Abercombie&kent">
+//  Copyright (c) Abercombie&Kent. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
 using AKEcommerceAutomation.PageObjects.Object_Repository;
 using OpenQA.Selenium;
-using AKEcommerceAutomation.Framework;
 
 namespace AKEcommerceAutomation.PageObjects
 {
@@ -13,10 +14,9 @@ namespace AKEcommerceAutomation.PageObjects
     {
         public DestinationsPage(IWebDriver driver) : base(driver)
         {
-            
         }
 
-         public string title()
+        public string title()
         {
             return driver.Title;
         }
@@ -26,46 +26,55 @@ namespace AKEcommerceAutomation.PageObjects
             driver.FindElement(DestinationsPageElements.TheAmericas).Click();
             return driver.Title;
         }
+
         public string vectormapclick_Africa()
         {
             driver.FindElement(DestinationsPageElements.Africa).Click();
             return driver.Title;
         }
+
         public string vectormapclick_Asia()
         {
             driver.FindElement(DestinationsPageElements.Asia).Click();
             return driver.Title;
         }
+
         public string vectormapclick_Carribean()
         {
             driver.FindElement(DestinationsPageElements.Carribean).Click();
             return driver.Title;
         }
+
         public string vectormapclick_AutraliaAndNewzealand()
         {
             driver.FindElement(DestinationsPageElements.AustraliaAndNewzealand).Click();
             return driver.Title;
         }
+
         public string vectormapclick_IndianOcean()
         {
             driver.FindElement(DestinationsPageElements.IndianOcean).Click();
             return driver.Title;
         }
+
         public string vectormapclick_Arctic()
         {
             driver.FindElement(DestinationsPageElements.Arctic).Click();
             return driver.Title;
         }
+
         public string vectormapclick_Europe()
         {
             driver.FindElement(DestinationsPageElements.Europe).Click();
             return driver.Title;
         }
+
         public string vectormapclick_Antarctica()
         {
             driver.FindElement(DestinationsPageElements.Antarctica).Click();
             return driver.Title;
         }
+
         public string vectormapclick_Middleeast()
         {
             driver.FindElement(DestinationsPageElements.MiddleEast).Click();
@@ -77,8 +86,5 @@ namespace AKEcommerceAutomation.PageObjects
             driver.FindElement(DestinationsPageElements.IndiaandHimalayas).Click();
             return driver.Title;
         }
-
     }
 }
-    
-
