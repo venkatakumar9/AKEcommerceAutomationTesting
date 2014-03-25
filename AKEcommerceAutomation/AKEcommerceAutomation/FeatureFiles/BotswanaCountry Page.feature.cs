@@ -200,6 +200,40 @@ testRunner.Then("I can view all the Accomodations available", ((string)(null)), 
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate Inside Access in the Country Page")]
+        public virtual void ValidateInsideAccessInTheCountryPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Inside Access in the Country Page", ((string[])(null)));
+#line 49
+this.ScenarioSetup(scenarioInfo);
+#line 50
+testRunner.Given("I reach the Botswana Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 51
+testRunner.When("I click on Insider Access", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 52
+testRunner.Then("Enquire button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate Useful Info in the country page")]
+        public virtual void ValidateUsefulInfoInTheCountryPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Useful Info in the country page", ((string[])(null)));
+#line 54
+this.ScenarioSetup(scenarioInfo);
+#line 55
+testRunner.Given("I reach the Botswana Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 56
+testRunner.When("I click on useful info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 57
+testRunner.Then("Enquire, Print buttons are present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

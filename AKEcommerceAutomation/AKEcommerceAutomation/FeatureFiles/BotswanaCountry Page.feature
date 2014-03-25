@@ -45,3 +45,13 @@ Scenario: Validate Accomodations in the country page
 Given I reach the Botswana Page
 When I Click on Accomodations 
 Then I can view all the Accomodations available
+
+Scenario: Validate Inside Access in the Country Page
+Given I reach the Botswana Page
+When I click on Insider Access
+Then Enquire button is present
+
+Scenario: Validate Useful Info in the country page
+Given I reach the Botswana Page
+When I click on useful info 
+Then Enquire, Print buttons are present

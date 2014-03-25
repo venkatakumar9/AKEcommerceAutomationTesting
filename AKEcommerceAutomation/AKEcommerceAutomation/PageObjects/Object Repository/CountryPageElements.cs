@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 
 using OpenQA.Selenium;
+using TechTalk.SpecFlow;
 
 namespace AKEcommerceAutomation.PageObjects.Object_Repository
 {
@@ -19,5 +20,15 @@ namespace AKEcommerceAutomation.PageObjects.Object_Repository
         /// ID of the map
         /// </summary>
         public static readonly By mapid = By.Id("map_canvas");
+
+        /// <summary>
+        /// Enquire button 
+        /// </summary>
+        public static readonly By Enquirebutton = By.CssSelector("div.pageTabRenderArea > section.top-cta-panel > a.button-secondary");
+
+        /// <summary>
+        /// Print button 
+        /// </summary>
+        public static readonly By PrintButton = By.ClassName("cta-print");
     }
 }
