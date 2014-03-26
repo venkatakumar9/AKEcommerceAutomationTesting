@@ -47,7 +47,7 @@ namespace AKEcommerceAutomation
         [Then(@"All the navigation links appear")]
         public void ThenAllTheNavigationLinksAppear(Table table)
         {
-            string[] navlinks = new ContinentPage(driver).continentnavlinks();
+            string[] navlinks = new ContinentPage(driver).navlinks();
             for (int i = 0; i < navlinks.Count(); i++)
             {
                 Assert.AreEqual(table.Rows[i]["Value"], navlinks[i]);

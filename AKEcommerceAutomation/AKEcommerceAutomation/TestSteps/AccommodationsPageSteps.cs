@@ -21,7 +21,7 @@ namespace AKEcommerceAutomation
         [When(@"I click on Accommodations tab")]
         public void WhenIClickOnAccommodationsTab()
         {
-            string[] navlinks = new ContinentPage(driver).continentnavlinks();
+            string[] navlinks = new ContinentPage(driver).navlinks();
             foreach (var navlink in navlinks)
             {
                 if (navlink=="ACCOMMODATIONS")
@@ -35,7 +35,8 @@ namespace AKEcommerceAutomation
         [When(@"I click on Sanctuary Chobe Chilwero")]
         public void WhenIClickOnSanctuaryChobeChilwero()
         {
-           foreach (IWebElement accomodation in driver.FindElements(ContinentPageElements.countries))
+            
+             foreach (IWebElement accomodation in driver.FindElements(ContinentPageElements.countries))
                 {
                     if (accomodation.Text == "SANCTUARY CHOBE CHILWERO-CHOBE")
                     {
@@ -48,7 +49,7 @@ namespace AKEcommerceAutomation
         [Then(@"All the Avialable Accomodatioons are present")]
         public void ThenAllTheAvialableAccomodatioonsArePresent()
         {
-            string[] accomodations= new ContinentPage(driver).countries();
+            string[] accomodations= new ContinentPage(driver).carouseltexts();
             foreach (var accomodation in accomodations)
             {
                 Console.WriteLine(accomodation);

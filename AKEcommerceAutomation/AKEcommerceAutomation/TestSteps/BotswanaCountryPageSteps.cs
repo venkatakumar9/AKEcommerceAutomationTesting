@@ -30,7 +30,7 @@ namespace AKEcommerceAutomation
         [Then(@"The Navigation Links are present")]
         public void ThenTheNavigationLinksArePresent(Table table)
         {
-            string[] navlinks = new ContinentPage(driver).continentnavlinks();
+            string[] navlinks = new ContinentPage(driver).navlinks();
             for (int i = 0; i < navlinks.Count(); i++)
             {
                 Assert.AreEqual(table.Rows[i]["Value"], navlinks[i]);
@@ -96,7 +96,7 @@ namespace AKEcommerceAutomation
         [Then(@"All the Areas with offers are available")]
         public string[] ThenAllTheAreasWithOffersAreAvailable()
         {
-            string[] areas = new ContinentPage(driver).countries();
+            string[] areas = new ContinentPage(driver).carouseltexts();
             if (areas.Length<1)
             {
                 Console.WriteLine("No data available");
