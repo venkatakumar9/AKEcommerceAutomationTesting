@@ -374,10 +374,6 @@ namespace AKEcommerceAutomation.TestSteps
         [When(@"I Click on Share Pinboard Icons")]
         public void WhenIClickOnSharePinboardIcons()
         {
-<<<<<<< HEAD
-            
-            driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div[1]/div[4]/a[1]/img")).Click();
-=======
              parentwindow = driver.CurrentWindowHandle;
             int sharelinks = driver.FindElements(By.XPath("//*[@id='infiniteScrollItem']/div[1]/div[4]/a/img")).Count;
             for (int i = 1; i <= sharelinks; i++)
@@ -385,7 +381,6 @@ namespace AKEcommerceAutomation.TestSteps
                 driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div[1]/div[4]/a["+i+"]/img")).Click();
 
             }
->>>>>>> Be-inspired
             
             
         }
@@ -393,10 +388,6 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"Each Icon Navigates to right page")]
         public void ThenEachIconNavigatesToRightPage()
         {
-<<<<<<< HEAD
-            //driver.SwitchTo().Window();
-            //ScenarioContext.Current.Pending();
-=======
             
             ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
             foreach (string window  in windowHandles)
@@ -441,7 +432,6 @@ namespace AKEcommerceAutomation.TestSteps
             driver.FindElement(By.Id("yourMessage")).SendKeys("Check MyPinboard, it is very interesting.");
             driver.FindElement(By.Id("sendPinboardToAFriend")).Click();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
->>>>>>> Be-inspired
         }
 
         [Then(@"Mypinboard send to a Friend email address")]
@@ -457,6 +447,6 @@ namespace AKEcommerceAutomation.TestSteps
             //ScenarioContext.Current.Pending();
         }
 
-        
+         
     }
 }
