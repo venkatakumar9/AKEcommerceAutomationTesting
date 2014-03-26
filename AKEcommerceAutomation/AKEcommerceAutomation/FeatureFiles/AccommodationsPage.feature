@@ -13,3 +13,12 @@ When I click on Accommodations tab
 Then All the Avialable Accomodatioons are present
 When I click on Sanctuary Chobe Chilwero
 Then I reach Sanctuary Chobe Chilwero Accomodation page
+
+Scenario: Verify the hero Image
+Given There is a Accomodation image in the Area page
+When I reach the Accomodation page
+Then the Hero image is present in accomodation page
+
+Scenario: Verify the map in the Accomodation Page
+Given I reach the Accomodation page
+Then the map is present

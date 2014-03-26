@@ -46,7 +46,7 @@ namespace AKEcommerceAutomation
         [Then(@"the map is present")]
         public void ThenTheMapIsPresent()
         {
-            driver.FindElement(CountryPageElements.Enquirebutton);
+            driver.FindElement(CountryPageElements.mapid);
         }
     }
 
