@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
@@ -17,7 +18,7 @@ namespace AKEcommerceAutomation.TestSteps
         private readonly BeInspiredPage beinspiredPage = new BeInspiredPage(driver);
         private readonly HomePage homePage = new HomePage(driver);
         private readonly BeInspired_inspirerpage inspirerimagespage = new BeInspired_inspirerpage(driver);
-
+        private string parentwindow; 
 
         /// <summary>
         /// Verifying the navigation in Be-inspired page
@@ -373,8 +374,18 @@ namespace AKEcommerceAutomation.TestSteps
         [When(@"I Click on Share Pinboard Icons")]
         public void WhenIClickOnSharePinboardIcons()
         {
+<<<<<<< HEAD
             
             driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div[1]/div[4]/a[1]/img")).Click();
+=======
+             parentwindow = driver.CurrentWindowHandle;
+            int sharelinks = driver.FindElements(By.XPath("//*[@id='infiniteScrollItem']/div[1]/div[4]/a/img")).Count;
+            for (int i = 1; i <= sharelinks; i++)
+            {
+                driver.FindElement(By.XPath("//*[@id='infiniteScrollItem']/div[1]/div[4]/a["+i+"]/img")).Click();
+
+            }
+>>>>>>> Be-inspired
             
             
         }
@@ -382,10 +393,69 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"Each Icon Navigates to right page")]
         public void ThenEachIconNavigatesToRightPage()
         {
+<<<<<<< HEAD
             //driver.SwitchTo().Window();
             //ScenarioContext.Current.Pending();
+=======
+            
+            ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
+            foreach (string window  in windowHandles)
+            {
+                if (window != parentwindow)
+                {
+                    driver.SwitchTo().Window(window);
+                    string title = driver.Title;
+                    Console.WriteLine(title);
+                    driver.Close();
+                    driver.SwitchTo().Window(parentwindow);
+
+                }
+
+            }
+
+            string sendtofriendlink = driver.FindElement(By.XPath("//div[@class = 'inner-popup']/div/h2")).Text;
+            Assert.AreEqual(sendtofriendlink, "SEND TO A FRIEND");
+            Console.WriteLine(sendtofriendlink);
+            driver.FindElement(By.XPath("//div[@class = 'inner-popup']/a")).Click();
+           
         }
 
+        /// <summary>
+        /// Send MyPinboard to a Friend
+        /// </summary>
+
+        [When(@"I click on send to a friend icon")]
+        public void WhenIClickOnSendToAFriendIcon()
+        {
+            homePage.GetBeInspiredPage().GetMyPinboard();
+            driver.FindElement(By.XPath("//div[@class = 'pinboard-share']/a[4]")).Click();
+        }
+
+        [When(@"I fill in the text fields with valid details")]
+        public void WhenIFillInTheTextFieldsWithValidDetails()
+        {
+            string sendtofriendlink = driver.FindElement(By.XPath("//div[@class = 'inner-popup']/div/h2")).Text;
+            Assert.AreEqual(sendtofriendlink, "SEND TO A FRIEND");
+            driver.FindElement(By.Id("sendersName")).SendKeys("venkata");
+            driver.FindElement(By.Id("recipientEmail")).SendKeys("kumar.venkata9@googlemail.com");
+            driver.FindElement(By.Id("yourMessage")).SendKeys("Check MyPinboard, it is very interesting.");
+            driver.FindElement(By.Id("sendPinboardToAFriend")).Click();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+>>>>>>> Be-inspired
+        }
+
+        [Then(@"Mypinboard send to a Friend email address")]
+        public void ThenMypinboardSendToAFriendEmailAddress()
+        {
+            string succesfullmessage =
+                driver.FindElement(By.XPath("//div[@class = 'ak-form send-to-friend']/fieldset/p")).Text;
+            Assert.AreEqual(succesfullmessage, "Your message has been sent.");
+            Console.WriteLine(succesfullmessage);
+            driver.FindElement(By.XPath("//div[@class = 'inner-popup']/a")).Click();
+
+
+            //ScenarioContext.Current.Pending();
+        }
 
         
     }

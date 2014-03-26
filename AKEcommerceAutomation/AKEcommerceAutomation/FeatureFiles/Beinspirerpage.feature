@@ -66,3 +66,7 @@ Given I am on MyPinboard page
 When I Click on Share Pinboard Icons
 Then Each Icon Navigates to right page
 
+Scenario: Send MyPinboard to a Friend
+When I click on send to a friend icon
+And I fill in the text fields with valid details
+Then Mypinboard send to a Friend email address
