@@ -53,7 +53,7 @@ namespace AKEcommerceAutomation
         public void ThenAllTheGuidedGroupJourneysAppear()
         {
             var homePage = new HomePage(driver);
-            var packages = homePage.GetContinentPage().countries();
+            var packages = homePage.GetContinentPage().carouseltexts();
             foreach (var package in packages)
             {
                 Console.WriteLine(package);

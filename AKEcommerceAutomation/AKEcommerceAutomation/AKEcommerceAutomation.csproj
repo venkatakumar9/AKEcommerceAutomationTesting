@@ -87,6 +87,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestSteps\AccommodationsPageSteps.cs" />
+    <Compile Include="FeatureFiles\AccommodationsPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccommodationsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="TestSteps\ChobeAreaPageSteps.cs" />
+    <Compile Include="FeatureFiles\AreaPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AreaPage.feature</DependentUpon>
+    </Compile>
     <Compile Include="PageObjects\CountryPagecs.cs" />
     <Compile Include="PageObjects\Object Repository\CountryPageElements.cs" />
     <Compile Include="TestSteps\BotswanaCountryPageSteps.cs" />
@@ -95,16 +107,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Beinspirerpage.feature</DependentUpon>
     </Compile>
-    <Compile Include="FeatureFiles\BotswanaCountry Page.feature.cs">
+    <Compile Include="FeatureFiles\Country Page.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BotswanaCountry Page.feature</DependentUpon>
+      <DependentUpon>Country Page.feature</DependentUpon>
     </Compile>
     <Compile Include="TestSteps\AfricaContinentpageSteps.cs" />
-    <Compile Include="FeatureFiles\AfricaContinentpage.feature.cs">
+    <Compile Include="FeatureFiles\Continentpage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AfricaContinentpage.feature</DependentUpon>
+      <DependentUpon>Continentpage.feature</DependentUpon>
     </Compile>
     <Compile Include="PageObjects\ContinentPage.cs" />
     <Compile Include="PageObjects\Object Repository\ContinentPageElements.cs" />
@@ -149,17 +161,25 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="FeatureFiles\AccommodationsPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccommodationsPage.feature.cs</LastGenOutput>
+    </None>
     <None Include="FeatureFiles\Beinspirerpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Beinspirerpage.feature.cs</LastGenOutput>
     </None>
-    <None Include="FeatureFiles\AfricaContinentpage.feature">
+    <None Include="FeatureFiles\Continentpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AfricaContinentpage.feature.cs</LastGenOutput>
+      <LastGenOutput>Continentpage.feature.cs</LastGenOutput>
     </None>
-    <None Include="FeatureFiles\BotswanaCountry Page.feature">
+    <None Include="FeatureFiles\Country Page.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BotswanaCountry Page.feature.cs</LastGenOutput>
+      <LastGenOutput>Country Page.feature.cs</LastGenOutput>
+    </None>
+    <None Include="FeatureFiles\AreaPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AreaPage.feature.cs</LastGenOutput>
     </None>
     <None Include="FeatureFiles\Destinationpage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

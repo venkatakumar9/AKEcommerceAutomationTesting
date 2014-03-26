@@ -71,7 +71,7 @@ namespace AKEcommerceAutomation
         [Then(@"The Navigation links are present")]
         public void ThenTheNavigationLinksArePresent(Table table)
         {
-            string[] conitnetpagelinks = homepage.GetContinentPage().continentnavlinks();
+            string[] conitnetpagelinks = homepage.GetContinentPage().navlinks();
             for (int i = 0; i < homepage.GetHeaderNavigationCount(); i++)
             {
                 Assert.AreEqual(table.Rows[i]["Value"], conitnetpagelinks[i]);
@@ -106,7 +106,7 @@ namespace AKEcommerceAutomation
         [Then(@"All the countries with holiday packages are shown")]
         public void ThenAllTheCountriesWithHolidayPackagesAreShown()
         {
-            var countries = new ContinentPage(driver).countries();
+            var countries = new ContinentPage(driver).carouseltexts();
             foreach (var country in countries)
             {
                 Console.WriteLine(country);

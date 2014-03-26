@@ -15,7 +15,7 @@ namespace AKEcommerceAutomation.PageObjects
         {
         }
 
-        public string[] continentnavlinks()
+        public string[] navlinks()
         {
             var continetnav = new string[_driver.FindElements(ContinentPageElements.Navigation).Count];
             for (int i = 0; i < _driver.FindElements(ContinentPageElements.Navigation).Count;)
@@ -30,7 +30,7 @@ namespace AKEcommerceAutomation.PageObjects
             return continetnav;
         }
 
-        public string[] countries()
+        public string[] carouseltexts()
         {
             var countries = new string[_driver.FindElements(ContinentPageElements.countries).Count];
             for (int i = 0; i < _driver.FindElements(ContinentPageElements.countries).Count;)
