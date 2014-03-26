@@ -25,7 +25,7 @@ namespace AKEcommerceAutomation.FeatureFiles
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "HOMEPAGE.feature"
+#line 1 "HomePage.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
