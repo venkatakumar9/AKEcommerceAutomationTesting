@@ -438,8 +438,8 @@ namespace AKEcommerceAutomation.TestSteps
         public void ThenMypinboardSendToAFriendEmailAddress()
         {
             string succesfullmessage =
-                driver.FindElement(By.XPath("//div[@class = 'ak-form send-to-friend']/fieldset")).Displayed.ToString();
-            //Assert.AreEqual(succesfullmessage, "Your message has been sent.");
+                driver.FindElement(By.XPath("//div[@class = 'ak-form send-to-friend']/fieldset/p")).Text;
+            Assert.AreEqual(succesfullmessage, "Your message has been sent.");
             Console.WriteLine(succesfullmessage);
             driver.FindElement(By.XPath("//div[@class = 'inner-popup']/a")).Click();
 
