@@ -18,7 +18,6 @@ namespace AKEcommerceAutomation.TestSteps
         public void WhenIClickOnSpecialOffersLinkInHeader()
         {
             homePage.GetSpecialoffersPage();
-            //ScenarioContext.Current.Pending();
         }
 
         [Then(@"Special offers page appear")]
