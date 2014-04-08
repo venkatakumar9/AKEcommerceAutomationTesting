@@ -74,5 +74,11 @@ namespace AKEcommerceAutomation.PageObjects
         {
             return new ContinentPage(_driver);
         }
+
+        public SpecialoffersPage GetSpecialoffersPage()
+        {
+            _driver.FindElement(By.XPath("//header[@id = 'header']/div/div/div/ul/li[2]")).Click();
+            return new SpecialoffersPage(_driver);
+        }
     }
 }
