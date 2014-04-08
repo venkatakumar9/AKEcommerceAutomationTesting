@@ -97,6 +97,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AreaPage.feature</DependentUpon>
     </Compile>
+    <Compile Include="FeatureFiles\Specialofferpage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Specialofferpage.feature</DependentUpon>
+    </Compile>
     <Compile Include="PageObjects\CountryPagecs.cs" />
     <Compile Include="PageObjects\Object Repository\CountryPageElements.cs" />
     <Compile Include="FeatureFiles\Beinspirerpage.feature.cs">
@@ -157,6 +162,7 @@
     <Compile Include="TestSteps\Steps.HomePageMainNavigation.cs" />
     <Compile Include="TestSteps\Steps.HomePage.cs" />
     <Compile Include="TestSteps\Steps.Homepagenavigation.cs" />
+    <Compile Include="TestSteps\Steps.SpecialOffers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -193,6 +199,10 @@
     <None Include="FeatureFiles\Homepagenavigation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Homepagenavigation.feature.cs</LastGenOutput>
+    </None>
+    <None Include="FeatureFiles\Specialofferpage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Specialofferpage.feature.cs</LastGenOutput>
     </None>
     <None Include="TestSteps\packages.config" />
   </ItemGroup>

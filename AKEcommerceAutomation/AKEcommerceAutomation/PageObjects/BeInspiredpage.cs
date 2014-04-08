@@ -49,8 +49,7 @@ namespace AKEcommerceAutomation.PageObjects
             var beinspirednavigationValues = new string[GetBeinspiredNavigationCount()];
             for (int i = 0; i < GetBeinspiredNavigationCount(); i++)
             {
-                 beinspirednavigationValues[i] =
-                    _driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[" + (i + 1) + "]")).Text;
+               //beinspirednavigationValues[i] =_driver.FindElement(By.XPath("//*[@id='page-wrapper']/div[5]/div/a[" + (i + 1) + "]")).Text;
 
                beinspirednavigationValues[i] =
                         _driver.FindElement(By.XPath("//div[@class = 'nav']/a[" + (i + 1) + "]")).Text;

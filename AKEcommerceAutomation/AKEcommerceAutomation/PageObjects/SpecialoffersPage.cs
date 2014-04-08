@@ -12,6 +12,21 @@ namespace AKEcommerceAutomation.PageObjects
    {
        
    }
-       //public 
+       public string title()
+       {
+           return driver.Title;
+       }
+
+      public void GetSpecialoffersnavigationValues()
+       {
+          int specialoffernavigationlinks = _driver.FindElements(By.XPath("//div[@class = 'page-nav']/ul")).Count;
+          for (int i = 1; i <= specialoffernavigationlinks; i++)
+          {
+             Console.WriteLine(driver.FindElement(By.XPath("//div[@class = 'page-nav']/ul["+i+"]")).Text);
+          }
+           
+          
+
+       }
    }
 }
