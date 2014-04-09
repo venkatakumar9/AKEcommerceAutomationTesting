@@ -84,6 +84,21 @@ testRunner.And("special offers navigation exists", ((string)(null)), ((TechTalk.
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify special offers Search wrapper in Special offers page")]
+        public virtual void VerifySpecialOffersSearchWrapperInSpecialOffersPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify special offers Search wrapper in Special offers page", ((string[])(null)));
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 18
+testRunner.When("I am in Specialoffers page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+testRunner.Then("Special offer search wrapper appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

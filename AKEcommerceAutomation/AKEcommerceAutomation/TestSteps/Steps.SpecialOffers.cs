@@ -14,6 +14,10 @@ namespace AKEcommerceAutomation.TestSteps
         private readonly HomePage homePage = new HomePage(driver);
         private readonly SpecialoffersPage specialofferpage = new SpecialoffersPage(driver);
 
+        /// <summary>
+        /// Verifying the Special Offers Navigation links
+        /// </summary>
+        
         [When(@"I click on Special offers link in header")]
         public void WhenIClickOnSpecialOffersLinkInHeader()
         {
@@ -33,6 +37,23 @@ namespace AKEcommerceAutomation.TestSteps
             specialofferpage.GetSpecialoffersnavigationValues();
             
         }
+
+        /// <summary>
+        ///  Verify special offers Search wrapper in Special offers page
+        /// </summary>>
+        
+        [When(@"I am in Specialoffers page")]
+        public void WhenIAmInSpecialoffersPage()
+        {
+            homePage.GetSpecialoffersPage();
+        }
+
+        [Then(@"Special offer search wrapper appears")]
+        public void ThenSpecialOfferSearchWrapperAppears()
+        {
+            specialofferpage.Getspecialoffersearchwrapper();
+        }
+
 
     }
 }
