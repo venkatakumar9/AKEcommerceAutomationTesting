@@ -18,4 +18,7 @@ Scenario: Verify special offers Search wrapper in Special offers page
 When I am in Specialoffers page
 Then Special offer search wrapper appears
 
+Scenario: Special offers in Guided Group Journeys
+When I am in Specialoffers page
+Then Special offers related to Guided Group Journeys display
 

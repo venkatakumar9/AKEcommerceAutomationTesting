@@ -54,6 +54,23 @@ namespace AKEcommerceAutomation.TestSteps
             specialofferpage.Getspecialoffersearchwrapper();
         }
 
+        /// <summary>
+        /// Special offers related to Guided Group Journeys
+        /// </summary>
+
+        [When(@"I am in the Specialoffers page")]
+        public void WhenIAmIntheSpecialoffersPage()
+        {
+            homePage.GetSpecialoffersPage();
+        }
+
+        [Then(@"Special offers related to Guided Group Journeys display")]
+        public void ThenSpecialOffersRelatedToGuidedGroupJourneysDisplay()
+        {
+            specialofferpage.GetSpecialOffers_Guidedgroup();
+        }
+
+        
 
     }
 }

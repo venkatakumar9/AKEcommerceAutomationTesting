@@ -35,5 +35,14 @@ namespace AKEcommerceAutomation.PageObjects
            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
        }
+
+       public void GetSpecialOffers_Guidedgroup()
+       {
+           int guidedgroupimages = _driver.FindElements(By.XPath("//*[@id='guidedGroupJourneys']/div/div/div/div/section/article/a/span[2]")).Count;
+           for (int i = 1; i <= guidedgroupimages; i++)
+           {
+               Console.WriteLine(driver.FindElement(By.XPath("//*[@id='guidedGroupJourneys']/div/div[" + i + "]/div/div/section/article/a/span[2]")).Text);
+           }
+       }
    }
 }

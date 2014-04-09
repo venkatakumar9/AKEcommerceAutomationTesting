@@ -99,6 +99,21 @@ testRunner.Then("Special offer search wrapper appears", ((string)(null)), ((Tech
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Special offers in Guided Group Journeys")]
+        public virtual void SpecialOffersInGuidedGroupJourneys()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Special offers in Guided Group Journeys", ((string[])(null)));
+#line 21
+this.ScenarioSetup(scenarioInfo);
+#line 22
+testRunner.When("I am in Specialoffers page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+testRunner.Then("Special offers related to Guided Group Journeys display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

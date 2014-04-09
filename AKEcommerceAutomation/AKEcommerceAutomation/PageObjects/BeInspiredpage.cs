@@ -107,6 +107,8 @@ namespace AKEcommerceAutomation.PageObjects
                 Console.WriteLine(driver.FindElement(By.XPath("//div[@class = 'pinboard-toolbar']/div[" + i + "]")).Text);
             }
         }
+
+        
         
     }
 }
