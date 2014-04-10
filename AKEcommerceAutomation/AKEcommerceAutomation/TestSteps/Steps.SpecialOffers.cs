@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
 using OpenQA.Selenium;
@@ -16,9 +13,8 @@ namespace AKEcommerceAutomation.TestSteps
         private readonly SpecialoffersPage specialofferpage = new SpecialoffersPage(driver);
 
         /// <summary>
-        /// Verifying the Special Offers Navigation links
+        ///     Verifying the Special Offers Navigation links
         /// </summary>
-        
         [When(@"I click on Special offers link in header")]
         public void WhenIClickOnSpecialOffersLinkInHeader()
         {
@@ -28,7 +24,7 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"Special offers page appear")]
         public void ThenSpecialOffersPageAppear()
         {
-            var title = driver.Title;
+            string title = driver.Title;
             Console.WriteLine(title);
         }
 
@@ -36,13 +32,12 @@ namespace AKEcommerceAutomation.TestSteps
         public void ThenSpecialOffersNavigationExists()
         {
             specialofferpage.GetSpecialoffersnavigationValues();
-            
         }
 
         /// <summary>
-        ///  Verify special offers Search wrapper in Special offers page
-        /// </summary>>
-        
+        ///     Verify special offers Search wrapper in Special offers page
+        /// </summary>
+        /// >
         [When(@"I am in Specialoffers page")]
         public void WhenIAmInSpecialoffersPage()
         {
@@ -56,9 +51,8 @@ namespace AKEcommerceAutomation.TestSteps
         }
 
         /// <summary>
-        /// Special offers related to Guided Group Journeys
+        ///     Special offers related to Guided Group Journeys
         /// </summary>
-
         [When(@"I am in the Specialoffers page")]
         public void WhenIAmIntheSpecialoffersPage()
         {
@@ -72,9 +66,8 @@ namespace AKEcommerceAutomation.TestSteps
         }
 
         /// <summary>
-        /// Special offers in Tailor Made Journeys
+        ///     Special offers in Tailor Made Journeys
         /// </summary>
-
         [When(@"I click on Tailor Made Journeys tab")]
         public void WhenIClickOnTailorMadeJourneysTab()
         {
@@ -90,10 +83,8 @@ namespace AKEcommerceAutomation.TestSteps
         }
 
         /// <summary>
-        /// Accommodations special offers
+        ///     Accommodations in special offers
         /// </summary>
-
-
         [When(@"I click on Accommodation tab in special offer page")]
         public void WhenIClickOnAccommodationTabInSpecialOfferPage()
         {
@@ -107,9 +98,5 @@ namespace AKEcommerceAutomation.TestSteps
         {
             specialofferpage.GetAccommodations_Specialoffers();
         }
-
-
-        
-
     }
 }
