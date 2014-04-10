@@ -22,3 +22,10 @@ Scenario: Special offers in Guided Group Journeys
 When I am in Specialoffers page
 Then Special offers related to Guided Group Journeys display
 
+Scenario: Special offers in Tailor Made Journeys
+When I click on Tailor Made Journeys tab
+Then special offers related to Tailor made journeys display
+
+Scenario: Accommodations special offers
+When I click on Accommodation tab in special offer page
+Then Accommodations in special offers display

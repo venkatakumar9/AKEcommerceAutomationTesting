@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using AKEcommerceAutomation.Framework;
 using AKEcommerceAutomation.PageObjects;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace AKEcommerceAutomation.TestSteps
@@ -67,8 +68,46 @@ namespace AKEcommerceAutomation.TestSteps
         [Then(@"Special offers related to Guided Group Journeys display")]
         public void ThenSpecialOffersRelatedToGuidedGroupJourneysDisplay()
         {
-            specialofferpage.GetSpecialOffers_Guidedgroup();
+            specialofferpage.GetGuidedgroup_SpecialOffers();
         }
+
+        /// <summary>
+        /// Special offers in Tailor Made Journeys
+        /// </summary>
+
+        [When(@"I click on Tailor Made Journeys tab")]
+        public void WhenIClickOnTailorMadeJourneysTab()
+        {
+            homePage.GetSpecialoffersPage();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            driver.FindElement(By.XPath("//div[@class = 'page-nav']/ul/li[2]")).Click();
+        }
+
+        [Then(@"special offers related to Tailor made journeys display")]
+        public void ThenSpecialOffersRelatedToTailorMadeJourneysDisplay()
+        {
+            specialofferpage.GetTailormade_specialoffers();
+        }
+
+        /// <summary>
+        /// Accommodations special offers
+        /// </summary>
+
+
+        [When(@"I click on Accommodation tab in special offer page")]
+        public void WhenIClickOnAccommodationTabInSpecialOfferPage()
+        {
+            homePage.GetSpecialoffersPage();
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            driver.FindElement(By.XPath("//div[@class = 'page-nav']/ul/li[3]")).Click();
+        }
+
+        [Then(@"Accommodations in special offers display")]
+        public void ThenAccommodationsInSpecialOffersDisplay()
+        {
+            specialofferpage.GetAccommodations_Specialoffers();
+        }
+
 
         
 

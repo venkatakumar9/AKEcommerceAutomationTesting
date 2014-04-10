@@ -36,12 +36,31 @@ namespace AKEcommerceAutomation.PageObjects
 
        }
 
-       public void GetSpecialOffers_Guidedgroup()
+       public void GetGuidedgroup_SpecialOffers()
        {
-           int guidedgroupimages = _driver.FindElements(By.XPath("//*[@id='guidedGroupJourneys']/div/div/div/div/section/article/a/span[2]")).Count;
+           int guidedgroupimages = _driver.FindElements(By.XPath("//*[@id='guidedGroupJourneys']/div/div/div/div/section/article/a/span[3]/span")).Count;
            for (int i = 1; i <= guidedgroupimages; i++)
            {
-               Console.WriteLine(driver.FindElement(By.XPath("//*[@id='guidedGroupJourneys']/div/div[" + i + "]/div/div/section/article/a/span[2]")).Text);
+               Console.WriteLine(driver.FindElement(By.XPath("//*[@id='guidedGroupJourneys']/div/div[" + i + "]/div/div/section/article/a/span[3]/span")).Text);
+           }
+       }
+
+       public void GetTailormade_specialoffers()
+       {
+           
+           int tailormadeoffers = _driver.FindElements(By.XPath("//*[@id='tailorMadeJourneys']/div/div/div/div/section/article/a/span[3]/span")).Count;
+           for (int i = 1; i <= tailormadeoffers; i++)
+           {
+               Console.WriteLine(driver.FindElement(By.XPath("//*[@id='tailorMadeJourneys']/div/div["+i+"]/div/div/section/article/a/span[3]/span")).Text);
+           }
+       }
+
+       public void GetAccommodations_Specialoffers()
+       {
+           int accommodations = _driver.FindElements(By.XPath("//*[@id='accommodations']/div/div/div/div/section/article/a/span[3]/span")).Count;
+           for (int i = 1; i <= accommodations; i++)
+           {
+               Console.WriteLine(driver.FindElement(By.XPath("//*[@id='accommodations']/div/div["+i+"]/div/div/section/article/a/span[3]/span")).Text);
            }
        }
    }
